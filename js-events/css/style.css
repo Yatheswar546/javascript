@@ -57,4 +57,5 @@ a {
     display: block;
     position: absolute;
     top: 10%;
+    transition: all 2s ease;
 }
