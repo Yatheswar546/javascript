@@ -1,0 +1,19 @@
+Js Operators:
+    
+Airthmetic  -  +, - , * , / , % , **, ++, --
+Assignment  -  =, +=, -=, *=, /=, %=, **=
+Comparison  -  ==, ===, !=, !==, >, <, >=, <=
+Logical     -  &&, ||, !
+Bitwise     -   &, |, ^, ~, <<, >>, >>>
+Ternary     -  ? : // if-else
+String
+Type        - typeof(), instanceof()
+
+Operator Precedence in Airthmetic Operators:  
+           B  E  D  M  R  A  S 
+
+type coersion: 
+-> implicit conversion of one datatype to another datatype.
+-> It is done when using "==".
+
+           

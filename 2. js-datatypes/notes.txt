@@ -1,0 +1,33 @@
+Data Types:
+
+Primitive Data Types:
+
+Number (Js has no double or float)
+String - single word, space, (_)
+Boolean - true, false
+BigInt
+Undefined
+Null
+  
+Non-Primitive Data Types:
+
+Object
+Arrays
+Functions
+Dates
+
+Questions:
+
+1. difference between null and undefined?
+Answer:
+When a variables is declared but not assigned any value then it is "undefined".
+When a variable is assigned with Null value then it is "null".
+
+Eg: 
+var a;  // undefined
+var b = null; // null
+
+2. why typeof(null) is an object?
+Answer:
+The reason typeof null returns 'object' in JavaScript is a historical bug 
+from the language's original implementation that has been preserved for backward compatibility. 

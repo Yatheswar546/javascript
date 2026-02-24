@@ -1,0 +1,27 @@
+Variables are used to store data.
+=> In Js, there are 3 types of Variables
+    |-> var 
+    |-> let 
+    |-> const 
+
+Scope:
+=> var is a GLOBAL scope variable 
+=> let, const are BLOCK scope variables
+
+Redeclaration  & Re-assignment:
+
+        re-declaration    re-assignment
+var         yes              yes 
+let         no               yes 
+const       no                no 
+
+Question:
+what happens if we use a variable without declaring?
+
+Answer:
+We can declare the variable again using var (Js-Hoisting concept).
+Eg: 
+a = 10;
+var a;
+
+But we can't declare the variable using let, const after assigning the value.

@@ -1,0 +1,7 @@
+Questions:
+
+1. List Truthy & Falsy Values.
+
+Answer:
+Falsy Values : false, null, 0, undefined, NaN, (" ")
+Truthy Values : other than falsy values 

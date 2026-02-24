@@ -1,0 +1,9 @@
+// Type Conversion - change of one datatype into another
+/*
+    1. Implicit - done internally by datatype precedence
+    2. Explicit - done by the user
+*/
+
+type coersion: 
+-> implicit conversion of one datatype to another datatype.
+-> It is done when using "==".
