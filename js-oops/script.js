@@ -79,10 +79,20 @@ function Person(pName, pYob, pJob){
 }
 
 Person.prototype.calculateAge = function(){
-    console.log(2023 - this.yob)
+    console.log("For => " + this.name , 2023 - this.yob)
 }
 
+Person.prototype.updateYearofBirth = function(birthYear){
+    this.yob = birthYear
+}
+
+Person.prototype.lastName = "Eswar"
+
 var swarup = new Person('Swarup',2002,'Software')
+
+swarup.calculateAge()
+swarup.updateYearofBirth(2001)
 swarup.calculateAge()
 
-console.log(swarup)
+// console.log(swarup)
+// console.log(swarup.lastName)

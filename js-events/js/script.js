@@ -1,7 +1,7 @@
 ////////////// Events & Event Listeners /////////////////////
 
-// var btn = document.getElementById('btn');
-// var body = document.querySelector('body');
+var btn = document.getElementById('btn');
+var body = document.querySelector('body');
 
 // console.log(body);
 
@@ -37,9 +37,9 @@ console.log(heading.classList.add('big'))
 // console.log(heading.classList);
 
 
-// setTimeout(function(){
-//     heading.classList.remove('big');
-// },1000);
+setTimeout(function(){
+    heading.classList.remove('big');
+},1000);
 
 
 var toggle_btn = document.getElementById('toggle-btn');
@@ -59,25 +59,26 @@ toggle_btn.addEventListener('click', function() {
 
 ///////////////////// Getting elements styles //////////////////
 
-// var btnincrease = document.getElementById('btn-increase');
-// var btndecrease = document.getElementById('btn-decrease');
+var btnincrease = document.getElementById('btn-increase');
+var btndecrease = document.getElementById('btn-decrease');
 
-// var heading = document.getElementById('heading');
+var heading = document.getElementById('heading');
 
-// console.log(btnincrease.style.marginLeft);
-// console.log(window.getComputedStyle(btndecrease).fontSize);
+console.log(btnincrease.style.marginLeft);
+console.log(window.getComputedStyle(btnincrease).marginLeft);
+console.log(window.getComputedStyle(btndecrease).fontSize);
 
-// var initialSize = window.getComputedStyle(heading).fontSize;
-// initialSize = parseInt(initialSize.substring(0, (initialSize.length - 2)))
+var initialSize = window.getComputedStyle(heading).fontSize;
+initialSize = parseInt(initialSize.substring(0, (initialSize.length - 2)))
 
-// heading.style.fontSize = parseInt(initialSize) + 100 + 'px';
+heading.style.fontSize = parseInt(initialSize) + 100 + 'px';
 
-// btnincrease.onclick = function () {
-//     initialSize += 10;
-//     heading.style.fontSize = initialSize + 'px';
-// }
+btnincrease.onclick = function () {
+    initialSize += 10;
+    heading.style.fontSize = initialSize + 'px';
+}
 
-// btndecrease.addEventListener('click', function (){
-//     initialSize -= 10;
-//     heading.style.fontSize = initialSize + 'px';
-// })
+btndecrease.addEventListener('click', function (){
+    initialSize -= 10;
+    heading.style.fontSize = initialSize + 'px';
+})
