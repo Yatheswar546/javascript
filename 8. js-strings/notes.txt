@@ -1,0 +1,62 @@
+Strings:
+
+-> represented by " " & ' '.
+-> Strings are immutable
+-> When we apply string operations a new string is formed.
+
+
+String functions:
+
+string.length
+
+string.concat('', fname, lname)
+
+string.charAt();
+
+string.indexOf('word')
+string.lastIndexOf('word)
+string.includes('word');
+string.search('word');
+string.match('word');
+
+string.slice(start, end)
+string.slice(-0, -1)
+string.slice(n) : from nth index to last
+string.substring(start, end)
+string.substr(start, length)
+
+string.toUpperCase()
+string.toLowerCase()
+
+string.trim()
+string.trimStart()
+string.trimEnd()
+
+string.replace('old_word', 'new_word')
+
+
+String Template Literals: 
+Template literals are strings enclosed in backticks that allow embedded 
+expressions using ${}, support multi-line strings, and provide cleaner 
+string interpolation compared to traditional concatenation.
+
+-> Template literals are a modern way to work with strings in JavaScript.
+-> They use backticks (`) instead of single ('') or double ("") quotes.
+
+They mainly help with:
+• embedding variables
+• multi-line strings
+• string formatting
+• expressions inside strings
+
+KeyPoint: ${ } allows you to insert variables or expressions.
+
+
+Example:
+Old Way
+const name = "Yathe";
+const age = 25;
+const text = "My name is " + name + " and I am " + age;
+
+New Way
+const text = `My name is ${name} and I am ${age}`;
