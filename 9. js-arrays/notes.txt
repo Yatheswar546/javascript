@@ -1,0 +1,40 @@
+Array:
+
+-> A Data Structure that holds collection of heterogeneous datatypes.
+-> Arrays are Mutable (changable).
+
+Arrays Memory Representation:
+
+let x = [1,2,3];
+let y = x;
+
+In the above example "x" array is created and y is referenced to that location.
+But a NEW ARRAY is NOT CREATED for "y".
+
+x[0] = 1000;
+
+When we change value in x then y will also change.
+
+NOTE: In arrays it will check for memory locations but not for actual values.
+
+Array Methods:
+
+array.length
+array.at(index)
+array.join('-')
+
+array.pop()
+array.push()
+array.shift()
+array.unshift()
+
+old_array.concat(new_array);
+old_array + ',' + new_array
+
+array.slice(start,end) [start, end)
+array.splice(position_to_add, no. of elements to be removed, new_element)
+
+array.indexOf('word')
+array.lastIndexOf('word')
+
+array.includes('word');

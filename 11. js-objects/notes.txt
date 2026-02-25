@@ -1,0 +1,76 @@
+Objects:
+
+-> Objects are used to store data/methods in key:value pairs
+-> Objects are used to represent and group related data and behaviour in a structured way.
+-> Non-Primitive Datatype
+-> key:value pairs (property)
+
+///////////// Creating Objects //////////////// 
+3 Ways to create Objects
+
+1. Using Object Literal
+2. Create Empty Object and then Add Properties
+3. Using new keyword
+
+///////////// Accesing Objects ////////////////
+
+-> to get keys of object : Object.keys(employee)
+-> to get values of object : Object.values(employee)
+
+///////////// Accesing Objects ////////////////
+
+delete object_name.key_name;
+
+We cannot delete entire object directly but we can assign the object with null/undefined values.
+
+///////////// has Own Property ////////////////
+
+hasOwnProperty - it is a method to check if the property is present or not
+
+//////////// Object Keys //////////////
+
+Js Object keys can't be Numbers
+                        Boolean
+                        Null
+                        Undefined
+
+They are converted to Strings
+
+//////////// Object Methods //////////////
+
+-> Js Method is a function that is stored as a "property" of an object.
+-> It is used to define the behaviour or action that the object can perform.
+
+//////////// Nested Objects //////////////
+
+Creation:
+
+const obj1 = {
+    
+    key1 : value1,
+    key2 : value2,
+
+    obj2 : {
+
+        key3: value3,
+        key4: value4
+        
+    }
+}
+
+Accessing:
+
+obj1["key"],
+
+obj1["obj2"]["key"],
+
+obj1.obj2.key;
+
+
+NOTE:
+////////// "const" in Objects /////////////////
+
+"const" keywords doesn't apply to objects.
+Because objects are "mutable".
+
+It only prevents the "reassignment";
