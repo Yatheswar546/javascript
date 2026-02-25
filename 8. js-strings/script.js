@@ -87,26 +87,26 @@ let text = "My name is " + name + " and I am " + age;
 
 // New Way
 text = `My name is ${name} and I am ${age}`;
-console.log(text);
+// console.log(text);
 
 // Example 2
 let a = 10, b = 20;
 
-console.log(`Sum of a and b is: ${a+b}`);
+// console.log(`Sum of a and b is: ${a+b}`);
 
 // Example 3: using functions
 function square(n){
     return n*n;
 }
 
-console.log(`Sqaure of 5: ${square(5)}`);
+// console.log(`Sqaure of 5: ${square(5)}`);
 
 // Example 4: multi line strings
 let content = `line 1
 line 2
 line 3`;
 
-console.log(content);
+// console.log(content);
 
 // Example 5: Using in DOM
 const user = {
@@ -127,7 +127,7 @@ document.getElementById("user").innerHTML = card;
 const isLoggedIn = true;
 
 const message = `User is ${isLoggedIn ? "Online" : "Offline"}`;
-console.log(message);
+// console.log(message);
 
 // Example 7: Nested Literals
 let userName = "Yathe";
@@ -138,7 +138,7 @@ const output = `
     Skills ${skills.join(",")}
 `;
 
-console.log(output);
+// console.log(output);
 
 // Example 8: Tagged Template Literals (Advanced for interviews)
 // Used in libraries like styled-components
@@ -150,4 +150,69 @@ function highlight(strings, value){
 let Name = "Yathe"
 let result =  highlight`Hello ${name}!`;
 
-console.log(result);
+// console.log(result);
+
+/////////////// PROBLEMS //////////////////
+
+// Problem 1: Reverse a String
+function reversingString(){
+    let str = document.getElementById("reverseStr").value;
+    let result = str.split('').reverse().join('');
+    
+    document.getElementById("reversedString").innerHTML = `Result: ${result}`;
+}
+
+// Problem 2: Check Palindrome or Not
+function checkPalindrome(){
+    let str = document.getElementById("palindromeStr").value;
+    
+    if(str === str.split('').reverse().join('')) {
+        document.getElementById("palindromeResult").innerHTML = "Result: It is Palindrome";
+    }
+    else{
+        document.getElementById("palindromeResult").innerHTML = "Result: Not a Palindrome";
+    }
+}
+
+// Problem 3: Count vowels in a String
+function checkVowels(){
+    let str = document.getElementById("vowelsStr").value;
+
+    let count = 0;
+    for(let i=0; i<str.length; i++){
+        if(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u'
+        || str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U'
+        ) {
+            count++;
+        }
+    }
+
+    document.getElementById("vowelsCount").innerHTML = `Result: There are ${count} vowels`;
+}
+
+// Problem 4: Capitalize first letter of each word
+// Approach 1
+// function capitaliseStr(){
+//     let str = document.getElementById("capitalizeStr").value;
+
+//     let result = "";
+
+//     let stringArray = str.split(' ');
+
+//     for(let i=0; i<stringArray.length; i++){
+//         newWord = stringArray[i][0].toUpperCase() + stringArray[i].slice(1);
+
+//         result = result + newWord + " ";
+//     }
+
+//     document.getElementById("capitaliseResult").innerHTML = `Result: ${result}`;
+// }
+
+// Approach 2
+function capitaliseStr(){
+    let str = document.getElementById("capitalizeStr").value;
+
+    let result = str.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+
+    document.getElementById("capitaliseResult").innerHTML = `Result: ${result}`;
+}
