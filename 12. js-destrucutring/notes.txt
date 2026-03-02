@@ -1,0 +1,97 @@
+Destructuring:
+Destructuring in JavaScript is a clean way to extract values from arrays and objects and assign them 
+to variables in a single line. Instead of manually accessing properties using dot notation or index positions, 
+destructuring makes the code shorter and easier to read.
+
+Object Destructuring:
+-> Unpack the properties (key, value pairs) and store it in different individual variables.
+
+Eg: const book = {
+        title: "A Belated Bachelor Party",
+        author: "Ravinder Singh",
+        year: 2013,
+        genre: "Friendship Novel"
+    };
+
+    let {title, author, year, genre} = book;
+
+    console.log(title) // A Belated Bachelor Party
+    console.log(year)  // 2013
+
+    let {title: x1, author: x2, year: x3, genre: x4} = book
+
+    console.log(x2) // Ravinder Singh
+    console.log(x4) Friendship Novel 
+
+    // function destructuring
+    function printUser({name}){
+        console.log(name);
+    }
+
+Array Destructuring:
+-> Unpack the elements and store them in different variables.
+
+Eg: let arr = ["sun", "mon", "tue", "wed"];
+
+    let [a,b,c,d] = arr;
+
+    console.log(a, b, c, d)  // sun mon tue wed 
+    
+    let [ ,  , x, y] = arr 
+    console.log(x,y)  // tue wed
+
+NOTE: Object Destructuring - Order is not important
+      Array Destructuring  - Order is V.V.V.V.V important
+
+Benefits of destructuring:
+=>Destructuring improves readability, reduces repetitive code, makes function parameters cleaner, 
+and avoids temporary variables.
+
+Nested Destructuring:
+
+Objects:
+const user = {
+    name: "Yatheswar",
+    address: {
+        city: "Vizag",
+        pincode: 530008
+    }
+};
+
+const { address: {city} } = user;
+console.log(city) // Vizag
+
+const { address } = user;
+const { city } = address;
+
+Arrays:
+const arr = [1, [2, 3]];
+const [x, [y, z]] = arr;
+
+console.log(x); 1
+console.log(z); 3
+
+Key Points:
+Destructuring improves readability and reduces operation.
+Default values protect against undefinded values.
+Nested Destructuring allows direct extraction from deeply structured data.
+It is commonly used in React props, API responses and function parameters.
+
+
+Array of Objects:
+=> "n" no. of objects in a Array.
+=> Easy & Flexible to use in case of accessing in a order.
+
+Eg: let students = [
+        {
+            "name": "yathe",
+             major: "CSE"
+        },
+        {
+            "name" : "eswar",
+             major : "DS"
+        }
+    ];
+
+    console.log(students[1].name) // eswar 
+    console.log(students[0].major) // CSE 

@@ -104,7 +104,7 @@ const info5 = {
     "name": "Bharath",
     "21": 21,
     "designation": "student",
-    "college": "Veltech"
+    "college": "Veltech",
     "true":"null"
 };
 */
