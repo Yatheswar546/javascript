@@ -1,0 +1,132 @@
+Scope of a Variable:
+
+        Types 
+    ______|______
+    |           |
+  Global       Local 
+                |-> Function (var)
+                |-> Block (let, const)
+
+Function Scope: 
+=> variables can't be accessed outside the function using "var/let/const".
+=> Used especially in "functions".
+
+Eg: function func(){
+        var b = "Hello";
+        console.log(b);  // Hello
+    }
+    func();
+    console.log(b)  // error
+
+Block Scope:
+=> Only "let/const" variables are accessed within the Block.
+=> "var" can accessed outside the Block also.
+=> Used especially in block "{}".
+
+Example-1:
+
+var a = 5;
+if(a === 5){
+    let b = 15;
+    console.log(b);  // 15;
+}
+console.log(b);   // error 
+
+Example-2:
+
+var a = 5;
+if(a === 5){
+    var b = 150;
+    console.log(b);  // 150
+}
+console.log(b);  // 150
+
+Lexical Scope:
+
+=> Ability for an inner scope to access the variable from outer scope 
+    i.e. inner scope is lexically bound to the outer scope.
+=> Lexical scope means a function can access variables from its outer scope 
+    based on where the function is defined in the code, not where it is executed.
+
+NOTE: 
+JavaScript looks for variables in this order:
+a) Current scope
+b) Outer scope
+c) Global scope
+
+Eg: let message = "Hello";
+    
+    function outer(){
+        let name = "Yatheswar";
+
+        function inner(){
+            console.log(message);
+            console.log(name);
+        }
+
+        inner();
+    }
+
+    outer;
+
+=====================================================================================================
+
+Hoisting:
+
+=> It is a JavaScript mechanism where "variables" and "function declarations" are moved to 
+    top of their scope before code execution.
+=> variables declared using "var" only supports hoisting.
+
+Example-1: 
+
+a = 10;
+console.log(a);   // 10
+var a;            // error
+
+Example-2:
+
+func();
+function func(){
+    console.log("Hello");
+}
+
+Example-3:
+
+console.log(a);   // undefined 
+var a = 10;
+
+Example-4:
+
+console.log(a);
+a = 10;           // error 
+
+
+=====================================================================================================
+
+Closures:   (Function + Lexical Environment)
+
+=> If a function is created inside another function, it retains access to scope of that outer function 
+   even after that outer function returns, because the outer function is in the lexical scope of the
+   function.
+
+=> If in a inner function if the "child function is returned" then it is a CLOSURE.
+
+Example:
+
+function parentFunction(){
+
+    // Lexical Scope START
+
+    const message = "Hi!, I am parent";
+
+    function childFunction(){
+        console.log(message);
+    }
+
+    return childFunction;
+
+    // Lexical Scope END
+}
+
+const ans = parentFunction();
+console.log(ans);
