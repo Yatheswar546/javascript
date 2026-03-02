@@ -1,0 +1,17 @@
+Callback:
+
+=> A Callback is a function that is passed into another function as a argument
+   to be executed later.
+
+=> Callbacks make sure that a function is not going to run before a taks is completed
+   but will run right after the task has been completed.
+
+=> Commonly used in "Asynchronous" programming.
+
+Different Forms of Callbacks:
+
+1) Callback with Function Declaration Syntax
+
+2) Callback with Function Expression Syntax
+
+3) Callback with Arrow Function Syntax
