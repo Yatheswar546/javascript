@@ -1,0 +1,51 @@
+Functions:
+=> Block of reusable code that performs a specific task.
+
+Uses:
+1) Code Resuability
+2) Organisation
+3) Encapsulation
+4) Abstraction
+5) Seperation of Concerns
+
+3 Ways of declaring functions:
+
+1) Function Declaration
+    
+    function add(a,b){
+        return a + b;
+    }
+
+    add(5,4);
+
+
+2) Function Expression
+
+    let sum = function (a,b){
+        return a + b;
+    }
+
+    sum(2,3);
+
+
+3) ES-6 Arrow Functions 
+
+    let add = (a,b) => {
+        return a + b;
+    }
+
+    => In Arrow function you can skip "{}" and "return" for single line of code.
+
+    let add = (a,b) => a + b;
+
+    => In case of only 1 argument and no arguments.
+
+    let x1 = () => console.log("Hello World!");
+
+    let x2 = a => console.log(a);
+
+===========================================================================
+
+Anonymous Function:
+=> Functions with no names. We create them using "Arrow" functions.
+
