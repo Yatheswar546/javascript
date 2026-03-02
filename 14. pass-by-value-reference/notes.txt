@@ -1,0 +1,9 @@
+Pass by Value:
+=> Making a Copy of original
+=> Making changes in them will not effect original values.
+=> All Primitive Data Types
+
+Pass by Reference:
+=> Reference of original values will be given.
+=> Making changes in them will effect original values.
+=> All Non-Primitive Data Types
