@@ -1,3 +1,16 @@
+// Callback 
+
+function ringAlarm(){
+    console.log("Wake Up !!!! It's time");
+}
+
+function setAlarm(funtionExecuteLater){
+    console.log("Wake up at 7am!!!");
+    funtionExecuteLater();
+}
+
+setAlarm(ringAlarm);
+
 // Different Forms of Callbacks
 
 // 1. Callback with Function Declaration Syntax
@@ -71,3 +84,5 @@ function reception(param){
 }
 
 reception( n => console.log(`Hello ${n}`));
+
+////////////////////////////////////////////////////////////////
