@@ -1,0 +1,94 @@
+DOM (Document Object Model):
+
+Introduction:
+
+=> Js can't understand HTML. Js understand datatypes. It will refer it as document.
+    HTML in terms of Js is a document.
+=> When a page is loaded, the browser creates a DOM of page.
+=> Tree representation of the HTML document.
+=> DOM tree can be modified with the help of Js.
+=> It is an object oriented representation.
+
+                                Document
+                                   |
+                                Root <html>
+                    _______________|_______________
+                    |                             |
+                  <head>                        <body>
+                    |                     ________|________          |
+                  <title>                 |               |
+                    |                    <h1>            <a> -> href
+                  Text "My Title"         |               |
+                                        My header        text
+                    
+=> Using this we can access the HTML elements, attributes, CSS stylings and Events.
+
+==============================================================================
+
+CRUD Operations with HTML Elements:
+
+Create HTML Elements:
+1) createElement('tag')     - is used to create an HTML Element.
+2) createTextNode('text')   - is used to place the string in the created element. 
+3) parent.insertBefore(created Element, sibling Element) - to insert element before an element. called on parent element
+4) firstElementChild        - returns the first element of list.
+5) cloneNode(true)          - copies element.
+
+Add, Remove & Toggle classes from HTML elements:
+
+classList: It holds all the classes of an HTML element.
+
+add()    :  used to add class (adds class name for an existing HTML element)
+remove() :  removes class name from an existing HTML element
+toggle() :  to toggle a class name (if it exits then removes or else adds a class name to HTML element)
+
+-------------------------------------------------
+
+Read Operation
+Select HTML Elements:
+1) getElementById()
+2) getElementByTagName()
+3) getElementByClassName()
+
+Query Selectors: css selectors to select HTML elements
+4) querySelector()     - selects 1st element of class 
+5) querySelectorAll()  - selects all elements of class 
+
+-------------------------------------------------
+
+Update HTML Elements:
+1) element.innerHTML       - new HTML element
+2) element.attribute       - new value 
+    element.setAttribute('attr','value')
+    element.getAttribute('attr')
+3) element.style.property  - new style 
+4) element.innerText       - only for updating text and considers only visible text.
+5) element.textContent     - only for updating text but considers invisible text by CSS.
+
+6) replaceChild('new created element', 'selected element to be replaced') 
+                           - used for replacing elements and must be called on parent element.
+7) appendChild()           - appends a new HTML element to an existing one as a Child Element
+8) element.append()        - can append text and elements.
+9) element.prepend()       - inserts at beginning.
+10) element.replaceWith()  - modern alternative to replaceChild().
+
+-------------------------------------------------
+
+Delete HTML Elements:
+1) parent.removeChild('selected Element) - to delete an HTML element. called on parent element
+2) element.remove()                      - removes element directly without referencing parent.
+
+-------------------------------------------------
+
+Additional:
+
+1) childElementCount  - returns the no. of child elements
+==============================================================================
+
+
+
+
+
+
+
+
