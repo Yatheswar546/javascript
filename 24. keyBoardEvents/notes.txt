@@ -1,0 +1,11 @@
+Js - KeyBoard Events:
+
+Events triggered when user clicks a key.
+
+3 types:
+
+1) keydown   : key is pressed.
+
+2) keyup     : key is released after it's keydown event.
+
+3) keypress  : when any key is in pressed position (except SHIFT, FN, CAPS LOCK).

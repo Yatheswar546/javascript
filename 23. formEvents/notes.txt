@@ -1,0 +1,13 @@
+Js - Form Events:
+
+1) change - It is triggered when the content of an input field is changed (or)
+            when user selects a value from dropdown etc....
+
+2) focus  - It is triggered when input is focused by user.
+
+3) blur   - When input field loses focus.
+
+4) submit - When submit button is clicked.
+
+
+=> e.preventDefault() : used to prevent the default behavior of an event (refresh a form etc...)

@@ -27,3 +27,10 @@ element.{eventProperty} = function(){}   addEventListener({eventName}, function(
 |                                           |
 |-> selectedElement.onclick                 |-> selectedElement.addEventListener({eventName}, function() {})
             = function () {}
+
+Key points on Event Handlers:
+
+=> Everytime when we use Event Handlers, an event is passed into the function.
+    (event, e).
+
+=> event.target : it is used to know which html element triggered the event.
