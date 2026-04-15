@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+.main-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
 button { 
     position: absolute;
     top: 0%;
@@ -25,11 +32,13 @@ button {
 
 .btn1{
     position: absolute;
-    top: 0%;
+    top: 20%;
     left: 40%;
 }
 
 .btn2{
+    position: absolute;
+    top: 20%;
     font-size: 20px;
 }
 
@@ -41,12 +50,23 @@ button {
     font-size: 38px;
 }
 
-a {
+#toggle-btn {
     text-decoration: none;
     padding: 10px;
     margin: 10px;
     color: #fff;
     background: #000;
+    left: 0%;
+    top: 5%;
+    transform: translate(0%, 0%);
+}
+
+#navbar {
+    padding: 30px;
+}
+
+#navbar li{
+    font-size: 20px;
 }
 
 .hide {

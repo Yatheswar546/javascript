@@ -1,0 +1,29 @@
+Events: Actions happens in a webpage.
+        1. Clicking the mouse.
+        2. Hovering
+        3. Pressing keys 
+        4. Webpage loading 
+        5. Form submission 
+        6. Video Controls 
+
+=> All DOM nodes generate such signals 
+    1. click button                  - click 
+    2. hovering                      - mouseover 
+    3. submit a form                 - submit 
+    4. webpage loaded, show ad popup - DOMContentLoaded
+
+=> HTML events have "on<event>" type attributes to specify the handlers. 
+
+==============================================================================
+
+Event Handlers : Actions performed on these events. 
+
+                        Two Ways of Event Handling 
+               ____________________|___________________
+               |                                      |
+        Event Properties                        addEventListener()
+               |                                      |
+element.{eventProperty} = function(){}   addEventListener({eventName}, function() {})
+|                                           |
+|-> selectedElement.onclick                 |-> selectedElement.addEventListener({eventName}, function() {})
+            = function () {}
