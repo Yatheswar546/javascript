@@ -8,7 +8,7 @@ function addItem(){
     let newItem = document.createElement('li');
     
     let itemDiv = document.createElement('div');    
-    itemDiv.id = "item" + (taskList.childElementCount) + 1;
+    // itemDiv.id = "item" + (taskList.childElementCount) + 1;
 
     let itemHeading = document.createElement('h3');
     let taskText = document.createTextNode(addItem);
@@ -18,13 +18,13 @@ function addItem(){
     let itemUpdateText = document.createTextNode('Done');
     itemUpdateBtn.appendChild(itemUpdateText);
     itemUpdateBtn.onclick = updateItem;
-    itemUpdateBtn.id = "item" + (taskList.childElementCount) + 1;
+    // itemUpdateBtn.id = "item" + (taskList.childElementCount) + 1;
 
     let itemDeleteBtn = document.createElement('button');
     let itemDeleteText = document.createTextNode('Delete');
     itemDeleteBtn.appendChild(itemDeleteText);
     itemDeleteBtn.onclick = deleteItem;
-    itemDeleteBtn.id = "item" + (taskList.childElementCount) + 1;
+    // itemDeleteBtn.id = "item" + (taskList.childElementCount) + 1;
 
     itemDiv.appendChild(itemHeading);
     itemDiv.appendChild(itemUpdateBtn);
