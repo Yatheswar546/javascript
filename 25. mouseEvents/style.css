@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 50px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+button{
+    font-size: 50px;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main{
+    display: flex;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 30px;
+    background-color: bisque;
+}
+
+h3{
+    text-align: center;
+    padding: 30px;
+    margin: 10px;
+    background-color: rgb(247, 168, 73);
+}
+
+p{
+    text-align: center;
+    padding: 30px;
+    margin: 10px;
+    background-color: aqua;
+}
