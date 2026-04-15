@@ -84,11 +84,3 @@ Additional:
 
 1) childElementCount  - returns the no. of child elements
 ==============================================================================
-
-
-
-
-
-
-
-
