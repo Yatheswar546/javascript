@@ -1,0 +1,9 @@
+Web APIs:
+
+=> Browser gives Js some additional superpowers in form of Web APIs (functions)
+    that helps to overcome challenges of being synchronous.
+
+=> Some of most used ones are
+    |--> DOM APIs 
+    |--> console.log()
+    |--> setTimeout(), fetch(), localStorgae() etc....
