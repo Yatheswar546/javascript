@@ -1,0 +1,46 @@
+Asynchronous:  
+
+        " I will finish it later ! "
+
+=> Writing code where tasks run in background without blocking the main program flow,
+    allowing other work to continue while waiting for results.
+
+=> Simply we can refer as functions "running in parallel" with other functions.
+
+=> We can use "setTimeout()" and "setInterval()".
+
+Syntax: setTimeout( function() { },  1000 );
+
+Explanation: 
+    => setTimeout  :  Js function to "wait"
+    => function()  :  callback function to perform
+    => 1000        :  time in ms (milliseconds)
+
+==============================================================================
+
+=> In JS, code is executed "line-by-line" in sequence.
+    So, we can achieve asynchronous programming in the following ways:
+
+    1) Callbacks  :   asynchronous function is executed when a function is completed.
+
+                    setTimeout( () => {
+                        ..........
+                        ..........
+                    }, 2000);
+
+    2) Promises 
+
+    3) Async / Await 
+
+    4) Timers     :  setTimeout(), setInterval()
+
+    5) Event Listeners
+
+==============================================================================
+
+NOTE: JavaScript Engine is single threaded synchronous
+      
+      ==> can only execute one line of code at a time.
+
+      ==> Only after the current line of code runs to completion can another line of code start executing.
+    
