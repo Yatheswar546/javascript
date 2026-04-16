@@ -1,0 +1,63 @@
+
+Core JavaScript (Basics)
+1. variables 
+2. data Types
+3. Operators
+4. type conversion
+5. conditional statements
+6. loops
+
+Functions Basics - Part 1
+7. functions
+
+Strings and Arrays 
+8. strings and string functions
+9. arrays and array functions
+10. string <-> array 
+
+Objects and Advanced Syntax
+11. Objects (Creation, Accessing, Deleting, Updating, Objects Keys and Methods, Nested Objects)
+12. Destructuring (Object and Array), Nested Destructuring, Array of Objects
+13. Pass by Value and Pass by Reference
+14. Rest and Spread operators
+
+Numbers and Utilities
+15. Special Numbers and Math functions
+
+Functions - Part 2
+16. Scope of a Variable, Hoisting and Closures 
+17. Types of Functions (Fn Declaration, Fn Expression, Arrow Functions) and Anonymous Functions.
+
+Callbacks and Array Iteration 
+18. Callbacks and its Different forms
+19. forEach and Array Iteration Callback Functions (find(), filter(), sort(), map(), reduce())
+
+DOM and Broswer 
+20. DOM and CRUD operations in DOM 
+21. BOM (Browser Object Model)
+
+Events
+22. Events and Event Handling 
+23. Form Events
+24. keyBoard Events
+25. Mouse Events 
+27. Event Bubbling
+
+Error and Data Handling
+28. Error Handling
+29. JSON, JSON.parse(), JSON.stringify()
+
+Networking
+30. HTTP Request and Repsonse , HTTP Method (GET, POST, PUT, DELETE), Handling HTTP Response, HTTP Status Codes
+31. Web APIs 
+
+Async Js
+32. Asynchronous Programming (Introduction)
+       |-> Promises 
+       |-> Async / Await 
+33. Promises , States of a Promise, Handling Promise
+34. fetch API , POST request using fetch 
+35. Async - Await 
+
+Storage
+36. localStorgae (setItem, getItem, removeItem, clear) 
