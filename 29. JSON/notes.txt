@@ -1,0 +1,86 @@
+XML (eXtensible MarkUp Language):
+
+=> It is a markup language that is desgined to store and transport data in a structured format.
+    It is used before JSON, but the data transfer is difficult because it is in HTML format.
+
+=====================================================================================
+
+JSON (JavaScript Object Notation):
+
+=> It is a lightweight format for storing and transporting data from a server to webpage.
+    It is "self-describing" and easy to understand.
+
+=> Whenever we want to get data from server it will be difficult to fetch data in a
+    plain text format (or) XML format because data would be bulky and cause too much
+    overhead for web services.
+
+=> We use JSON in which, data is passed in an array of objects.
+
+Synatx:  
+{
+    "name"  : "value",
+    "array" :  [ ]
+}
+
+Uses: 
+1) Less Verbose
+2) Faster
+3) Readable 
+4) Objects align in a code
+5) Structure matches the code
+
+=====================================================================================
+
+Difference between JSON and Js Object:
+
+            JSON               |          Js Object
+                               |
+1.  key/value pairs in " "     |    key/value pairs without " "
+                               |
+2.  no functions               |    can contain functions
+                               |
+3.  supported by any language  |    only JavaScript supports
+
+=====================================================================================
+
+=> JSON can't hold "undefined" variables and "functions" and "data".
+
+=> It can hold strings, arrays, numbers, booleans, null and object.
+
+=====================================================================================
+
+Similarities b/w JSON & XML:
+
+=> Both are "self-describing" and "human-readable"
+
+=> Hierarchical (values within values)
+
+=> Can be parsed and used by programming languages
+
+=> Can be fetched with and "XMLHttpRequest"
+
+=====================================================================================
+
+JSON.parse() & JSON.stringify():
+
+JSON.parse()     : The data received from server will be in string format, 
+                   so we need to parse to get object.
+
+JSON.stringify() :  The data should be send in string format to server. 
+
+                        JSON.parser()
+            Web   <--------------------------  SERVER
+            Page  -------------------------->
+                        JSON.stringify()
+
+=====================================================================================
+
+Why JSON is better ?
+
+=> It doesn't use end tag 
+=> It is shorter 
+=> Quicker to read and write 
+=> Can use arrays 
+=> XML has to be parsed with an XML parser 
+    JSON can be parsed by JSON.parse()
+=> For AJAX applications, JSON is faster and easier.
