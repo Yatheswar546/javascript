@@ -1,85 +1,84 @@
-for (let i = 0; i < 10; i++) {
+// ================= BASIC LOOPS =================
+
+// for loop
+for (let i = 0; i < 5; i++) {
     // console.log(i);
 }
 
-a1 = ["a", "b", "c", "d", "e"];
-for (let x in a1) {
-    // console.log(x, a1[x]);
+// for-in (indexes)
+let arr1 = ["a", "b", "c"];
+for (let i in arr1) {
+    // console.log(i, arr1[i]);
 }
 
-/*
-    0, a1[0]
-    1, a1[1]
-    2, a1[2]
-*/
-
-a1 = ["a", "b", "c", "d", "e"];
-for (let x of a1) {
-    // console.log(x);
+// for-of (values)
+for (let value of arr1) {
+    // console.log(value);
 }
 
-res = 0;
-while (res < 10) {
+// while loop
+let res = 0;
+while (res < 5) {
     // console.log(res);
-    res += 1;
+    res++;
 }
 
-ans = 10
+// do-while
+let ans = 5;
 do {
-    // console.log(ans)
-    ans -= 1
+    // console.log(ans);
+    ans--;
 } while (ans > 0);
 
-//////////// Problems ////////////
 
-// 1. Print Pyramid Pattern 
-function printPattern(){
-    let num = document.getElementById("patternNum").value;
-    // console.log(num);
+// ================= PROBLEMS =================
+
+// 1. Pyramid Pattern
+function printPattern() {
+    let num = Number(document.getElementById("patternNum").value);
     let pattern = "";
-    for(let j=0; j<num; j++){
-        pattern = pattern + "*"
+
+    for (let i = 0; i < num; i++) {
+        pattern += "*";
         console.log(pattern);
     }
 }
 
-// 2. Find factorial 
-function factorial(){
-    let num = document.getElementById("factorialNum").value;
-    let factorial = 1;
-    for(let i=1; i<=num; i++){
-        factorial = factorial*i;
+// 2. Factorial
+function factorial() {
+    let num = Number(document.getElementById("factorialNum").value);
+    let fact = 1;
+
+    for (let i = 1; i <= num; i++) {
+        fact *= i;
     }
-    document.getElementById("factorialResult").innerHTML = "Factorial is: " + factorial;
+
+    document.getElementById("factorialResult").innerText = "Factorial is: " + fact;
 }
 
-// 3. Sum of digits of a Number
-function sumofNumber(){
-    let num = document.getElementById("sumofNumber").value;
+// 3. Sum of digits
+function sumofNumber() {
+    let num = Number(document.getElementById("sumofNumber").value);
     let sum = 0;
-    while(num!=0){
-        r = parseInt(num%10);
-        sum = sum + r;
-        num = parseInt(num/10);
+
+    while (num > 0) {
+        let r = num % 10;
+        sum += r;
+        num = Math.floor(num / 10);
     }
 
-    document.getElementById("sumResult").innerHTML = "Sum of Number is: " + sum;
+    document.getElementById("sumResult").innerText = "Sum of Number is: " + sum;
 }
 
-// 4. Remove duplicates from Array using Loop
-
+// 4. Remove duplicates
 let initialArray = [1,2,3,4,5,1,2,3,4,5,6,7,8,9];
 
-console.log("initial array: ", initialArray);
 let resultArray = [];
 
-for(let i=0; i<initialArray.length; i++){
-    if(initialArray[i] in resultArray){
-        continue;
-    } 
-    else {
+for (let i = 0; i < initialArray.length; i++) {
+    if (!resultArray.includes(initialArray[i])) {
         resultArray.push(initialArray[i]);
     }
 }
 
-console.log("result array: ", resultArray);
+console.log("Result array:", resultArray);

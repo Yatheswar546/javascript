@@ -64,9 +64,9 @@ Storage
 
 =================================================================================================
 
-Good gp, now 5th Folder
+Good gp, now 6th Folder
 
-5th Folder : typeConversion
+6th Folder : loops
 
 index.html
 
@@ -75,95 +75,142 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conditionals Statements</title>
+    <title>Loops</title>
 </head>
 <body>
+
+    <h1>Js Loops</h1>
+
+    <h3>for</h3>
+    <h3>while</h3>
+    <h3>do-while</h3>
+    <h3>for-of</h3>
+    <h3>for-in</h3>
     
-    <h1>Conditionals Statements</h1>
-
-    <h3>if</h3>
-    <h3>if-else</h3>
-    <h3>if-else-if</h3>
-    <h3>switch</h3>
-
-    <!-- Problem 1: Simple Calculator -->
-    <h1>Calculator using Switch Case</h1>
-
-    <input type="number" id="num1" placeholder="Enter first number:">
     <br>
-    <input type="number" id="num2" placeholder="Enter second number: ">
+
+    <h2>Problems</h2>
+    <h3>Problem 1 : Pyramid Pattern</h3>
+    <input type="number" id="patternNum" placeholder="Enter Number: ">
+    <button onclick="printPattern()">Enter</button>
+    <h4>Check in console for result</h4>
+
     <br>
-    <label for="">Select Operation:</label>
-    <select id="operator">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-        <option value="**">**</option>
-    </select>
 
-    <button onclick="calculate()">Calculate: </button>
+    <h3>Problem 2: Find factorial using loop</h3>
+    <input type="number" id="factorialNum" placeholder="Enter Number: ">
+    <button onclick="factorial()">Enter</button>
+    <h4 id="factorialResult">Factorial is: </h4>
 
-    <h3 id="result">Result: </h3>
+    <br>
+
+    <h3>Problem 3: Sum of digits of a number</h3>
+    <input type="number" id="sumofNumber" placeholder="Enter Number:">
+    <button onclick="sumofNumber()">Enter</button>
+    <h4 id="sumResult">Sum of Number is: </h4>
+
+    <br>
+
+    <h3>Problem 4: Remove duplicates from Array using Loop</h3>
+    <h4>Check js script for the code</h4>    
 
     <script src="./script.js"></script>
 </body>
 </html>
 
+
 script.js
 
-/////////// PROBLEMS //////////
+for (let i = 0; i < 10; i++) {
+    // console.log(i);
+}
 
-// 1. build a calculator using switch
+a1 = ["a", "b", "c", "d", "e"];
+for (let x in a1) {
+    // console.log(x, a1[x]);
+}
 
-function calculate(){
-    let num1 = document.getElementById("num1").value;
-    let num2 = document.getElementById("num2").value;
-    let operator = document.getElementById("operator").value;
-    let result;
+/*
+    0, a1[0]
+    1, a1[1]
+    2, a1[2]
+*/
 
-    switch(operator){
-        case '+' : 
-            result = num1 + num2;
-            break;
-        case '-':
-            result = num1 - num2;
-            break;
-        case '*':
-            result = num1 * num2;
-            break;
-        case '/':
-            if(num2===0){
-                result = "Can't divide with 0";
-                break;
-            } else{
-                result = num1 / num2;
-                break;
-            }
-        case '**':
-            result = num1 ** num2;
-            break;
+a1 = ["a", "b", "c", "d", "e"];
+for (let x of a1) {
+    // console.log(x);
+}
 
-        default:
-            result = "Invalid Operator"
+res = 0;
+while (res < 10) {
+    // console.log(res);
+    res += 1;
+}
+
+ans = 10
+do {
+    // console.log(ans)
+    ans -= 1
+} while (ans > 0);
+
+//////////// Problems ////////////
+
+// 1. Print Pyramid Pattern 
+function printPattern(){
+    let num = document.getElementById("patternNum").value;
+    // console.log(num);
+    let pattern = "";
+    for(let j=0; j<num; j++){
+        pattern = pattern + "*"
+        console.log(pattern);
+    }
+}
+
+// 2. Find factorial 
+function factorial(){
+    let num = document.getElementById("factorialNum").value;
+    let factorial = 1;
+    for(let i=1; i<=num; i++){
+        factorial = factorial*i;
+    }
+    document.getElementById("factorialResult").innerHTML = "Factorial is: " + factorial;
+}
+
+// 3. Sum of digits of a Number
+function sumofNumber(){
+    let num = document.getElementById("sumofNumber").value;
+    let sum = 0;
+    while(num!=0){
+        r = parseInt(num%10);
+        sum = sum + r;
+        num = parseInt(num/10);
     }
 
-    // document.getElementById("result").innerText = "Result: " + result;
-    let resultDisplay = document.getElementById("result");
-
-    resultDisplay.innerHTML = "Result is: " + result;
-
+    document.getElementById("sumResult").innerHTML = "Sum of Number is: " + sum;
 }
+
+// 4. Remove duplicates from Array using Loop
+
+let initialArray = [1,2,3,4,5,1,2,3,4,5,6,7,8,9];
+
+console.log("initial array: ", initialArray);
+let resultArray = [];
+
+for(let i=0; i<initialArray.length; i++){
+    if(initialArray[i] in resultArray){
+        continue;
+    } 
+    else {
+        resultArray.push(initialArray[i]);
+    }
+}
+
+console.log("result array: ", resultArray);
+
 
 notes.txt
 
-Questions:
 
-1. List Truthy & Falsy Values.
 
-Answer:
-Falsy Values : false, null, 0, undefined, NaN, (" ")
-Truthy Values : other than falsy values 
-
-The above is the 5th topic, analyze it and do the same thing as you did for previous folders. 
+The above is the 6th topic, I have not written any notes for this topic, so generate a new README file, analyze the html and js files and do the same thing as you did for previous folders. 
 Also as you can see we used HTML file so you can do changes in HTML also, if required.
