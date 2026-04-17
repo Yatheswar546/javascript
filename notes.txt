@@ -64,9 +64,9 @@ Storage
 
 =================================================================================================
 
-Good gp, now 3rd Folder
+Good gp, now 4th Folder
 
-3rd Folder : operators
+4th Folder : typeConversion
 
 index.html
 
@@ -75,75 +75,99 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operators</title>
+    <title>Type Conversion</title>
 </head>
 <body>
+    
+    <h1>Type Conversion</h1>
 
-    <h1>Js Operators</h1>
+    <h3>Implicit</h3>
+    <h3>Explicit</h3>
 
-    <h3>Airthmetic</h3>
-    <h3>Assignment</h3>
-    <h3>Comparison</h3>
-    <h3>Logical</h3>
-    <h3>Bitwise</h3>
-    <h3>Ternary</h3>
-    <h3>String</h3>
-    <h3>TypeOf</h3>
-
+    <h3>Type Coersion</h3>
     <script src="./script.js"></script>
 </body>
 </html>
 
 script.js
 
-var a = 5;
-var b = "5";
+let x1 = 5
+let x2 = "5"
+
+// console.log(x1 == x2)
+
+res1 = 51 + 90
+// console.log(res1)
+
+res2 = "Hello " + "Everyone";
+// console.log(res2)
+
+res3 = 51 + 90 + "JavaScript";
+// console.log(res3)
+
+/*  
+    51 + 90 + "JavaScript"
+    141 (number) + "JavaScript" (string)
+    "141" (string) + "JavaScript" (string)
+    141JavaScript
+*/
+
+res4 = 50 + 30 + "JavaScript" + 20 + 100
+// console.log(res4) //80JavaScript20100
+/*
+    80JavaScript120
+    200JavaScript
+    JavaScript200
+
+    Working:
+    50 + 30 + "JavaScript" + 20 + 100
+    80 (number) + "JavaScript" + 20 (number) + 100 (number)
+    "80" (string) + "JavaScript" + 20 (number) + 100 (number)
+    "80JavaScript" + 20 (number) + 100 (number)
+    "80JavaScript" + "20" (string) + 100 (number)
+    "80JavaScript20" (string) + "100" (string)
+    "80JavaScript20100"
+*/
+
+// let num = 123;
+
+// console.log(num, typeof (num))
+
+// let str1 = String(num);
+
+// console.log(str1, typeof (str1));
+
+// let str2 = "456"
+
+// console.log(str2, typeof (str2));
+
+// let num2 = Number(str2);
+
+// console.log(num2, typeof (num2));
+
+// num2 = num2 + 300;
+
+// console.log(num2, typeof (num2))
+
+// Type Coersion
+let a = 5;
+let b = "5";
 
 console.log(a==b);
 console.log(a===b);
 
-// Problems
-
-// write a function that returns the largest of three numbers
-function largestofThree(a,b,c){
-
-    if(a>b && a>c){
-        return a;
-    } else if(b>c){
-        return b;
-    } else{
-        return c;
-    }
-
-}
-
-console.log(largestofThree(5,10,4));
-
 notes.txt
 
-Js Operators:
-    
-Airthmetic  -  +, - , * , / , % , **, ++, --
-Assignment  -  =, +=, -=, *=, /=, %=, **=
-Comparison  -  ==, ===, !=, !==, >, <, >=, <=
-Logical     -  &&, ||, !
-Bitwise     -   &, |, ^, ~, <<, >>, >>>
-Ternary     -  ? : // if-else
-String
-Type        - typeof(), instanceof()
-
-Operator Precedence in Airthmetic Operators:  
-           B  E  D  M  R  A  S 
+// Type Conversion - change of one datatype into another
+/*
+    1. Implicit - done internally by datatype precedence
+    2. Explicit - done by the user
+*/
 
 type coersion: 
 -> implicit conversion of one datatype to another datatype.
 -> It is done when using "==".
 
 
-Queestions:
-1. difference between == and ===
-2. explain short-circuiting in && and ||
-3. what is nullish coalescing ??
-
-The above is the 3rd topic, analyze it and do the same thing as you did for previous folders. 
+The above is the 4th topic, analyze it and do the same thing as you did for previous folders. 
 Also you can do changes in HTML also, if required only, it is not a mandatory thing. Further topics we need to do anyhow but for now as it is basic topic, it is your wish.
