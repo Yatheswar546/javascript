@@ -64,9 +64,9 @@ Storage
 
 =================================================================================================
 
-Good gp, now 9th Folder
+Good gp, now 10th Folder
 
-9th Folder : arrays
+10th Folder : arrays
 
 index.html
 
@@ -75,256 +75,47 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrays & Array Methods</title>
+    <title>Array ↔ String</title>
 </head>
 <body>
-    
-    <h1>Array & Array Methods</h1>
+
+    <h1>Array ↔ String Converstions</h1>
     <h4>Check the script.js & notes.txt file for details</h4>
 
-    <h2>Problems</h2>
-
-    <h3>Problem 1: Find second largest number</h3>
-    <input type="text" id="array" placeholder="Enter Numbers with spaces:">
-    <button onclick="readArray()">Enter</button>
-    <h4 id="secondLargest">Result: </h4>
-
-    <h3>Problem 2: Rotate array by 'k' times</h3>
-    <input type="text" id="rotateArray" placeholder="Enter Numbers with spaces: ">
-    <input type="number" id="kValue" placeholder="Enter k:">
-    <button onclick="rotateArray()">Enter</button>
-    <h4 id="rotatedArray">Result: </h4>
-    
-    <script src="./script.js"></script>
+    <script src="./script.js"></script>   
 
 </body>
 </html>
 
 script.js
 
-// Creating an Array
-//    0            1             2      3    4
-let students = ["Bharath", "SaiNavadeep", "Akash", 123, true];
-// console.log(students);
+// String to Array ( split() )
+let statement = "This is JavaScript Notes";
+// console.log(statement.split(' '));
 
-const fruits = new Array("Apple", "Banana", "Grapes");
-// console.log(fruits);
-
-// Arrays Memory Representation
-let x = [1, 2, 3]
-let y = x
-
-// console.log(x === y);
-
-let z = [1, 2, 3];
-
-// console.log(x === z);
-// console.log(x === y);
-// console.log(y === z);
-
-// In arrays it will check for memory locations but for actual values.
-
-let movies = ["WAR2", "Coolie", "Kingdom", "Narasimha", "Salaar"];
-let films = movies;
-
-// console.log(movies);
-// console.log(films);
-
-movies[0] = "Spirit";
-// console.log(movies);
-// console.log(films);
-// Arrays are Mutable
-
-// Accessing Array Elements;
-
-// console.log(movies[1]);
-
-for (let i = 0; i < movies.length; i++) {
-    // console.log(movies[i]);
-}
-
-for (let i in movies) {
-    // console.log(movies[i]);
-}
-
-for (let movie of movies) {
-    // console.log(movie);
-}
-
-// Array Methods
-movies = ["WAR2", "Coolie", "Kingdom", "Narasimha", "Salaar"];
-// console.log(movies)
-
-// console.log(movies.length);
-
-// console.log(movies.at(2));
-
-// console.log(movies.join(' - '));
-
-// movies.pop()
-// console.log(movies);
-
-// movies.push('RRR')
-// console.log(movies);
-
-// movies.shift();
-// console.log(movies);
-
-// movies.unshift('Devara');
-// console.log(movies);
-
-telugu_movies = ["Devara", "Coolie", "Kingdom", "Narasimha", "Salaar"];
-
-hinid_movies = ["WAR2", "Pathan", "Tiger", "Dear Zindagi"];
-
-let indian_films = telugu_movies.concat(hinid_movies);
-// console.log(indian_films);
-
-let total_films = telugu_movies + ',' + hinid_movies;
-// console.log(total_films);
-// console.log(typeof (total_films));
-
-movies = ["WAR2", "Coolie", "Kingdom", "Narasimha", "Salaar"];
-////////// 0       1           2          3            4
-
-// console.log(movies.slice(1));
-// console.log(movies.slice(1, 4)); // [1, 4)
-
-// array_name.splice(position_to_add, no. of elements to be removed, new_element)
-// movies.splice(3, 0, 'OG');
-// movies.splice(2, 2, 'OG');
-// console.log(movies);
-
-// Search Methods
-movies = ["WAR2", "Coolie", "Kingdom", "Coolie", "Narasimha", "Salaar", "OG"];
-/////////   0        1          2         3          4          5        6
-
-// console.log(movies.indexOf('Coolie'));
-// console.log(movies.lastIndexOf('Coolie'));
-
-// console.log(movies.includes('OG'));
-
-////////////// PROBLEMS ////////////////
-
-// Problem 1: Find second largest number
-function readArray(){
-    let array = document.getElementById("array").value;
-    let arr = array.split(' ').map(Number);
-
-    // Logic 1
-    // let firstLargest=-9999999;
-    // for(let i=0; i<arr.length; i++){
-    //     if(arr[i] > firstLargest) firstLargest = arr[i];
-    // }
-
-    // let secondLargest = -9999;
-    // for(let i=0; i<arr.length; i++){
-    //     if(arr[i] > secondLargest && arr[i]!= firstLargest){
-    //         secondLargest = arr[i];
-    //     }
-    // }
-
-    // Logic 2
-    let firstLargest = -9999, secondLargest = -9999;
-
-    for(let i=0; i<arr.length; i++){
-        if(arr[i] > firstLargest){
-            secondLargest = firstLargest;
-            firstLargest = arr[i];
-        } 
-        else if(arr[i] < firstLargest && arr[i] > secondLargest){
-            secondLargest = arr[i];
-        }
-    }
-
-    console.log(secondLargest);
-
-}
-
-// Problem 2: Rotate array by 'k' times
-function rotateArray(){
-    let array = document.getElementById("rotateArray").value;
-    let arr = array.split(' ').map(Number);
-    let k = document.getElementById("kValue").value;
-    let n = arr.length
-    
-    k = k % n;
-
-    let resultArray = [];
-
-    for(let i=0; i<n; i++){
-        if(i<k){
-            resultArray.push(arr[n+i-k]);
-        }
-        else{
-            resultArray.push(arr[i-k]);
-        }
-    }
-
-    document.getElementById("rotatedArray").innerHTML = `Result: ${resultArray}`;
-}
+// Array to String ( join() )
+topics = ["Array", "String", "Object", "Callbacks", "Promises", "Async-Await"];
+// console.log(topics.join(' - '));
 
 notes.txt
 
-Array:
+Strings to Arrays - split()
 
--> A Data Structure that holds collection of heterogeneous datatypes.
--> Arrays are Mutable (changable).
+Array to String - join()
 
-Arrays Memory Representation:
-
-let x = [1,2,3];
-let y = x;
-
-In the above example "x" array is created and y is referenced to that location.
-But a NEW ARRAY is NOT CREATED for "y".
-
-x[0] = 1000;
-
-When we change value in x then y will also change.
-
-NOTE: In arrays it will check for memory locations but not for actual values.
-
-Array Methods:
-
-array.length
-array.at(index)
-array.join('-')
-
-array.pop()
-array.push()
-array.shift()
-array.unshift()
-
-old_array.concat(new_array);
-old_array + ',' + new_array
-
-array.slice(start,end) [start, end)
-array.splice(position_to_add, no. of elements to be removed, new_element)
-
-array.indexOf('word')
-array.lastIndexOf('word')
-
-array.includes('word');
-
-arrays and array methods
-
-questions
-
-1. mutable vs immutable array methods
-2. difference between slice and splice
-3. what does array length actually store?
+array ↔ string conversions
 
 problems
 
-1. find second largest number
-2. flatten a nested array (1 level)
-3. rotate array by k steps
-4. remove falsy values from array
+1. convert "a,b,c,d" → array
+2. convert ["js","is","fun"] → sentence
+3. remove extra spaces from sentence
+4. implement custom join function
 
-extra topic added: shallow vs deep copy of arrays
+The above is the 10th topic, analyze the html and js files and do the same thing as you did for previous folders. 
+Also as you can see I didn't use the HTML file very much so suggest few changes we can do for HTML.
 
-The above is the 9th topic, analyze the html and js files and do the same thing as you did for previous folders. 
+The above is the 10th topic, analyze the html and js files and do the same thing as you did for previous folders. 
 Also as you can see we used HTML file so you can do changes in HTML also, if required.
 
 The above is the 7th topic, I have not written any notes for this topic, so generate a new README file, analyze the html and js files and do the same thing as you did for previous folders. 
