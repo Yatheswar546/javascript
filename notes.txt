@@ -64,7 +64,9 @@ Storage
 
 =================================================================================================
 
-1st Folder : variables
+Good gp, now 2nd Folder
+
+2nd Folder : datatypes
 
 index.html
 
@@ -73,87 +75,94 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variables</title>
+    <title>Data Types</title>
 </head>
 <body>
 
-    <h1>Js Variables</h1>
+    <h1>Data Types</h1>
 
-    <h3>var</h3>
-    <h3>let</h3>
-    <h3>const</h3>
+    <h2>Primitive Data Types</h2>
+    <h3>Number (Js has no double or float)</h3>
+    <h3>String - single word, space, (_)</h3>
+    <h3>Boolean - true, false</h3>
+    <h3>BigInt</h3>
+    <h3>Undefined</h3>
+    <h3>Null</h3>
     
+    <h2>Non-Primitive Data Types</h2>
+    <h3>Object</h3>
+    <h3>Arrays</h3>
+    <h3>Functions</h3>
+    <h3>Dates</h3>
+
     <script src="./script.js"></script>
 </body>
 </html>
 
 script.js
-// var
-var a = 10;
-console.log(a);
 
-var a = 20;
-console.log(a);
+var number = 10;
+var string = "JavaScript";
+var boolean = true;
 
-// let 
-// let a = 10; // error
-let b = 10;
-console.log(b);
-// let b = 20; // error
-b = 20;
-console.log(b);
+var bigInt = 10987256480192;
+var unDefined;
+var Null = null;
 
-// const
-const c = 10;
-console.log(c);
-// const c = 20; // error
-// c = 20;  // error
+// typeof() is used to check the data-types
 
-//////////////////// PROBLEMS ////////////////////////
+console.log(typeof(number));
+console.log(typeof(string));
+console.log(typeof(boolean));
+console.log(typeof(bigInt));
+console.log(typeof(unDefined));
+console.log(typeof(Null));
 
-// 1. swap two variables without using third variable
-let first = 50;
-let second = 40;
-console.log("Before Swapping:",first, second);
+/////////// PROBLEMS /////////////
 
-first = first + second;
-second = first-second;
-first = first-second
+// 1. write a function that prints type of any input
+function checkType(input){
+    return typeof(input);
+}
 
-console.log("After Swapping:",first, second);
-
+console.log(checkType("vbdshvhis"));
 
 
 notes.txt
 
-Variables are used to store data.
-=> In Js, there are 3 types of Variables
-    |-> var 
-    |-> let 
-    |-> const 
+Data Types:
 
-Scope:
-=> var is a GLOBAL scope variable 
-=> let, const are BLOCK scope variables
+Primitive Data Types:
 
-Redeclaration  & Re-assignment:
+Number (Js has no double or float)
+String - single word, space, (_)
+Boolean - true, false
+BigInt
+Undefined
+Null
+  
+Non-Primitive Data Types:
 
-        re-declaration    re-assignment
-var         yes              yes 
-let         no               yes 
-const       no                no 
+Object
+Arrays
+Functions
+Dates
 
-Question:
-what happens if we use a variable without declaring?
+Questions:
 
+1. difference between null and undefined?
 Answer:
-We can declare the variable again using var (Js-Hoisting concept).
+When a variables is declared but not assigned any value then it is "undefined".
+When a variable is assigned with Null value then it is "null".
+
 Eg: 
-a = 10;
-var a;
+var a;  // undefined
+var b = null; // null
 
-But we can't declare the variable using let, const after assigning the value.
+2. why typeof(null) is an object?
+Answer:
+The reason typeof null returns 'object' in JavaScript is a historical bug 
+from the language's original implementation that has been preserved for backward compatibility. 
 
 
-
-The above is the 1st topic, analyse it and also you can add extra questions if you can 
+The above is the 2nd topic, analyze it and do the same thing as you did for 1st folder 
