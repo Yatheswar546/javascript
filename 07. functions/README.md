@@ -134,7 +134,7 @@ Yes, functions are first-class citizens in JavaScript.
 ---
 
 ## 🔹 Practice Problems
-
+ 
 1. Generate Fibonacci number.
 2. Check prime number.
 3. Implement custom `Math.max`.
