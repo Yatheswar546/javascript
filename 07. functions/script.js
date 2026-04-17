@@ -1,4 +1,4 @@
-// Problem 1: Function to generate Fibonacci
+// ================= Problem 1: FIBONACCI =================
 
 // function calculatefibonacci(num){
 //     if(num == 1){
@@ -11,34 +11,35 @@
 
 // }
 
-function calculatefibonacci(n){
+function calculateFibonacci(n) {
+    n = Number(n);
 
-    if(n==1){
-        return 0;
-    } else if(n==2){
-        return 1;
-    } else {
-        a = 0;
-        b = 1;
-        for(i=0; i<n-2; i++){
-            c = a+b;
-            a = b;
-            b = c;
-        }
-        return c;
+    if (n <= 0) return 0;
+    if (n === 1) return 0;
+    if (n === 2) return 1;
+
+    let a = 0;
+    let b = 1;
+    let c;
+
+    for (let i = 0; i < n - 2; i++) {
+        c = a + b;
+        a = b;
+        b = c;
     }
 
+    return c;
 }
 
 function fibonacci(){
     let num = document.getElementById("fibonacciNum").value;
+    let result = calculateFibonacci(num);
 
-    let result = calculatefibonacci(num);
-    document.getElementById("fibonacciResult").innerHTML = "Fibonacci Number is: " + result;
+    document.getElementById("fibonacciResult").innerText = "Fibonacci Number is: " + result;
 
 }
 
-// Problem 2: Check whether the number is Prime or not
+// ================= Problem 2: PRIME CHECK =================
 
 // Logic - 1
 // function isPrime(n){
@@ -52,29 +53,22 @@ function fibonacci(){
 // }
 
 // Logic - 2
-// function isPrime(n){
-//     if(n==2 || n==3 || n==3){
-//         return true;
-//     } else {
-//         let count = 0;
-//         for(let i=2; i<=parseInt(n/2); i++){
-//             if(n%i == 0) count++;
-//             console.log(count);
-//         }
-//         return (count <= 1) ? true : false; 
-//     }
-// }
+function isPrime(n){
+
+    n = Number(n);
+
+    if(n==2 || n==3) return true;
+    
+    for(let i=2; i<=Math.sqrt(n); i++){
+        if(n%i == 0) return false;
+    }
+    return true;
+}
 
 function checkPrime(){
     let num = document.getElementById("primeNum").value;
-
     let result = isPrime(num);
 
-    if(result){
-        document.getElementById("primeResult").innerHTML = "Result: Prime Number"; 
-    }
-    else{
-        document.getElementById("primeResult").innerHTML = "Result: Not a Prime Number";
-    }
+    document.getElementById("primeResult").innerText = result ? "Result: Prime Number" : "Result: Not a Prime Number";
     
 }
