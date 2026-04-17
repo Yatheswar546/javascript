@@ -64,9 +64,9 @@ Storage
 
 =================================================================================================
 
-Good gp, now 2nd Folder
+Good gp, now 3rd Folder
 
-2nd Folder : datatypes
+3rd Folder : operators
 
 index.html
 
@@ -75,25 +75,20 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Types</title>
+    <title>Operators</title>
 </head>
 <body>
 
-    <h1>Data Types</h1>
+    <h1>Js Operators</h1>
 
-    <h2>Primitive Data Types</h2>
-    <h3>Number (Js has no double or float)</h3>
-    <h3>String - single word, space, (_)</h3>
-    <h3>Boolean - true, false</h3>
-    <h3>BigInt</h3>
-    <h3>Undefined</h3>
-    <h3>Null</h3>
-    
-    <h2>Non-Primitive Data Types</h2>
-    <h3>Object</h3>
-    <h3>Arrays</h3>
-    <h3>Functions</h3>
-    <h3>Dates</h3>
+    <h3>Airthmetic</h3>
+    <h3>Assignment</h3>
+    <h3>Comparison</h3>
+    <h3>Logical</h3>
+    <h3>Bitwise</h3>
+    <h3>Ternary</h3>
+    <h3>String</h3>
+    <h3>TypeOf</h3>
 
     <script src="./script.js"></script>
 </body>
@@ -101,68 +96,54 @@ index.html
 
 script.js
 
-var number = 10;
-var string = "JavaScript";
-var boolean = true;
+var a = 5;
+var b = "5";
 
-var bigInt = 10987256480192;
-var unDefined;
-var Null = null;
+console.log(a==b);
+console.log(a===b);
 
-// typeof() is used to check the data-types
+// Problems
 
-console.log(typeof(number));
-console.log(typeof(string));
-console.log(typeof(boolean));
-console.log(typeof(bigInt));
-console.log(typeof(unDefined));
-console.log(typeof(Null));
+// write a function that returns the largest of three numbers
+function largestofThree(a,b,c){
 
-/////////// PROBLEMS /////////////
+    if(a>b && a>c){
+        return a;
+    } else if(b>c){
+        return b;
+    } else{
+        return c;
+    }
 
-// 1. write a function that prints type of any input
-function checkType(input){
-    return typeof(input);
 }
 
-console.log(checkType("vbdshvhis"));
-
+console.log(largestofThree(5,10,4));
 
 notes.txt
 
-Data Types:
+Js Operators:
+    
+Airthmetic  -  +, - , * , / , % , **, ++, --
+Assignment  -  =, +=, -=, *=, /=, %=, **=
+Comparison  -  ==, ===, !=, !==, >, <, >=, <=
+Logical     -  &&, ||, !
+Bitwise     -   &, |, ^, ~, <<, >>, >>>
+Ternary     -  ? : // if-else
+String
+Type        - typeof(), instanceof()
 
-Primitive Data Types:
+Operator Precedence in Airthmetic Operators:  
+           B  E  D  M  R  A  S 
 
-Number (Js has no double or float)
-String - single word, space, (_)
-Boolean - true, false
-BigInt
-Undefined
-Null
-  
-Non-Primitive Data Types:
-
-Object
-Arrays
-Functions
-Dates
-
-Questions:
-
-1. difference between null and undefined?
-Answer:
-When a variables is declared but not assigned any value then it is "undefined".
-When a variable is assigned with Null value then it is "null".
-
-Eg: 
-var a;  // undefined
-var b = null; // null
-
-2. why typeof(null) is an object?
-Answer:
-The reason typeof null returns 'object' in JavaScript is a historical bug 
-from the language's original implementation that has been preserved for backward compatibility. 
+type coersion: 
+-> implicit conversion of one datatype to another datatype.
+-> It is done when using "==".
 
 
-The above is the 2nd topic, analyze it and do the same thing as you did for 1st folder 
+Queestions:
+1. difference between == and ===
+2. explain short-circuiting in && and ||
+3. what is nullish coalescing ??
+
+The above is the 3rd topic, analyze it and do the same thing as you did for previous folders. 
+Also you can do changes in HTML also, if required only, it is not a mandatory thing. Further topics we need to do anyhow but for now as it is basic topic, it is your wish.
