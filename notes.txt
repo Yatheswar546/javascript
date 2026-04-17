@@ -60,4 +60,100 @@ Async Js
 35. Async - Await 
 
 Storage
-36. localStorgae (setItem, getItem, removeItem, clear) 
+36. localStorgae (setItem, getItem, removeItem, clear)
+
+=================================================================================================
+
+1st Folder : variables
+
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+
+    <h1>Js Variables</h1>
+
+    <h3>var</h3>
+    <h3>let</h3>
+    <h3>const</h3>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
+
+script.js
+// var
+var a = 10;
+console.log(a);
+
+var a = 20;
+console.log(a);
+
+// let 
+// let a = 10; // error
+let b = 10;
+console.log(b);
+// let b = 20; // error
+b = 20;
+console.log(b);
+
+// const
+const c = 10;
+console.log(c);
+// const c = 20; // error
+// c = 20;  // error
+
+//////////////////// PROBLEMS ////////////////////////
+
+// 1. swap two variables without using third variable
+let first = 50;
+let second = 40;
+console.log("Before Swapping:",first, second);
+
+first = first + second;
+second = first-second;
+first = first-second
+
+console.log("After Swapping:",first, second);
+
+
+
+notes.txt
+
+Variables are used to store data.
+=> In Js, there are 3 types of Variables
+    |-> var 
+    |-> let 
+    |-> const 
+
+Scope:
+=> var is a GLOBAL scope variable 
+=> let, const are BLOCK scope variables
+
+Redeclaration  & Re-assignment:
+
+        re-declaration    re-assignment
+var         yes              yes 
+let         no               yes 
+const       no                no 
+
+Question:
+what happens if we use a variable without declaring?
+
+Answer:
+We can declare the variable again using var (Js-Hoisting concept).
+Eg: 
+a = 10;
+var a;
+
+But we can't declare the variable using let, const after assigning the value.
+
+
+
+The above is the 1st topic, analyse it and also you can add extra questions if you can 
