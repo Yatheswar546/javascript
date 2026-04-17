@@ -1,0 +1,102 @@
+Promises: 
+
+        " I Promise a Result !!! "
+
+=> In JavaScript, a Promise represents a value (output of a request) 
+    which is unknown for now, but will become known in future. 
+
+=> Promises are values which acts as placeholders for future values.
+    Unlike Arrays, Strings, Maps and Sets in JavaScript, 
+    Promises have a deterministic value from the very start.
+
+=> There are primarily two scenarios where we can use a Promise:
+    1) When you use a promise to create a placeholder for a future value.
+    2) When you consume the value which is assigned to the placeholder.
+
+=> Promise is used to handle the asynchronous result of an operation.
+    Eg: making an API Call, Reading from Disk etc....
+
+=> It defers the execution of code block until an asynchronous request is completed.
+
+=============================================================================================
+
+Producing Code: codes takes some time (running).
+
+Consuming Code: code must wait sometime (waiting).
+
+=> When the producing code obtains result, it should call one of the two callbacks.
+    
+    Success ---> myResolve ( result value )
+
+    Reject  ---> myReject  ( error object )
+
+Syntax:
+    const myPromise = new Promise( (resolve, reject) => {
+        // Promise body 
+        // call resolve() when it is success 
+        // call reject()  when it fails 
+    });
+
+=> Promise constructor is having only 1 parameter, which is callback.
+
+=> Callback is having 2 parameters
+    |
+    |--> resolve() : when promise is in success 
+    |
+    |--> reject()  : when promise is in fail.
+
+=============================================================================================
+
+States of a Promise:
+
+1) Start 
+2) Pending    :  A pending promise hasn't begin operation yet. (undefined)
+3) Fulfilled  :  A promise resolves after operation finishes.  (result) 
+4) Rejected   :  A promise fails to complete successfully.     (error)
+5) Result 
+
+=============================================================================================
+
+Handling Promises:
+
+    RESOLVE ------> then()
+    REJECT  ------> catch()
+
+then()   :  It is called when resolve() is executed. 
+            It receives data passed in resolve() as argument.
+
+catch()  :  It is called when reject() is executed.
+            It receives data passed in reject() as argument.
+
+            Eg: waiting for a timeout 
+                waiting for a file.
+
+Eg: 
+
+    const isCashAvailable = true;
+
+    //PROMISE DECLARATION 
+    const atmPromise = new Promise( function (resolve, reject) => {
+        {
+            if(isCashAvailable){
+                const response = {
+                    message: "Cash is Available to withdraw";
+                }
+                resolve(response);
+            }
+            else {
+                const response = {
+                    message: "Cash is Not Available";
+                }
+                reject(response);
+            }
+        }
+    });
+
+    //HANDLING PROMISE 
+    atmPromise.then( function(successData) {
+        console.log(successData);
+    }).catch( function(failData) {
+        console.error(failData);
+    });
+
