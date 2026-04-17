@@ -64,9 +64,9 @@ Storage
 
 =================================================================================================
 
-Good gp, now 7th Folder
+Good gp, now 8th Folder
 
-7th Folder : functions
+8th Folder : strings
 
 index.html
 
@@ -75,159 +75,342 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Functions</title> 
+    <title>Strings & String Methods</title>
 </head>
 <body>
 
-    <h1>Functions</h1>
-    
-    <br>
+    <h1>Strings & String Methods</h1>
+    <h4>Check the script.js & notes.txt file for details</h4>
+
+    <div id="user"></div>
 
     <h2>Problems</h2>
+    <h3>Problem 1: Reverse a String</h3>
+    <input type="text" id="reverseStr" placeholder="Enter the String:">
+    <button onclick="reversingString()">Enter</button>
+    <h4 id="reversedString">Result: </h4>
 
-    <h3>Problem 1: Function to generate Fibonacci number (series starting with 0)</h3>
-    <input type="number" id="fibonacciNum" placeholder="Enter Number:">
-    <button onclick="fibonacci()">Enter</button>
-    
-    <h4 id="fibonacciResult">Fibonacci Number is: </h4>
+    <h3>Problem 2: Check Palindrome or Not</h3>
+    <input type="text" id="palindromeStr" placeholder="Enter the String:">
+    <button onclick="checkPalindrome()">Enter</button>
+    <h4 id="palindromeResult">Result: </h4>
 
-    <br>
+    <h3>Problem 3: Count vowels in a String</h3>
+    <input type="text" id="vowelsStr" placeholder="Enter the String:">
+    <button onclick="checkVowels()">Enter</button>
+    <h4 id="vowelsCount">Result: </h4>
 
-    <h3>Problem 2: Check whether the number is Prime or not</h3>
-    <input type="number" id="primeNum" placeholder="Enter Number: ">
-    <button onclick="checkPrime()">Enter</button>
-    <h4 id="primeResult">Result: </h4>
+    <h4>Problem 4: Capitalize first letter of each word</h4>
+    <input type="text" id="capitalizeStr" placeholder="Enter the String:">
+    <button onclick="capitaliseStr()">Enter</button>
+    <h4 id="capitaliseResult">Result:</h4>
 
     <script src="./script.js"></script>
+    
 </body>
 </html>
 
-
 script.js
 
-// Problem 1: Function to generate Fibonacci
+//              -5-4-3-2-1
+let str1 = "Hello Everyone";
+//0123456789.................. 
+// console.log(str1.length);
 
-// function calculatefibonacci(num){
-//     if(num == 1){
-//         return 0;
-//     } else if (num == 2){
-//         return 1;
-//     } else{
-//         return calculatefibonacci(num-1) + calculatefibonacci(num-2);
-//     }
+// console.log(str1.charAt(4));
 
-// }
+// Concatination
+let str2 = "JavaScript" + " " + "Strings";
+// console.log(str2);
 
-function calculatefibonacci(n){
+let str3 = "JavaScript".concat(" ", "Strings ", "Concat Method");
+// console.log(str3);
 
-    if(n==1){
-        return 0;
-    } else if(n==2){
-        return 1;
-    } else {
-        a = 0;
-        b = 1;
-        for(i=0; i<n-2; i++){
-            c = a+b;
-            a = b;
-            b = c;
-        }
-        return c;
-    }
+// Slicing the Strings
+/*
+    slice(start, end)     
+    substring(start, end)
+    substr(start, length)
+*/
 
+let str4 = "Akshay is a Software Engineer";
+
+// console.log(str4.slice(0, 6))
+// console.log(str4.slice(0))
+// console.log(str4.substring(12, 20))
+
+// console.log(str4.substr(12, 17))
+
+// console.log(str4.slice(-8, -1));
+// console.log(str4.slice(-8));
+
+
+// Converting the Characters
+
+let str5 = "harsha";
+// console.log(str5.toUpperCase());
+
+let str6 = "UZWAL";
+// console.log(str6.toLowerCase());
+
+// Trimming
+let str7 = "    Coolie is releasing on August 14th     "
+// console.log(str7);
+
+// console.log(str7.trim());
+// console.log(str7.trimStart());
+// console.log(str7.trimEnd());
+
+
+// Replacing
+let str8 = "15th is a Holiday";
+
+// console.log(str8);
+
+let new_str8 = str8.replace("15th", "14th");
+
+// console.log(new_str8);
+
+let str9 = "Dogs are very cute animals. I love Dogs very much";
+
+// console.log(str9);
+
+let new_str9 = str9.replaceAll("Dogs", "Cats");
+
+// console.log(new_str9)
+
+// Searching in a String 
+let str10 = "My Portfolio is ready";
+
+// console.log(str10.includes("Portfolio"));
+
+// console.log(str10.indexOf("Portfolio"));
+
+// console.log(str10.search("Portfolio"));
+
+// console.log(str10.match("ready"));
+
+
+// String Template Literals
+
+// Example 1
+// Old Way
+let name = "Yathe";
+let age = 25;
+let text = "My name is " + name + " and I am " + age;
+
+// New Way
+text = `My name is ${name} and I am ${age}`;
+// console.log(text);
+
+// Example 2
+let a = 10, b = 20;
+
+// console.log(`Sum of a and b is: ${a+b}`);
+
+// Example 3: using functions
+function square(n){
+    return n*n;
 }
 
-function fibonacci(){
-    let num = document.getElementById("fibonacciNum").value;
+// console.log(`Sqaure of 5: ${square(5)}`);
 
-    let result = calculatefibonacci(num);
-    document.getElementById("fibonacciResult").innerHTML = "Fibonacci Number is: " + result;
+// Example 4: multi line strings
+let content = `line 1
+line 2
+line 3`;
 
+// console.log(content);
+
+// Example 5: Using in DOM
+const user = {
+    name: 'yathe',
+    age: 25
 }
 
-// Problem 2: Check whether the number is Prime or not
+const card = `
+    <div class="card">
+        <h2>${user.name}</h2>
+        <h2>${user.age}</h2>
+    </div>
+`
+document.getElementById("user").innerHTML = card;
 
-// Logic - 1
-// function isPrime(n){
-//     let count = 0;
-//     for(i=1; i<=n; i++){
-//         if(n%i==0){
-//             count++;
-//         }
-//     }
-//     return (count <= 2) ? true : false;
-// }
+// Example 6: Conditional statements
 
-// Logic - 2
-// function isPrime(n){
-//     if(n==2 || n==3 || n==3){
-//         return true;
-//     } else {
-//         let count = 0;
-//         for(let i=2; i<=parseInt(n/2); i++){
-//             if(n%i == 0) count++;
-//             console.log(count);
-//         }
-//         return (count <= 1) ? true : false; 
-//     }
-// }
+const isLoggedIn = true;
 
-function checkPrime(){
-    let num = document.getElementById("primeNum").value;
+const message = `User is ${isLoggedIn ? "Online" : "Offline"}`;
+// console.log(message);
 
-    let result = isPrime(num);
+// Example 7: Nested Literals
+let userName = "Yathe";
+let skills = ["HTML", "CSS", "Js"];
 
-    if(result){
-        document.getElementById("primeResult").innerHTML = "Result: Prime Number"; 
+const output = `
+    Name: ${userName}
+    Skills ${skills.join(",")}
+`;
+
+// console.log(output);
+
+// Example 8: Tagged Template Literals (Advanced for interviews)
+// Used in libraries like styled-components
+
+function highlight(strings, value){
+    return `${strings[0]}**${value}**${strings[1]}`
+}
+
+let Name = "Yathe"
+let result =  highlight`Hello ${name}!`;
+
+// console.log(result);
+
+/////////////// PROBLEMS //////////////////
+
+// Problem 1: Reverse a String
+function reversingString(){
+    let str = document.getElementById("reverseStr").value;
+    let result = str.split('').reverse().join('');
+    
+    document.getElementById("reversedString").innerHTML = `Result: ${result}`;
+}
+
+// Problem 2: Check Palindrome or Not
+function checkPalindrome(){
+    let str = document.getElementById("palindromeStr").value;
+    
+    if(str === str.split('').reverse().join('')) {
+        document.getElementById("palindromeResult").innerHTML = "Result: It is Palindrome";
     }
     else{
-        document.getElementById("primeResult").innerHTML = "Result: Not a Prime Number";
+        document.getElementById("palindromeResult").innerHTML = "Result: Not a Palindrome";
     }
-    
 }
 
+// Problem 3: Count vowels in a String
+function checkVowels(){
+    let str = document.getElementById("vowelsStr").value;
+
+    let count = 0;
+    for(let i=0; i<str.length; i++){
+        if(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u'
+        || str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U'
+        ) {
+            count++;
+        }
+    }
+
+    document.getElementById("vowelsCount").innerHTML = `Result: There are ${count} vowels`;
+}
+
+// Problem 4: Capitalize first letter of each word
+// Approach 1
+// function capitaliseStr(){
+//     let str = document.getElementById("capitalizeStr").value;
+
+//     let result = "";
+
+//     let stringArray = str.split(' ');
+
+//     for(let i=0; i<stringArray.length; i++){
+//         newWord = stringArray[i][0].toUpperCase() + stringArray[i].slice(1);
+
+//         result = result + newWord + " ";
+//     }
+
+//     document.getElementById("capitaliseResult").innerHTML = `Result: ${result}`;
+// }
+
+// Approach 2
+function capitaliseStr(){
+    let str = document.getElementById("capitalizeStr").value;
+
+    let result = str.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+
+    document.getElementById("capitaliseResult").innerHTML = `Result: ${result}`;
+}
 
 notes.txt
 
+Strings:
 
-Function: It is a part of code that executes a particular operation.
-
-Syntax: 
-
-// function definition
-function function_name(param1, param2, ..... paramN){
-    ......... code ..........
-    ......... to be .........
-    ....... executed ........
-
-    return statement;
-}
-
-// function call
-function_name(arguments); 
-
-3 Ways of declaring function:
-
-1. Function declaration:
-
-function add(a,b){
-    return a + b;
-}
-
-2. Function expression:
-
-let add = function(a,b){
-    return a + b;
-}
-
-3. Arrow function:
-
-let add = (a,b) => {
-    return a + b;
-}
+-> represented by " " & ' '.
+-> Strings are immutable
+-> When we apply string operations a new string is formed.
 
 
-The above is the 7th topic, analyze the html and js files and do the same thing as you did for previous folders. 
+String functions:
+
+string.length
+
+string.concat('', fname, lname)
+
+string.charAt();
+
+string.indexOf('word')
+string.lastIndexOf('word)
+string.includes('word');
+string.search('word');
+string.match('word');
+
+string.slice(start, end)
+string.slice(-0, -1)
+string.slice(n) : from nth index to last
+string.substring(start, end)
+string.substr(start, length)
+
+string.toUpperCase()
+string.toLowerCase()
+
+string.trim()
+string.trimStart()
+string.trimEnd()
+
+string.replace('old_word', 'new_word')
+
+
+String Template Literals: 
+Template literals are strings enclosed in backticks that allow embedded 
+expressions using ${}, support multi-line strings, and provide cleaner 
+string interpolation compared to traditional concatenation.
+
+-> Template literals are a modern way to work with strings in JavaScript.
+-> They use backticks (`) instead of single ('') or double ("") quotes.
+
+They mainly help with:
+• embedding variables
+• multi-line strings
+• string formatting
+• expressions inside strings
+
+KeyPoint: ${ } allows you to insert variables or expressions.
+
+
+Example:
+Old Way
+const name = "Yathe";
+const age = 25;
+const text = "My name is " + name + " and I am " + age;
+
+New Way
+const text = `My name is ${name} and I am ${age}`;
+
+questions
+
+1. difference between "", '', and ``
+2. when to use template literals
+3. mutable or immutable?
+
+problems
+
+1. reverse a string
+2. check palindrome string
+3. count vowels in string
+4. capitalize first letter of each word
+
+
+The above is the 8th topic, analyze the html and js files and do the same thing as you did for previous folders. 
 Also as you can see we used HTML file so you can do changes in HTML also, if required.
 
 The above is the 7th topic, I have not written any notes for this topic, so generate a new README file, analyze the html and js files and do the same thing as you did for previous folders. 

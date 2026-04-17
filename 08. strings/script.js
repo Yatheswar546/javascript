@@ -1,18 +1,18 @@
+// ================= BASIC =================
 //              -5-4-3-2-1
 let str1 = "Hello Everyone";
 //0123456789.................. 
-// console.log(str1.length);
+console.log(str1.length);
+console.log(str1.charAt(4));
 
-// console.log(str1.charAt(4));
-
-// Concatination
+// ================= CONCATINATION =================
 let str2 = "JavaScript" + " " + "Strings";
-// console.log(str2);
+console.log(str2);
 
 let str3 = "JavaScript".concat(" ", "Strings ", "Concat Method");
-// console.log(str3);
+console.log(str3);
 
-// Slicing the Strings
+// ================= Slicing the Strings =================
 /*
     slice(start, end)     
     substring(start, end)
@@ -21,85 +21,77 @@ let str3 = "JavaScript".concat(" ", "Strings ", "Concat Method");
 
 let str4 = "Akshay is a Software Engineer";
 
-// console.log(str4.slice(0, 6))
-// console.log(str4.slice(0))
-// console.log(str4.substring(12, 20))
+console.log(str4.slice(0, 6))
+console.log(str4.slice(0))
+console.log(str4.substring(12, 20))
 
-// console.log(str4.substr(12, 17))
+console.log(str4.substr(12, 17))
 
-// console.log(str4.slice(-8, -1));
-// console.log(str4.slice(-8));
+console.log(str4.slice(-8, -1));
+console.log(str4.slice(-8));
 
 
-// Converting the Characters
+// ================= Converting the Characters =================
 
 let str5 = "harsha";
-// console.log(str5.toUpperCase());
+console.log(str5.toUpperCase());
 
 let str6 = "UZWAL";
-// console.log(str6.toLowerCase());
+console.log(str6.toLowerCase());
 
-// Trimming
+// ================= TRIMMING =================
 let str7 = "    Coolie is releasing on August 14th     "
-// console.log(str7);
+console.log(str7);
 
-// console.log(str7.trim());
-// console.log(str7.trimStart());
-// console.log(str7.trimEnd());
+console.log(str7.trim());
+console.log(str7.trimStart());
+console.log(str7.trimEnd());
 
 
-// Replacing
+// ================= REPLACE =================
 let str8 = "15th is a Holiday";
-
-// console.log(str8);
+console.log(str8);
 
 let new_str8 = str8.replace("15th", "14th");
-
-// console.log(new_str8);
+console.log(new_str8);
 
 let str9 = "Dogs are very cute animals. I love Dogs very much";
-
-// console.log(str9);
+console.log(str9);
 
 let new_str9 = str9.replaceAll("Dogs", "Cats");
+console.log(new_str9)
 
-// console.log(new_str9)
-
-// Searching in a String 
+// ================= SEARCH ================= 
 let str10 = "My Portfolio is ready";
-
-// console.log(str10.includes("Portfolio"));
-
-// console.log(str10.indexOf("Portfolio"));
-
-// console.log(str10.search("Portfolio"));
-
-// console.log(str10.match("ready"));
+console.log(str10.includes("Portfolio"));
+console.log(str10.indexOf("Portfolio"));
+console.log(str10.search("Portfolio"));
+console.log(str10.match("ready"));
 
 
-// String Template Literals
+// ================= TEMPLATE LITERALS =================
 
 // Example 1
-// Old Way
 let name = "Yathe";
 let age = 25;
+
+// Old Way
 let text = "My name is " + name + " and I am " + age;
 
 // New Way
 text = `My name is ${name} and I am ${age}`;
-// console.log(text);
+console.log(text);
 
 // Example 2
 let a = 10, b = 20;
-
-// console.log(`Sum of a and b is: ${a+b}`);
+console.log(`Sum of a and b is: ${a+b}`);
 
 // Example 3: using functions
 function square(n){
     return n*n;
 }
 
-// console.log(`Sqaure of 5: ${square(5)}`);
+console.log(`Sqaure of 5: ${square(5)}`);
 
 // Example 4: multi line strings
 let content = `line 1
@@ -138,8 +130,9 @@ const output = `
     Skills ${skills.join(",")}
 `;
 
-// console.log(output);
+console.log(output);
 
+// ================= TAGGED TEMPLATE =================
 // Example 8: Tagged Template Literals (Advanced for interviews)
 // Used in libraries like styled-components
 
@@ -150,7 +143,7 @@ function highlight(strings, value){
 let Name = "Yathe"
 let result =  highlight`Hello ${name}!`;
 
-// console.log(result);
+console.log(result);
 
 /////////////// PROBLEMS //////////////////
 
@@ -159,35 +152,34 @@ function reversingString(){
     let str = document.getElementById("reverseStr").value;
     let result = str.split('').reverse().join('');
     
-    document.getElementById("reversedString").innerHTML = `Result: ${result}`;
+    document.getElementById("reversedString").innerText = `Result: ${result}`;
 }
 
 // Problem 2: Check Palindrome or Not
 function checkPalindrome(){
     let str = document.getElementById("palindromeStr").value;
     
-    if(str === str.split('').reverse().join('')) {
-        document.getElementById("palindromeResult").innerHTML = "Result: It is Palindrome";
-    }
-    else{
-        document.getElementById("palindromeResult").innerHTML = "Result: Not a Palindrome";
-    }
+    let cleanStr = str.toLowerCase();
+
+    let result = cleanStr === cleanStr.split('').reverse().join('');
+
+    document.getElementById("palindromeResult").innerText = result ? "Result: It is Palindrome" : "Result: Not a Palindrome"; 
 }
 
 // Problem 3: Count vowels in a String
 function checkVowels(){
-    let str = document.getElementById("vowelsStr").value;
+    let str = document.getElementById("vowelsStr").value.toLowerCase();
 
     let count = 0;
-    for(let i=0; i<str.length; i++){
-        if(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u'
-        || str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U'
-        ) {
+    let vowels = "aeiou";
+
+    for(let char of str){
+        if(vowels.includes(char)){
             count++;
         }
     }
 
-    document.getElementById("vowelsCount").innerHTML = `Result: There are ${count} vowels`;
+    document.getElementById("vowelsCount").innerText = `Result: There are ${count} vowels`;
 }
 
 // Problem 4: Capitalize first letter of each word
@@ -214,5 +206,5 @@ function capitaliseStr(){
 
     let result = str.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
 
-    document.getElementById("capitaliseResult").innerHTML = `Result: ${result}`;
+    document.getElementById("capitaliseResult").innerText = `Result: ${result}`;
 }
