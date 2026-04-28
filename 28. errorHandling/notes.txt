@@ -1,7 +1,0 @@
-Error Handling:
-
-    try/ catch/ throw 
-
-=> When an error occurs, Js will normaly stop, and generate an error message. 
-
-=> The try/ catch/ finally statements handles some or all errors due to wrong input, and other unforseen things.

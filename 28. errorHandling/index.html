@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <h1>Error Handling in JavaScript</h1>
+
+    <h3>Safe JSON Parse</h3>
+    <input type="text" id="jsonInput" placeholder="Enter JSON (e.g. {'name': 'yathe'})">
+    <button onclick="parseJSON()">Parse</button>
+    <p id="jsonResult"></p>
+
+    <h3>Null Safe Access</h3>
+    <button onclick="checkUser()">Check User</button>
+    <p id="userResult"></p>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>

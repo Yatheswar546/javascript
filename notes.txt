@@ -64,99 +64,39 @@ Storage
 
 =================================================================================================
 
-Good gp, now 27th Folder
+Good gp, now 28th Folder
 
-27th Folder : eventBubbling
+28th Folder : errorHandling
 
 notes.txt
-Event Bubbling:
+Error Handling:
 
-=> Event Bubbling is a Js behavior where an event triggered on a target element (child element)
-    propagates upward through its parent elements in DOM.
+    try/ catch/ throw 
 
-    Child --> Parent --> Grandparent --> ....... --> DOM
+=> When an error occurs, Js will normaly stop, and generate an error message. 
 
-Example: 
+=> The try/ catch/ finally statements handles some or all errors due to wrong input, and other unforseen things.
 
-<div id="parent">
-    <button id="child"> Click Me </button>
-</div>
-
-document.getElementById("parent").addEventListener("click", () => {
-    console.log("Parent Clicked");
-});
-
-document.getElementById("child").addEventListener("click", () => {
-    console.log("Child Clicked");
-});
-
-Output:   Child Clicked
-          Parent Clicked 
-
-          First --> child handler 
-          Then  --> parent handler (Bubbling)
-
-
-========================================================================================
-
-Event Flow Order:
-
-1) Capturing Phase (top --> down)
-2) Target Phase     
-3) Bubbling Phase  (down --> top)
-
-========================================================================================
-
-Event Delegation:
-
-=> Event Bubbling allows us to set up an event handler on a parent element than can handle 
-    events triggered on its children. This is known as "Event Delegation"
-
-Example:
-
-<ul id="list">
-    <li> Item 1 </li>
-    <li> Item 2 </li>
-</ul>
-
-document.querySelector(#list).addEventListener("click", (e) => {
-    if(e.target.tagName === "LI"){
-        console.log("Clicked", e.target.textContext);
-    }
-});
-
-========================================================================================
-
-Stopping Event Bubbling:
-
-=> Js provides a method called "stopPropagation()" which can stop event bubbling when needed.
-
-Example:
-
-document.querySelector(".child").addEventListener("click", (e) {
-    e.stopPropagation();
-    console.log("Click event will not bubble up beyond this child element");
-});
-
+error handling and defensive programming
 
 questions
 
-1. event flow phases
-2. event bubbling vs capturing
-3. preventDefault vs stopPropagation
-4. what is event delegation and why efficient
+1. try catch limitations
+2. throw custom error
+3. finally usage
+4. safe optional chaining purpose
 
 problems
 
-1. button click counter
-2. form validation with preventDefault
-3. event delegation todo delete
-4. keyboard event listener
-5. detect outside click
+1. safe JSON parse utility
+2. fetch wrapper with error handling
+3. retry with exponential backoff
+4. null-safe object reader
+5. global error handler
 
-The above is 27th topic about Event-Bubbling. I written only notes.txt. Because I am not getting any idea on what to write in HTML and Js files for this.
-Create a neat HTML, Js files and README.md file explaining in a neat manner about Event-Bubbling and with better examples and add additional information 
-on this for easier understanding for everyone. Also regarding the questions and problems add all the questions which are present with correct answer for interview point of view.
+The above is 28th topic about Error Handling. I written only notes.txt. Because I am not getting any idea on what to write in HTML and Js files for this.
+Create a neat HTML, Js files and README.md file explaining in a neat manner about Error Handling and with better examples and add additional information 
+on this for easier understanding for everyone.
 
 (1)
 The above is the 20th topic, analyze the html, js files and notes.txt. For this folder just do changes in HTML if you feel required. 
