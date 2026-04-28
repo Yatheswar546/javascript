@@ -64,9 +64,9 @@ Storage
 
 =================================================================================================
 
-Good gp, now 18th Folder
+Good gp, now 19th Folder
 
-18th Folder : Callbacks
+19th Folder : Array Iteration Callback Methods
 
 index.html
 <!DOCTYPE html>
@@ -74,142 +74,343 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Callbacks</title>
+    <title>Array Iteration Methods - Callbacks</title>
 </head>
 <body>
 
-    <h1>Callbacks : to be executed later</h1>
+    <h1>Array Iteration Methods using Callbacks Method</h1>
 
-    <h2>Different Forms of Callbacks</h2>
+    <h2>forEach()</h2>
+
+    <h2>Array Callback Functions</h2>
     <ul type="none">
         <li>
-            <h3>1. Callback with Function Declaration Syntax</h3>
-            <h3>2. Callback with Function Expression Syntax</h3>
-            <h3>3. Callback with Arrow Function Syntax</h3>
+            <h2>find()</h2>
+            <h2>sort()</h2>
+            <h2>map()</h2>
+            <h2>filter()</h2>
+            <h2>reduce()</h2>
         </li>
     </ul>
 
+    <h2>Problems</h2>
+    <h3>Problem 1: Sort Users by Age</h3>
+    <h4>Check script.js for code</h4>   
+
+    <h3>Problem 2: Total Price from cart using reduce</h3>
+    <h4>Check script.js for code</h4>
+
     <script src="./script.js"></script>
+
 </body>
 </html>
 
 
 script.js
-// Callback 
+// forEach()
 
-function ringAlarm(){
-    console.log("Wake Up !!!! It's time");
-}
+let forEachArray = [1,2,3,4,5];
 
-function setAlarm(funtionExecuteLater){
-    console.log("Wake up at 7am!!!");
-    funtionExecuteLater();
-}
+// forEachArray.forEach( a => console.log(a));
 
-setAlarm(ringAlarm);
+// forEachArray.forEach( (a,b,c) => console.log(a,b,c));
 
-// Different Forms of Callbacks
+// let forEachresult = forEachArray.forEach( (a) => console.log(a));
+// console.log(forEachresult);
 
-// 1. Callback with Function Declaration Syntax
+/////////////////////////////////////////////////////////////////////
+ 
+// find()
 
-// Function declaration
-// function greet(n){
-//     console.log(`Hello ${n}`);
-// }
+let findArray1 = [1,2,3,4,5];
 
-// // Function taking a callback
-// function reception(param){
-//     let name = "Yatheswar";
-//     param(name);
-// }
+let findArray1result = findArray1.find( ele => (ele%2 === 0));
+// console.log(findArray1result);
 
-// // Using the function declaration as a callback
-// reception(greet);
+let findArray2 = ["JavaScript", "DOM", "Events", "Arrays", "DOM"];
 
-////////////////////////////////////////////////////////////////
+let findArray2result = findArray2.find( ele => (ele === "DOM"));
+// console.log(findArray2result);
 
-// 2 (a). Callback with Function Expression Syntax
+/////////////////////////////////////////////////////////////////////
 
-// // Function Expression
-// let greet = function(n){
-//     console.log(`Hello ${n}`);
-// }
+// sort()
 
-// // Function taking a callback
-// function reception(param){
-//     let name = "Yatheswar";
-//     greet(name);
-// }
+let sortArray1 = ["JavaScript", "DOM", "Events", "Arrays"];
 
-// // Using the function expression as a callback
-// reception(greet);
+let sortArray1result = sortArray1.sort();
+// console.log(sortArray1result);
 
-// 2 (b). Inline Callback with Function Expression 
+let sortArray2 = [2,1,5,4,3,8,6,10,20,45];
 
-// Function Expression
-// function reception(param){
-//     let name = "Yatheswar";
-//     param(name);
-// }
+let sortArray2result1 = sortArray2.sort();
+// console.log(sortArray2result1);  // (10) [1, 10, 2, 20, 3, 4, 45, 5, 6, 8]
 
-// // Using the function expression as a Callback
-// reception(function (n){
-//     console.log(`Hello ${n}`)
-// });
+let sortArray2result2 = sortArray2.sort( (a,b) => (a - b));
+// console.log(sortArray2result2);  // (10) [1, 2, 3, 4, 5, 6, 8, 10, 20, 45]
 
-////////////////////////////////////////////////////////////////
+let sortArray2result3 = sortArray2.sort( (a,b) => (b - a));
+// console.log(sortArray2result3);  // (10) [45, 20, 10, 8, 6, 5, 4, 3, 2, 1]
 
-// 3 (a). Callback with Arrow Function Syntax
+/////////////////////////////////////////////////////////////////////
 
-// Arrow Function
-// let greet = n => console.log(`Hello ${n}`);
+// map()
 
-// // Function taking a Callback
-// function reception(param){
-//     let name = "Yatheswar";
-//     param(name);
-// }
+let mapArray = [1,2,3,4,5];
 
-// // Using the arrow function as a Callback
-// reception(greet);
+let mapArrayresult = mapArray.map( ele => (ele*2));
+// console.log(mapArrayresult);
 
-// 3 (b). Inline Callback with Arrow Function Syntax
+/////////////////////////////////////////////////////////////////////
 
-function reception(param){
-    let name = "Yatheswar";
-    param(name);
-}
+// filter()
 
-reception( n => console.log(`Hello ${n}`));
+let filterArray = ["JavaScript", "DOM", "Events", "Arrays", "DOM"];
 
-////////////////////////////////////////////////////////////////
+let filterArrayresult = filterArray.filter( ele => (ele==="DOM"));
+// console.log(filterArrayresult)
+
+/////////////////////////////////////////////////////////////////////
+
+// reduce()
+
+let reduceArray1 = [1,2,3,4,5,6,7,8,9];
+
+let reduceArray1result = reduceArray1.reduce( (total, ele) => (total+=ele), 0);
+// console.log(reduceArray1result);
+
+let reduceArray2 = ["apple", "kiwi", "orange"];
+
+let reduceArray2result1 = reduceArray2.reduce( (total, ele) => (total += ele.length), 0);
+// console.log(reduceArray2result1);
+
+let reduceArray2result2 = reduceArray2.reduce( (total, ele) => (total += ele.length));
+// console.log(reduceArray2result2);
+
+/////////////// PROBLEMS ///////////////
+
+// Problem 1: Sort Users by Age
+
+const users = [
+    {
+        name: "yathe",
+        age: 25
+    },
+    {
+        name: "vijay",
+        age: 24
+    },
+    {
+        name: "ratnakar",
+        age: 30
+    }
+]
+
+console.log(users.sort( (a,b) => a.age - b.age));
+
+// Problem 2: Total Price from cart using reduce
+
+const cart = [
+    {
+        item: "Book",
+        price: 320
+    },
+    {
+        item: "dress",
+        price: 599
+    },
+    {
+        item: "earpods",
+        price: 1299
+    }
+]
+
+console.log(cart.reduce( (total, ele) => (total+=ele.price), 0) );
 
 
 notes.txt 
-Callback:
+forEach():
 
-=> A Callback is a function that is passed into another function as a argument
-   to be executed later.
+=> It is an array method used to run a function once for each item in an array.
+=> "Go through each element and do something with it"
 
-=> Callbacks make sure that a function is not going to run before a taks is completed
-   but will run right after the task has been completed.
+=> forEach() accepts only "one" argument i.e. a "callback function". 
 
-=> Commonly used in "Asynchronous" programming.
+Eg: arr.forEach( () => {} );
 
-Different Forms of Callbacks:
+=> This callback function will accept "3" arguments (element, index, array).
 
-1) Callback with Function Declaration Syntax
+Eg: arr.forEach( (element, index, array) => {} );
 
-2) Callback with Function Expression Syntax
+NOTE: by default index starts at "0".
+      element is only mandatory, index & array are optional
 
-3) Callback with Arrow Function Syntax
+Eg: let arr = [1,2,3,4,5];
+
+    arr.forEach( a => console.log(a))  
+    o/p:  1 2 3 4 5
+
+    arr.forEach( (a,b,c) => console.log(a,b,c));
+    o/p:  1, 0, [1,2,3,4,5]
+          2, 1, [1,2,3,4,5]
+          3, 2, [1,2,3,4,5]
+          4, 3, [1,2,3,4,5]
+          5, 4, [1,2,3,4,5]
+
+NOTE: forEach() won't return anything. It just prints the data.
+
+Eg: let result = arr.forEach( a => console.log(a));
+    console.log(result);
+
+    o/p: undefined
+
+=================================================================================
+
+Array Callback Functions:
+
+=> These functions iterate on each element of the array at once and 
+    performs an operation and returns the value.
+
+    find()
+    filter()
+    sort()
+    map()
+    reduce()
+
+
+1) find():
+    => returns the value of 1st element in the provided array that satisfies the condition 
+       mentioned in the callback function.
+
+    Eg: arr = ["JavaScript", "DOM", "Events", "Arrays", "DOM"]
+        
+        let result = arr.find( ele => (ele.name === "DOM"));
+        console.log(result);
+
+        o/p: DOM
+
+-----------------------------------------------------
+
+2) sort():
+    => sort elements of an array in-place (modifies) and returns the sorted array.
+    => it "modifies" the array.
+    
+    Eg: arr = ["JavaScript", "DOM", "Events", "Arrays"]
+
+        arr.sort();
+
+        o/p: ["Arrays", "DOM", "Events", "JavaScript", "DOM"];
+
+    => sort tries to convert the array elements to strings first and sorts 
+        lexicographically (dictionary) order.
+
+    NOTE: for numbers it doesn't sort as expected because numbers are considered as strings 
+            with "sort()" function.
+
+    Sort with comparator function:
+
+    arr.sort( (a,b) => a-b);  // Ascending Order 
+
+    arr.sort( (a,b) => b-a);  // Descending Order
+
+-----------------------------------------------------
+
+3) map(): 
+    => allows to transform the array elements in a cleaner way.
+    => Used for creating a new array from an existing one, applying a function 
+        to each one of the elements in the array.
+
+    Eg: arr = [1,2,3,4,5];
+
+        let r = arr.map(ele => ele*2);
+        console.log(r);
+
+        o/p: [2,4,6,8,10]
+
+    NOTE: map() is superior of forEach();
+          map() is capable of creating new Array 
+                                       applying transformation
+                                       push results into new Array.
+          map() always returns an array.
+
+-----------------------------------------------------
+
+4) filter():  
+    => same as find() checks the condition on each element.
+    => but returns all elements that satisfies the condition rather than the first occurance in find().
+
+    Eg: arr = ["JavaScript", "DOM", "Events", "Arrays", "DOM"];
+
+        arr.filter( ele => (ele === "DOM") );
+
+        o/p: ['DOM', 'DOM']
+
+-----------------------------------------------------
+ 
+ 
+5) reduce():
+    => this method reduces an array of value down to just one value.
+    => it does not change the original array.
+    => real-life example is "cart page".
+
+    Syntax:  array.reduce( accumulatorFn, initialValue);
+
+            accumulatorFn = ( accumulator, currentValue, index, currentArray) => { reducerLogic };
+
+    accumulator (required):
+    => It accumulates callback's return value.
+    => It stores all the values returned by callback.
+    => Can be a number, array, object.
+
+    currentValue (required):  
+    => array element i.e. array[i]
+
+    index (optional):
+    => current index of item
+
+    currentArray (optional):
+    => the iterating array
+
+    initialValue (optional):
+    => A value to use as first argument to first call of the callback.
+
+    Eg: Count total no. of characters in array "arr".
+
+        let  arr = ["apple", "kiwi", "orange"];
+
+        let result = arr.reduce ( (total, ele) => total += ele.length, 0)
+
+        o/p: 10
+
+    Eg: with no initialValue
+
+        let  arr = ["apple", "kiwi", "orange"];
+
+        let result = arr.reduce ( (total, ele) => total += ele.length)
+
+        o/p: apple46
+
 
 questions
 
-1. what is callback hell
-2. synchronous vs asynchronous callback
+1. difference: forEach vs map
+2. when to use reduce
 
-The above is the 18th topic, analyze the html, js files and notes.txt and do the same thing as you did for previous folders. 
+problems
+
+1. implement custom map
+2. custom filter
+3. custom reduce
+4. group array of objects by property
+5. sort users by age
+6. find first duplicate
+7. total price from cart using reduce
+
+The above is the 19th topic, analyze the html, js files and notes.txt and do the same thing as you did for previous folders. 
+Also as you can see we used HTML file so you can do changes in HTML also, if required and help me in creating html, js and README files 
+with required information and codes with nice examples for better understanding. 
+
+The above is the 19th topic, analyze the html, js files and notes.txt and do the same thing as you did for previous folders. 
 Also as you can see we used HTML file so you can do changes in HTML also, if required and help me in creating html, js and README files 
 with required information and codes with nice examples for better understanding. And try to maintain the points I have written in my notes.txt
 including extra points for better understanding. You can any additional data that is helpful for this but the data mentioned in my notes.txt
