@@ -64,210 +64,85 @@ Storage
 
 =================================================================================================
 
-Good gp, now 20th Folder
+Good gp, now 21st Folder
 
-20th Folder : DOM
+21st Folder : Counter-DOM Example
 
 index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM</title>
-
-    <style>
-        li{
-            list-style: none;
-        }
-        div{
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            width: 300px;
-        }
-    </style>
-
+    <title>Js Counter</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-
-    <h1>DOM (Document Object Model)</h1>
-    <h4>Check the script.js & notes.txt file for details</h4>
-
-    <h2>To-Do List</h2>
-    <input type="text" id="inputTask" placeholder="Enter Details">
-    <button onclick="addItem()">Add Item</button>
-
-    <ul id="taskList"></ul>
-
-    <script src="./script.js"></script>
-
+    <header>
+        <div>
+            <img id="bg-image" src="./images/bg2.jpg" alt="">
+            <h1 id="countdown">10</h1>
+        </div>
+    </header> 
+    <script src="./js/script.js"></script>
 </body>
 </html>
 
+style.css
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+}
 
 script.js
-let taskList = document.getElementById("taskList");
+var countdownelement = document.getElementById('countdown');
+var bgimgelement = document.getElementById('bg-image');
 
-function addItem(){
-    let addItem = document.getElementById("inputTask").value.trim();
+// console.log(bgimgelement.src);
 
-    if(addItem === "") return;
+var initialcountdown = countdownelement.innerHTML;
 
-    let newItem = document.createElement('li');
-    
-    let itemDiv = document.createElement('div');    
-    // itemDiv.id = "item" + (taskList.childElementCount) + 1;
+var interval = setInterval(function() {
+    initialcountdown = initialcountdown > 0 ? initialcountdown -= 1 : 0;
 
-    let itemHeading = document.createElement('h3');
-    let taskText = document.createTextNode(addItem);
-    itemHeading.appendChild(taskText);
+    countdownelement.innerHTML = initialcountdown;
 
-    let itemUpdateBtn = document.createElement('button');
-    let itemUpdateText = document.createTextNode('Done');
-    itemUpdateBtn.appendChild(itemUpdateText);
-    itemUpdateBtn.onclick = function(){
-        updateItem(this);
-    };
-    // itemUpdateBtn.id = "item" + (taskList.childElementCount) + 1;
+    // countdownelement.style.fontSize = initialcountdown * 100 + "px";
 
-    let itemDeleteBtn = document.createElement('button');
-    let itemDeleteText = document.createTextNode('Delete');
-    itemDeleteBtn.appendChild(itemDeleteText);
-    itemDeleteBtn.onclick = function(){
-        deleteItem(this);
-    };
-    // itemDeleteBtn.id = "item" + (taskList.childElementCount) + 1;
+    // bgimgelement.style.width = initialcountdown * 10 + "%";
 
-    itemDiv.appendChild(itemHeading);
-    itemDiv.appendChild(itemUpdateBtn);
-    itemDiv.appendChild(itemDeleteBtn);
+    var backimgpath = initialcountdown % 2 === 0 ? './images/bg1.jpg' : './images/bg2.jpg';
 
-    newItem.appendChild(itemDiv);
+    bgimgelement.src = backimgpath;
 
-    taskList.appendChild(newItem);
+    // console.log('Interval is Runinng');
 
-    document.getElementById("inputTask").value = "";
-}
+    // bgimgelement.className = 'BackImage';
+    // console.log(bgimgelement);
 
-function updateItem(button){
-    let div = button.parentElement;
-    let heading = div.querySelector("h3");
-    heading.style.textDecoration = "line-through";
-}
+    if(initialcountdown <= 0){
+        clearInterval(interval);
+    }
 
-function deleteItem(button){
-    let li = button.parentElement.parentElement;
-    li.remove();
-}
+}, 1000);
 
-notes.txt 
-DOM (Document Object Model):
-
-Introduction:
-
-=> Js can't understand HTML. Js understand datatypes. It will refer it as document.
-    HTML in terms of Js is a document.
-=> When a page is loaded, the browser creates a DOM of page.
-=> Tree representation of the HTML document.
-=> DOM tree can be modified with the help of Js.
-=> It is an object oriented representation.
-
-                                Document
-                                   |
-                                Root <html>
-                    _______________|_______________
-                    |                             |
-                  <head>                        <body>
-                    |                     ________|________          |
-                  <title>                 |               |
-                    |                    <h1>            <a> -> href
-                  Text "My Title"         |               |
-                                        My header        text
-                    
-=> Using this we can access the HTML elements, attributes, CSS stylings and Events.
-
-==============================================================================
-
-CRUD Operations with HTML Elements:
-
-Create HTML Elements:
-1) createElement('tag')     - is used to create an HTML Element.
-2) createTextNode('text')   - is used to place the string in the created element. 
-3) parent.insertBefore(created Element, sibling Element) - to insert element before an element. called on parent element
-4) firstElementChild        - returns the first element of list.
-5) cloneNode(true)          - copies element.
-
-Add, Remove & Toggle classes from HTML elements:
-
-classList: It holds all the classes of an HTML element.
-
-add()    :  used to add class (adds class name for an existing HTML element)
-remove() :  removes class name from an existing HTML element
-toggle() :  to toggle a class name (if it exits then removes or else adds a class name to HTML element)
-
--------------------------------------------------
-
-Read Operation
-Select HTML Elements:
-1) getElementById()
-2) getElementByTagName()
-3) getElementByClassName()
-
-Query Selectors: css selectors to select HTML elements
-4) querySelector()     - selects 1st element of class 
-5) querySelectorAll()  - selects all elements of class 
-
--------------------------------------------------
-
-Update HTML Elements:
-1) element.innerHTML       - new HTML element
-2) element.attribute       - new value 
-    element.setAttribute('attr','value')
-    element.getAttribute('attr')
-3) element.style.property  - new style 
-4) element.innerText       - only for updating text and considers only visible text.
-5) element.textContent     - only for updating text but considers invisible text by CSS.
-
-6) replaceChild('new created element', 'selected element to be replaced') 
-                           - used for replacing elements and must be called on parent element.
-7) appendChild()           - appends a new HTML element to an existing one as a Child Element
-8) element.append()        - can append text and elements.
-9) element.prepend()       - inserts at beginning.
-10) element.replaceWith()  - modern alternative to replaceChild().
-
--------------------------------------------------
-
-Delete HTML Elements:
-1) parent.removeChild('selected Element) - to delete an HTML element. called on parent element
-2) element.remove()                      - removes element directly without referencing parent.
-
--------------------------------------------------
-
-Additional:
-
-1) childElementCount  - returns the no. of child elements
-==============================================================================
-
-dom manipulation
-
-questions
-
-1. difference: getElementById vs querySelector
-2. innerHTML vs textContent
-3. reflow vs repaint (basic idea)
-
-problems
-
-1. build todo list (must do)
-2. create element dynamically and append
-3. highlight searched text
-4. remove all child nodes
-5. live character counter
-
-The above is the 20th topic, analyze the html, js files and notes.txt. For this folder just do changes in HTML if you feel required. 
-But generate a good README file with the information provided in notes.txt and additional information which you feel would be better 
-for this with proper codes and nice examples for better understanding.  Also maintain the diagram which I mentioned in notes.txt.
+The above is the 21st topic which is DOM-Example (Counter). In this the counter runs from 10 to 0. Background image changes for all even numbers and for all odd numbers.
+Analyze the HTML, CSS, Js files and prepare a README.md file for this counter example.
 
 (1)
 The above is the 20th topic, analyze the html, js files and notes.txt. For this folder just do changes in HTML if you feel required. 
