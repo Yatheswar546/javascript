@@ -1,35 +1,39 @@
-// Callback 
-
+// ================= BASIC CALLBACK =================
 function ringAlarm(){
     console.log("Wake Up !!!! It's time");
 }
 
-function setAlarm(funtionExecuteLater){
+function setAlarm(functionExecuteLater){
     console.log("Wake up at 7am!!!");
-    funtionExecuteLater();
+    functionExecuteLater();
 }
 
-setAlarm(ringAlarm);
+function runCallback() {
+    let result = setAlarm(ringAlarm);
+    document.getElementById("callbackResult").innerText = result;
+}
 
-// Different Forms of Callbacks
+// ================= DIFFERENT FORMS of CALLBACKS =================
 
 // 1. Callback with Function Declaration Syntax
 
 // Function declaration
-// function greet(n){
-//     console.log(`Hello ${n}`);
+// function greet(name){
+//     console.log(`Hello ${name}`);
 // }
 
 // // Function taking a callback
-// function reception(param){
+// function reception1(callback){
 //     let name = "Yatheswar";
-//     param(name);
+//     callback(name);
 // }
 
 // // Using the function declaration as a callback
-// reception(greet);
+// reception1(greet);
 
-////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+
+// 2. Function Expression 
 
 // 2 (a). Callback with Function Expression Syntax
 
@@ -39,50 +43,60 @@ setAlarm(ringAlarm);
 // }
 
 // // Function taking a callback
-// function reception(param){
+// function reception2(callback){
 //     let name = "Yatheswar";
-//     greet(name);
+//     callback(name);
 // }
 
 // // Using the function expression as a callback
-// reception(greet);
+// reception2(greet);
 
 // 2 (b). Inline Callback with Function Expression 
 
 // Function Expression
-// function reception(param){
+// function reception2(callback){
 //     let name = "Yatheswar";
-//     param(name);
+//     callback(name);
 // }
 
 // // Using the function expression as a Callback
-// reception(function (n){
+// reception2(function (n){
 //     console.log(`Hello ${n}`)
 // });
 
 ////////////////////////////////////////////////////////////////
 
+// 3. Arrow Function 
+
 // 3 (a). Callback with Arrow Function Syntax
 
 // Arrow Function
-// let greet = n => console.log(`Hello ${n}`);
+let greet = n => console.log(`Hello ${n}`);
 
 // // Function taking a Callback
-// function reception(param){
-//     let name = "Yatheswar";
-//     param(name);
-// }
+function reception3(callback){
+    let name = "Yatheswar";
+    callback(name);
+}
 
 // // Using the arrow function as a Callback
-// reception(greet);
+reception3(greet);
 
 // 3 (b). Inline Callback with Arrow Function Syntax
 
-function reception(param){
+function reception3(callback){
     let name = "Yatheswar";
-    param(name);
+    callback(name);
 }
 
-reception( n => console.log(`Hello ${n}`));
+reception3( n => console.log(`Hello ${n}`));
 
-////////////////////////////////////////////////////////////////
+
+// ================= ASYNC CALLBACK =================
+function runAsync() {
+    document.getElementById("asyncResult").innerText = "Waiting...";
+
+    setTimeout(() => {
+        document.getElementById("asyncResult").innerText = "Executed after 2 seconds";
+    }, 2000);
+}
