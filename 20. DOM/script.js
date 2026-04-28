@@ -44,7 +44,8 @@ function addItem(){
 function updateItem(button){
     let div = button.parentElement;
     let heading = div.querySelector("h3");
-    heading.style.textDecoration = "line-through";
+    // heading.style.textDecoration = "line-through";
+    heading.classList.toggle("done");
 }
 
 function deleteItem(button){
