@@ -64,167 +64,103 @@ Storage
 
 =================================================================================================
 
-Good gp, now 29th Folder
+Good gp, now 30th Folder
 
-29th Folder : JSON
-
-index.html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Js - JSON</title>
-</head>
-<body>
-
-    <h1>Javascript - JSON</h1>
-
-
-    <script src="./script.js"></script>
-
-</body>
-</html>
-
-script.js
-var obj = {
-    "name" : 'Yathe',
-    "age" : 28,
-    "married" : false,
-    "score" : [22,45,67,13],
-    "grade" : null,
-    "marks": {
-        "ml" : 65,
-        "python" : 76,
-        "javascript" : 87,
-    },
-    "lastName" : undefined,
-    "getName" : function(){
-        return this.name
-    }
-}
-
-console.log(obj)
-
-obj = JSON.stringify(obj)
-console.log(obj)
-console.log(JSON.stringify(obj))
-
-obj = JSON.parse(obj)
-console.log(obj)
-
-obj = JSON.stringify(obj)
-console.log(obj)
-
-var arr = [
-    {
-        "name" : 'Yathe',
-        "age" : 22
-    },
-    {
-        "name" : 'Swarup',
-        "age" : 21
-    },
-    {
-        "name" : 'Suhaas',
-        "age" : 20
-    },
-]
-
-console.log(arr[1].age)
+30th Folder : HTTP
 
 notes.txt
-XML (eXtensible MarkUp Language):
+HTTP (HyperText Transfer Protocol):
 
-=> It is a markup language that is desgined to store and transport data in a structured format.
-    It is used before JSON, but the data transfer is difficult because it is in HTML format.
+                         request
+            FRONTEND   ----------->  BACKEND
+            (CLIENT)   <-----------  (SERVER)
+                         response 
 
-=====================================================================================
+============================================================================
 
-JSON (JavaScript Object Notation):
+HTTP Methods:
+GET    - fetching the data
+POST   - creating the data
+PUT    - editing the data 
+DELETE - deleting the data 
 
-=> It is a lightweight format for storing and transporting data from a server to webpage.
-    It is "self-describing" and easy to understand.
+============================================================================
 
-=> Whenever we want to get data from server it will be difficult to fetch data in a
-    plain text format (or) XML format because data would be bulky and cause too much
-    overhead for web services.
+GET Request:
 
-=> We use JSON in which, data is passed in an array of objects.
+URL - https://jsonplaceholder.typicode.com/todos
+              |----- backend server -----| |-endpoint-|
 
-Synatx:  
-{
-    "name"  : "value",
-    "array" :  [ ]
-}
+============================================================================
 
-Uses: 
-1) Less Verbose
-2) Faster
-3) Readable 
-4) Objects align in a code
-5) Structure matches the code
+Handling HTTP Repsonse:
 
-=====================================================================================
+"readyState" property: It is a XMLHttpRequest Object that holds the status.
 
-Difference between JSON and Js Object:
+    0  -  UNSENT
+    1  -  OPENED
+    2  -  HEADERS RECEIVED
+    3  -  LOADING
+    4  -  DONE
 
-            JSON               |          Js Object
-                               |
-1.  key/value pairs in " "     |    key/value pairs without " "
-                               |
-2.  no functions               |    can contain functions
-                               |
-3.  supported by any language  |    only JavaScript supports
+"onreadystatechange" : defines a function to be executed when the readyState changes.
 
-=====================================================================================
+============================================================================
 
-=> JSON can't hold "undefined" variables and "functions" and "data".
+HTTP Status Codes:
 
-=> It can hold strings, arrays, numbers, booleans, null and object.
+100 - 199 [ Information ]
 
-=====================================================================================
+100 - Continue 
+101 - Switching Protocols
+102 - Processing
+103 - Early Hints 
 
-Similarities b/w JSON & XML:
 
-=> Both are "self-describing" and "human-readable"
+200 - 299 [ Success ]
 
-=> Hierarchical (values within values)
+200 - OK
+201 - CREATED 
+202 - ACCEPTED
+204 - No content 
+206 - Partial Content 
 
-=> Can be parsed and used by programming languages
+300 - 399 [ Redirect ]
 
-=> Can be fetched with and "XMLHttpRequest"
+300 - Multiple choices 
+301 - Moved Permanently 
+304 - Not Modified
+307 - Temporary Redirect 
+308 - Permanent Redirect
 
-=====================================================================================
+400 - 499 [ Client Error ]
 
-JSON.parse() & JSON.stringify():
+400 - Bad Request 
+401 - Unauthorized
+403 - Forbidden
+404 - Not Found 
+409 - Conflict
 
-JSON.parse()     : The data received from server will be in string format, 
-                   so we need to parse to get object.
+500 - 599 [ Server Error ]
 
-JSON.stringify() :  The data should be send in string format to server. 
+500 - Internal Server Error
+501 - Not implemented
+502 - Bad Gateway
+503 - Service Unavailable
+504 - Gateway Timeout
 
-                        JSON.parser()
-            Web   <--------------------------  SERVER
-            Page  -------------------------->
-                        JSON.stringify()
 
-=====================================================================================
+The above is 30th topic about HTTP. Now we have moved into Networking part. I created only notes.txt for this. Because I am not getting any idea 
+on what to write in HTML and Js files for this.
+Help me in creating this HTTP topic in a very clear and beginner friendly way so even a beginner can also understand.
+This knowledge should be helpful for backend also for future reference.
+After this the next folder is on Web APIs. These two folders are on networking in our present JavaScript Repo.
 
-Why JSON is better ?
+So make this folder with better examples and add additional information on this for easier understanding for everyone. 
+Make sure you make it for Interview Ready like the previous topics and also you can add diagrams or graphs(like we did earlier).
+But make sure it is understand for everyone and you can cover each and every topic including structure of URLs also right from scratch.
 
-=> It doesn't use end tag 
-=> It is shorter 
-=> Quicker to read and write 
-=> Can use arrays 
-=> XML has to be parsed with an XML parser 
-    JSON can be parsed by JSON.parse()
-=> For AJAX applications, JSON is faster and easier.
-
-The above is 29th topic about JSON. Analyze the html, js files and notes.txt and create a README.md file explaining in a neat manner 
-about JSON from beginning of why we need to use it and how to use with better examples and add additional information 
-on this for easier understanding for everyone. Also add suggestions in html and js files if you want. 
-Make sure you make it for Interview Ready like the previous topics.
+You can generate html, js etc... any kind of files for this including README.md file for better understanding.
 
 (1)
 The above is the 20th topic, analyze the html, js files and notes.txt. For this folder just do changes in HTML if you feel required. 

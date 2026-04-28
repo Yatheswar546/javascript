@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Basics</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>HTTP (HyperText Transfer Protocol)</h1>
+
+    <h2>1.Make GET Request</h2>
+    <button onclick="getData()">Fetch Todos</button>
+    <pre id="getResult"></pre>
+
+    <h2>2. Make POST Request</h2>
+    <button onclick="postData()">Create Data</button>
+    <pre id="postResult"></pre>
+
+    <script src="./script.js"></script>
+    
+</body>
+</html>
