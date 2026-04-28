@@ -64,35 +64,281 @@ Storage
 
 =================================================================================================
 
-Good gp, now 22nd Folder
+Good gp, now 23rd Folder
 
-22nd Folder : BOM (Browser Object Model)
+23rd Folder : Events
+
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Events</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Events & Event Handlers -->
+    <h1 class="main-heading">Events & Event Handlers</h1>
+
+    <!-- <button id="btn">Click Me</button> -->
+    <!-- <div>
+        <h1 id="heading" class="small">Add/Remove Classes</h1>
+    </div> -->
+
+    <!-- Add, Remove & Toggle --->
+    <!-- <button id="toggle-btn">Toggle Button</button>
+    <nav id="navbar" class="hide">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Gallery</li>
+            <li>Contact</li>
+        </ul>
+    </nav>  -->
+
+    <!-- Getting elements styles -->
+    <!-- <button id="btn-increase" style="margin-left: 0px" class="btn1">+</button>
+    <button id="btn-decrease" class="btn2">-</button> -->
+
+    <!-- <div>
+        <h1 id="heading">Get Styles</h1>
+    </div> -->
+
+       
+
+    <script src="./script.js"></script>
+</body> 
+</html>
+
+style.css
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+button { 
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    padding: 20px;
+    font-size: 20px;
+}
+
+.btn1{
+    position: absolute;
+    top: 20%;
+    left: 40%;
+}
+
+.btn2{
+    position: absolute;
+    top: 20%;
+    font-size: 20px;
+}
+
+.small {
+    font-size: 18px;
+}
+
+.big {
+    font-size: 38px;
+}
+
+#toggle-btn {
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    color: #fff;
+    background: #000;
+    left: 0%;
+    top: 5%;
+    transform: translate(0%, 0%);
+}
+
+#navbar {
+    padding: 30px;
+}
+
+#navbar li{
+    font-size: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+    position: absolute;
+    top: 10%;
+    transition: all 2s ease;
+}
+
+script.js
+////////////// Events & Event Listeners /////////////////////
+
+// var btn = document.getElementById('btn');
+// var body = document.querySelector('body');
+
+// console.log(body);
+
+// console.log(div);
+
+// using event property
+// btn.onclick = function(){
+//     alert("Button is clicked");
+// }
+
+// using addEventListener
+// btn.addEventListener('click', function(){
+//     alert('Hello');
+// });
+
+// function bg(){
+
+//     var randomNum = Math.floor(Math.random() * 255);
+//     alert("rgb("+ randomNum + "," + 45 + "," + 155 + ")");
+//     body.style.backgroundColor = "rgb("+ randomNum + "," + 45 + "," + 155 + ")";
+//     body.style.backgroundColor = "green";
+// }
+
+// btn.onclick = bg;
+
+
+//////////////////// ADD , REMOVE & TOGGLE Classes ///////////////
+// var heading = document.getElementById('heading');
+
+// console.log(heading.classList);
+// console.log(heading.classList.add('big'))
+// console.log(heading.classList.remove('small')) 
+// console.log(heading.classList);
+
+
+// setTimeout(function(){
+//     heading.classList.remove('big');
+// },1000);
+
+
+// var toggle_btn = document.getElementById('toggle-btn');
+
+// var navbar = document.getElementById('navbar');
+
+// toggle_btn.addEventListener('click', function() {
+//     if(navbar.classList.contains('show')){
+//         navbar.classList.remove('show');
+//         navbar.classList.add('hide');
+//     }else{
+//         navbar.classList.remove('hide');
+//         navbar.classList.add('show');
+//     }
+
+// });
+
+///////////////////// Getting elements styles //////////////////
+
+// var btnincrease = document.getElementById('btn-increase');
+// var btndecrease = document.getElementById('btn-decrease');
+
+// var heading = document.getElementById('heading');
+
+// console.log(btnincrease.style.marginLeft);
+// console.log(window.getComputedStyle(btnincrease).marginLeft);
+// console.log(window.getComputedStyle(btndecrease).fontSize);
+
+// var initialSize = window.getComputedStyle(heading).fontSize;
+// initialSize = parseInt(initialSize.substring(0, (initialSize.length - 2)))
+
+// heading.style.fontSize = parseInt(initialSize) + 100 + 'px';
+
+// btnincrease.onclick = function () {
+//     initialSize += 10;
+//     heading.style.fontSize = initialSize + 'px';
+// }
+
+// btndecrease.addEventListener('click', function (){
+//     initialSize -= 10;
+//     heading.style.fontSize = initialSize + 'px';
+// })
 
 notex.txt
-Browser Object Model (BOM):
+Events: Actions happens in a webpage.
+        1. Clicking the mouse.
+        2. Hovering
+        3. Pressing keys 
+        4. Webpage loading 
+        5. Form submission 
+        6. Video Controls 
 
-=> It represents the current browser window. The main purpose of BOM is to manipulate 
-    the properties and methods which are associated with the browser window.
+=> All DOM nodes generate such signals 
+    1. click button                  - click 
+    2. hovering                      - mouseover 
+    3. submit a form                 - submit 
+    4. webpage loaded, show ad popup - DOMContentLoaded
 
-                                window
-        ___________________________|___________________________
-        |            |             |             |             |
-     document     history       location       screen       navigator
+=> HTML events have "on<event>" type attributes to specify the handlers. 
 
-=> document object  : Represents html structure and content in tree format.
+==============================================================================
 
-=> history object   : data of URLs.
+Event Handlers : Actions performed on these events. 
 
-=> location object  : info. about current URL.
+                        Two Ways of Event Handling 
+               ____________________|___________________
+               |                                      |
+        Event Properties                        addEventListener()
+               |                                      |
+element.{eventProperty} = function(){}   addEventListener({eventName}, function() {})
+|                                           |
+|-> selectedElement.onclick                 |-> selectedElement.addEventListener({eventName}, function() {})
+            = function () {}
 
-=> screen object    : info. about browser screen like width/height.
+Key points on Event Handlers:
 
-=> navigator object : info. about user's browser & OS.
+=> Everytime when we use Event Handlers, an event is passed into the function.
+    (event, e).
 
-The above is notes for 22nd topic, I created only notes.txt for this. Because I am not getting any idea 
-on what to write in HTML and Js files for this. Also I am not sure whether it is a very important topic
-for interviews or not. So, help me in this topic. Generate required files for this with better examples 
-so everyone can understand easily and also for interview ready.
+=> event.target : it is used to know which html element triggered the event.
+
+questions
+
+1. event flow phases
+2. event bubbling vs capturing
+3. preventDefault vs stopPropagation
+4. what is event delegation and why efficient
+
+problems
+
+1. button click counter
+2. form validation with preventDefault
+3. event delegation todo delete
+4. keyboard event listener
+5. detect outside click
+
+The above is 23rd topic about Events. Create a neat README.md file explaining in a neat manner about Events.
+Also add additional information if you want on this with better examples for easier understanding for everyone.
+Also suggest any changes if you can in the present html,css and js files.
 
 (1)
 The above is the 20th topic, analyze the html, js files and notes.txt. For this folder just do changes in HTML if you feel required. 
