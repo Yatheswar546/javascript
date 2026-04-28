@@ -64,15 +64,14 @@ Storage
 
 =================================================================================================
 
-Good gp, now 13th Folder
+Good gp, now 14th Folder
 
-13th Folder : pass-by-value and pass-by-reference
+14th Folder : spread and rest operators
 
-notes.txt
+index.html
 
 
-
-The above is 12th topic, I haven't created any html or js files because I am not getting any idea for this.
+The above is 14th topic, I haven't created any html or js files because I am not getting any idea for this.
 Help me in creating html, js and README files with required information and codes with nice examples for better understanding.
 
 The above is the 11th topic, analyze the html and js files and do the same thing as you did for previous folders. 

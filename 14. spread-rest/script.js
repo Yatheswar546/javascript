@@ -1,34 +1,44 @@
-// Spread Operator
+// =================== SPREAD Operator ===================
 
-// Without spread 
+// ========== WITHOUT SPREAD ==========
 let old_arr = [1,2,3,4,5];
 let new_arr = old_arr;
-// let new_arr = [...old_arr];
+new_arr.push(6);
 
-// console.log(`old array: ${old_arr}`);  // 1,2,3,4,5
-// console.log(`new array: ${new_arr}`);  // 1,2,3,4,5
+console.log(`old array: ${old_arr}`);  // 1,2,3,4,5,6
+console.log(`new array: ${new_arr}`);  // 1,2,3,4,5,6
 
-new_arr = new_arr.push(6,7,8,9);
+new_arr = new_arr.push(7,8,9);
 
-// console.log(`old array: ${old_arr}`);  // 1,2,3,4,5,6,7,8,9
-// console.log(`new array: ${new_arr}`);  // 9  (it returns the length as push returns the new length of array)
+console.log(`old array: ${old_arr}`);  // 1,2,3,4,5,6,7,8,9
+console.log(`new array: ${new_arr}`);  // 9  (it returns the length as push returns the new length of array)
 
-// With Spread
+// ========== WITH SPREAD ==========
 let spread_old_arr = [1,2,3,4,5];
 let spread_new_arr = [...spread_old_arr];
 
-// console.log(`spread old array: ${spread_old_arr}`);  // 1,2,3,4,5
-// console.log(`spread new array: ${spread_new_arr}`);  // 1,2,3,4,5
+console.log(`spread old array: ${spread_old_arr}`);  // 1,2,3,4,5
+console.log(`spread new array: ${spread_new_arr}`);  // 1,2,3,4,5
 
 spread_new_arr.push(6,7,8,9);
 
-// console.log(`spread old array: ${spread_old_arr}`);  // 1,2,3,4,5
-// console.log(`spread new array: ${spread_new_arr}`);  // 1,2,3,4,5,6,7,8,9
+console.log(`spread old array: ${spread_old_arr}`);  // 1,2,3,4,5
+console.log(`spread new array: ${spread_new_arr}`);  // 1,2,3,4,5,6,7,8,9
 
 
-//////////// Problems ////////////
+function spreadDemo() {
+    let arr = [1,2,3];
+    let copy = [...arr];
 
-// Problem 1: Merge arrays using Spread
+    copy.push(4);
+
+    console.log("Original:", arr);
+    console.log("Copy:", copy);
+}
+
+// ================= PROBLEMS =================
+
+// Problem 1: MERGE ARRAYS using SPREAD
 
 let arr1 = [1,2,3,4,5];
 let arr2 = [6,7,8,9,10];
@@ -40,7 +50,7 @@ let arr3 = [...arr1, ...arr2]
 
 // console.log(arr3);
 
-// Problem 2: SUM unlimited arguments using rest
+// Problem 2: SUM unlimited arguments using REST
 
 function sum(...arr){
     let total = 0;
