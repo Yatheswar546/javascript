@@ -64,9 +64,9 @@ Storage
 
 =================================================================================================
 
-Good gp, now 15th Folder
+Good gp, now 16th Folder
 
-15th Folder : Numbers and Math
+16th Folder : Scope, Hoisting and Closures
 
 index.html
 <!DOCTYPE html>
@@ -74,165 +74,153 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Numbers and Math</title>
+    <title>Scope, Hoisting and Closures</title>
 </head>
 <body>
 
-    <h1>Numbers and Math</h1>
-    <h2>1. Special Numbers</h2>
-    <h4>Infinity, -Infinity, -0, NaN</h4>
+    <h1>Scope, Hoisting and Closures</h1>
+    <h4>Check the notes.txt file for details</h4>
 
-    <br>
-
-    <h2>2. Floating Point Numbers</h2>
-
-    <br>
-
-    <h2>3. Math Functions</h2>
-    <ul type="none">
-        <li>
-            <h3>Math.trun()</h3>
-            <h3>Math.round()</h3>
-            <h3>Math.floor()</h3>
-            <h3>Math.ceil()</h3>
-            <h3>Math.max()</h3>
-            <h3>Math.min()</h3>
-            <h3>Math.pow(base, power)</h3>
-            <h3>Math.PI [CONSTANT]</h3>
-        </li>
-    </ul>
-
-    <h1>Problems</h2>
-    <h2>Problem 1: Round the number to 2 decimal places</h2>
-    <input type="number" id="roundNum" placeholder="Enter the Number">
-    <button onclick="roundingNumber()">Enter</button>
-    <h4 id="roundResult">Result: </h4>
-
-    <h2>Problem 2: Generate a Random number in given range</h2>
-    <input type="number" id="startingNumber" placeholder="Enter Starting Number">    
-    <input type="number" id="endingNumber" placeholder="Enter Last Number">
-    <button onclick="randomNumber()">Enter</button>
-    <h4 id="randomResult">Result: </h4>
-
-    <script src="./script.js"></script>
-
-    <h2>Problem 3: Check if Number is Integer or Not</h2>
-    <input type="number" id="number" placeholder="Enter the number">
-    <button onclick="checkInteger()">Enter</button>
-    <h4 id="result">Result: </h4>
-    
 </body>
 </html>
 
-script.js
-// Special Numbers in Js
-console.log(`7/0 = ${7/0}`);
-console.log(`-8/0 = ${-8/0}`);
-console.log(`-0/17 = ${-0/17}`);
-console.log(`"Js"/187 = ${"Js"/187}`);
-console.log(`[1,9,8]/0 = ${[1,9,8]/0}`);
-
-// Floating Point Numbers in Js
-console.log(`202.2 * 2 = ${202.2 * 2}`);
-console.log(`303.3 * 3 = ${303.3 * 3}`);
-console.log(`0.1 + 0.2 = ${0.1 + 0.2}`);
-
-// Math Functions in Js
-console.log(`Math.trunc(3.654) = ${Math.trunc(3.654)}`);
-console.log(`Math.round(7.876810) = ${Math.round(7.876810)}`);
-console.log(`Math.floor(9.621793) = ${Math.floor(9.621793)}`);
-console.log(`Math.ceil(5.66849846) = ${Math.ceil(5.66849846)}`);
-console.log(`Math.max(8,9,0,19) = ${Math.max(8,9,0,19)}`);
-console.log(`Math.min(9,10,18,10,-9,-6) = ${Math.min(9,10,18,10,-9,-6)}`);
-console.log(`Math.pow(4,87) = ${Math.pow(4,87)}`);
-console.log(`Math.PI = ${Math.PI}`);
-
-////////////// Problems //////////////
-
-// Problem 1: Round the number to 2 decimal places
-
-function roundingNumber(){
-    let num = document.getElementById("roundNum").value;
-
-    // let result = Math.round(num * 100) / 100;
-    let result = Number(num).toFixed(2);
-
-    document.getElementById("roundResult").innerHTML = `Result: ${result}`;
-}
-
-// Problem 2: Generate a Random number in given range
-function randomNumber(){
-    let start = document.getElementById("startingNumber").value;
-    let end = document.getElementById("endingNumber").value;
-
-    // Formula:  Math.floor(Math.random() * (max - min)) + min
-
-    let result = Math.floor(Math.random() * (Number(end) - Number(start))) + Number(start);
-
-    document.getElementById("randomResult").innerHTML = `Random Number in given range is: ${result}`;
-
-}
-
-function checkInteger(){
-    let num = document.getElementById("number").value;
-
-    // if(Number.isInteger(Number(num))){
-    //     document.getElementById("result").innerHTML = `Result: It is Integer`;
-    // }
-    // else{
-    //     document.getElementById("result").innerHTML = `Result: Not an Integer`;
-    // }
-
-    // Number.isInteger(Number(num)) ? document.getElementById("result").innerHTML = `Result: It is Integer` : document.getElementById("result").innerHTML = `Result: Not an Integer`;
-
-    document.getElementById("result").innerHTML = Number.isInteger(Number(num)) ? `Result: It is Integer` : `Result: Not an Integer`
-}
-
 notes.txt 
-Special Numbers in Js:
-=> Infinity, -Infinity, -0, NaN 
-=> NaN : Not a Number. It is used for Mathematical Operations
-=> Infinity and Nan are "Number" datatypes.
+Scope of a Variable:
 
-Floating Point Numbers in Js:
-=> Js treats decimals as floating point numbers.
-=> addition, multiplication are subject to rounding errors.
+        Types 
+    ______|______
+    |           |
+  Global       Local 
+                |-> Function (var)
+                |-> Block (let, const)
 
-Math Functions:
+Function Scope: 
+=> variables can't be accessed outside the function using "var/let/const".
+=> Used especially in "functions".
 
-1. Math.trunc() - returns only integer part.
-2. Math.round() - returns round-off values.
-3. Math.floor() - returns the lower round-off value.
-4. Math.ceil() - return the upper round-off value.
+Eg: function func(){
+        var b = "Hello";
+        console.log(b);  // Hello
+    }
+    func();
+    console.log(b)  // error
 
-NOTE: trunc() and floor() works differently with -ve numbers.
+Block Scope:
+=> Only "let/const" variables are accessed within the Block.
+=> "var" can accessed outside the Block also.
+=> Used especially in block "{}".
 
-5. Math.max() - Returns the maximum value.
-6. Math.min() - Return the minimum value.
-7. Math.pow(base, power) - Returns the power of a number.
+Example-1:
 
-CONSTANT:
-8. Math.PI = 3.141592653589793
+var a = 5;
+if(a === 5){
+    let b = 15;
+    console.log(b);  // 15;
+}
+console.log(b);   // error 
 
-numbers and math
+Example-2:
 
-covers
-floating points
-special numbers (NaN, Infinity, -0)
-Math functions
+var a = 5;
+if(a === 5){
+    var b = 150;
+    console.log(b);  // 150
+}
+console.log(b);  // 150
 
-questions
+Lexical Scope:
 
-1. why 0.1 + 0.2 !== 0.3
-2. what is NaN and how to check it
-3. difference between parseInt and Number
+=> Ability for an inner scope to access the variable from outer scope 
+    i.e. inner scope is lexically bound to the outer scope.
+=> Lexical scope means a function can access variables from its outer scope 
+    based on where the function is defined in the code, not where it is executed.
 
-problems
+NOTE: 
+JavaScript looks for variables in this order:
+a) Current scope
+b) Outer scope
+c) Global scope
 
-1. round to 2 decimal places
-2. generate random number in range
-3. check if number is integer
-4. implement custom toFixed
+Eg: let message = "Hello";
+    
+    function outer(){
+        let name = "Yatheswar";
+
+        function inner(){
+            console.log(message);
+            console.log(name);
+        }
+
+        inner();
+    }
+
+    outer;
+
+=====================================================================================================
+
+Hoisting:
+
+=> It is a JavaScript mechanism where "variables" and "function declarations" are moved to 
+    top of their scope before code execution.
+=> variables declared using "var" only supports hoisting.
+
+Example-1: 
+
+a = 10;
+console.log(a);   // 10
+var a;            // error
+
+Example-2:
+
+func();
+function func(){
+    console.log("Hello");
+}
+
+Example-3:
+
+console.log(a);   // undefined 
+var a = 10;
+
+Example-4:
+
+console.log(a);
+a = 10;           // error 
+
+
+=====================================================================================================
+
+Closures:   (Function + Lexical Environment)
+
+=> If a function is created inside another function, it retains access to scope of that outer function 
+   even after that outer function returns, because the outer function is in the lexical scope of the
+   function.
+
+=> If in a inner function if the "child function is returned" then it is a CLOSURE.
+
+Example:
+
+function parentFunction(){
+
+    // Lexical Scope START
+
+    const message = "Hi!, I am parent";
+
+    function childFunction(){
+        console.log(message);
+    }
+
+    return childFunction;
+
+    // Lexical Scope END
+}
+
+const ans = parentFunction();
+console.log(ans);
+
+The above is 16th topic, I haven't created any js file because I am not getting any idea for this. 
+Also as you can see I didn't use the HTML file very much so suggest few changes we can do for HTML.
+Help me in creating html, js and README files with required information and codes with nice examples for better understanding.
 
 The above is the 15th topic, analyze the html and js files and notes.txt and do the same thing as you did for previous folders. 
 Also as you can see we used HTML file so you can do changes in HTML also, if required and Help me in creating html, js and README files 
