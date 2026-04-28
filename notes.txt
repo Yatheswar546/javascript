@@ -64,9 +64,9 @@ Storage
 
 =================================================================================================
 
-Good gp, now 25th Folder
+Good gp, now 26th Folder
 
-25th Folder : keyBoardEvents
+26th Folder : mouseEvents
 
 index.html
 <!DOCTYPE html>
@@ -75,14 +75,34 @@ index.html
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Js FormEvents</title>
+    <title>Js Mouse Events</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-    <!------------- Keyboard Events ---------->
-    <h1>Keyboard Events</h1> 
+    <!------------- Mouse Events ---------->
+    <h1>Mouse Events</h1>
 
+    <button id="btn">Click Me</button>
+
+    <main>
+        <div id="over">
+            <h3>Mouseover Event Triggered:</h3>
+            <p>0</p>
+        </div>
+
+        <div id="enter">
+            <h3>Mouseeneter Event Triggered:</h3>
+            <p>0</p>
+        </div>
+
+        <div id="move">
+            <h3>Mousemove Event Trggered:</h3>
+            <p>0</p>
+        </div>
+
+    </main>
+    
     <script src="./script.js"></script>
 </body> 
 </html>
@@ -97,63 +117,113 @@ style.css
 h1{
     font-size: 50px;
     position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+button{
+    font-size: 50px;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main{
+    display: flex;
+
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+div{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 30px;
+    background-color: bisque;
+}
+
+h3{
+    text-align: center;
+    padding: 30px;
+    margin: 10px;
+    background-color: rgb(247, 168, 73);
+}
+
+p{
+    text-align: center;
+    padding: 30px;
+    margin: 10px;
+    background-color: aqua;
+}
+
 script.js
-// Keydown event
+var btn = document.getElementById('btn');
 
-document.body.addEventListener('keydown', function(e) {
-    var keycode = e.keyCode;
-
-    // 13 is keycode for enter
-    if(keycode === 13){
-        console.log(keycode + 'KeyDown - A key is clicked !!!')
-    }
-    // console.log(keycode + 'KeyDown - A key is clicked !!!')
+btn.addEventListener('mousedown', function(){
+    console.log('Mouse Down Event');
 });
 
-// Keyup event
-
-document.body.addEventListener('keyup', function(e) {
-    var keycode = e.keyCode;
-
-    // 13 is keycode for enter
-    
-    if(keycode === 13){
-        console.log(keycode + 'Keyup - A key is clicked !!!')
-    }
-    // console.log(keycode + 'Keyup -  is clicked !!!')
+btn.addEventListener('mouseup', function(){
+    console.log('Mouse Up Event');
 });
 
-// Keypress event
+btn.addEventListener('click', function(){
+    console.log('Mouse Click Event');
+});
 
-document.body.addEventListener('keypress', function(e) {
-    var keycode = e.keyCode;
+btn.addEventListener('dblclick', function(){
+    console.log('Double Click Event');
+});
 
-    // 13 is keycode for enter
-    if(keycode === 13){
-        console.log(keycode + 'Keypress - A key is clicked !!!')
-    }
-    // console.log(keycode + 'Keypress -  is clicked !!!')
+var over = document.getElementById('over');
+var overCount = 0;
+var overText = over.querySelector('p');
+
+over.addEventListener('mouseover',function() {
+    overCount ++;
+    overText.innerHTML = overCount;
+});
+
+var enter = document.getElementById('enter');
+var enterCount = 0;
+var enterText = enter.querySelector('p');
+
+enter.addEventListener('mouseenter',function() {
+    enterCount ++;
+    enterText.innerHTML = enterCount;
+});
+
+var move = document.getElementById('move');
+var moveCount = 0;
+var moveText = move.querySelector('p');
+
+move.addEventListener('mousemove',function() {
+    moveCount ++;
+    moveText.innerHTML = moveCount;
 });
 
 
+notes.txt
+Js - Mouse Events:
 
-notex.txt
-Js - KeyBoard Events:
+=> Events triggered when different mouse keys are pressed (or) released.
 
-Events triggered when user clicks a key.
+1) mousedown  :   left/right/middle button is clicked.
+2) mouseup    :   left/right/middle button is released.
 
-3 types:
+3) click      :   left key is pressed and released on same HTML element.
+                    (Requires mousedown/mouseup event before).
+4) dbclick    :   left button clicked twice.
 
-1) keydown   : key is pressed.
-
-2) keyup     : key is released after it's keydown event.
-
-3) keypress  : when any key is in pressed position (except SHIFT, FN, CAPS LOCK).
+5) mouseover  :   mouse pointer enters the HTML element and child element.
+6) mouseenter :   mouse enters HTML elements.
+7) mousemove  :   everytime the mouse pointer is moved over the HTML element.
 
 questions
 
@@ -170,9 +240,9 @@ problems
 4. keyboard event listener
 5. detect outside click
 
-The above is 25th topic about KeyBoard-Events. Analyze the html, css , js and notes files. Create a neat README.md file explaining in a neat manner about KeyBoard-Events
-and add additional information if you want on this with better examples for easier understanding for everyone. Also suggest any changes if you can in the present html,css and js files.
-Also regarding the questions and problems add the information that are suitable for the present topic.
+The above is 26th topic about Mouse-Events. Analyze the html, css , js and notes files. Create a neat README.md file explaining in a neat manner about Mouse-Events
+and add additional information if you want on this with better examples for easier understanding for everyone. Also suggest any changes if you can in the present 
+html, css and js files. Also regarding the questions and problems add the information that are suitable for the present topic.
 
 (1)
 The above is the 20th topic, analyze the html, js files and notes.txt. For this folder just do changes in HTML if you feel required. 
