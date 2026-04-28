@@ -64,21 +64,185 @@ Storage
 
 =================================================================================================
 
-Good gp, now 14th Folder
+Good gp, now 15th Folder
 
-14th Folder : spread and rest operators
+15th Folder : Numbers and Math
 
 index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers and Math</title>
+</head>
+<body>
 
+    <h1>Numbers and Math</h1>
+    <h2>1. Special Numbers</h2>
+    <h4>Infinity, -Infinity, -0, NaN</h4>
+
+    <br>
+
+    <h2>2. Floating Point Numbers</h2>
+
+    <br>
+
+    <h2>3. Math Functions</h2>
+    <ul type="none">
+        <li>
+            <h3>Math.trun()</h3>
+            <h3>Math.round()</h3>
+            <h3>Math.floor()</h3>
+            <h3>Math.ceil()</h3>
+            <h3>Math.max()</h3>
+            <h3>Math.min()</h3>
+            <h3>Math.pow(base, power)</h3>
+            <h3>Math.PI [CONSTANT]</h3>
+        </li>
+    </ul>
+
+    <h1>Problems</h2>
+    <h2>Problem 1: Round the number to 2 decimal places</h2>
+    <input type="number" id="roundNum" placeholder="Enter the Number">
+    <button onclick="roundingNumber()">Enter</button>
+    <h4 id="roundResult">Result: </h4>
+
+    <h2>Problem 2: Generate a Random number in given range</h2>
+    <input type="number" id="startingNumber" placeholder="Enter Starting Number">    
+    <input type="number" id="endingNumber" placeholder="Enter Last Number">
+    <button onclick="randomNumber()">Enter</button>
+    <h4 id="randomResult">Result: </h4>
+
+    <script src="./script.js"></script>
+
+    <h2>Problem 3: Check if Number is Integer or Not</h2>
+    <input type="number" id="number" placeholder="Enter the number">
+    <button onclick="checkInteger()">Enter</button>
+    <h4 id="result">Result: </h4>
+    
+</body>
+</html>
+
+script.js
+// Special Numbers in Js
+console.log(`7/0 = ${7/0}`);
+console.log(`-8/0 = ${-8/0}`);
+console.log(`-0/17 = ${-0/17}`);
+console.log(`"Js"/187 = ${"Js"/187}`);
+console.log(`[1,9,8]/0 = ${[1,9,8]/0}`);
+
+// Floating Point Numbers in Js
+console.log(`202.2 * 2 = ${202.2 * 2}`);
+console.log(`303.3 * 3 = ${303.3 * 3}`);
+console.log(`0.1 + 0.2 = ${0.1 + 0.2}`);
+
+// Math Functions in Js
+console.log(`Math.trunc(3.654) = ${Math.trunc(3.654)}`);
+console.log(`Math.round(7.876810) = ${Math.round(7.876810)}`);
+console.log(`Math.floor(9.621793) = ${Math.floor(9.621793)}`);
+console.log(`Math.ceil(5.66849846) = ${Math.ceil(5.66849846)}`);
+console.log(`Math.max(8,9,0,19) = ${Math.max(8,9,0,19)}`);
+console.log(`Math.min(9,10,18,10,-9,-6) = ${Math.min(9,10,18,10,-9,-6)}`);
+console.log(`Math.pow(4,87) = ${Math.pow(4,87)}`);
+console.log(`Math.PI = ${Math.PI}`);
+
+////////////// Problems //////////////
+
+// Problem 1: Round the number to 2 decimal places
+
+function roundingNumber(){
+    let num = document.getElementById("roundNum").value;
+
+    // let result = Math.round(num * 100) / 100;
+    let result = Number(num).toFixed(2);
+
+    document.getElementById("roundResult").innerHTML = `Result: ${result}`;
+}
+
+// Problem 2: Generate a Random number in given range
+function randomNumber(){
+    let start = document.getElementById("startingNumber").value;
+    let end = document.getElementById("endingNumber").value;
+
+    // Formula:  Math.floor(Math.random() * (max - min)) + min
+
+    let result = Math.floor(Math.random() * (Number(end) - Number(start))) + Number(start);
+
+    document.getElementById("randomResult").innerHTML = `Random Number in given range is: ${result}`;
+
+}
+
+function checkInteger(){
+    let num = document.getElementById("number").value;
+
+    // if(Number.isInteger(Number(num))){
+    //     document.getElementById("result").innerHTML = `Result: It is Integer`;
+    // }
+    // else{
+    //     document.getElementById("result").innerHTML = `Result: Not an Integer`;
+    // }
+
+    // Number.isInteger(Number(num)) ? document.getElementById("result").innerHTML = `Result: It is Integer` : document.getElementById("result").innerHTML = `Result: Not an Integer`;
+
+    document.getElementById("result").innerHTML = Number.isInteger(Number(num)) ? `Result: It is Integer` : `Result: Not an Integer`
+}
+
+notes.txt 
+Special Numbers in Js:
+=> Infinity, -Infinity, -0, NaN 
+=> NaN : Not a Number. It is used for Mathematical Operations
+=> Infinity and Nan are "Number" datatypes.
+
+Floating Point Numbers in Js:
+=> Js treats decimals as floating point numbers.
+=> addition, multiplication are subject to rounding errors.
+
+Math Functions:
+
+1. Math.trunc() - returns only integer part.
+2. Math.round() - returns round-off values.
+3. Math.floor() - returns the lower round-off value.
+4. Math.ceil() - return the upper round-off value.
+
+NOTE: trunc() and floor() works differently with -ve numbers.
+
+5. Math.max() - Returns the maximum value.
+6. Math.min() - Return the minimum value.
+7. Math.pow(base, power) - Returns the power of a number.
+
+CONSTANT:
+8. Math.PI = 3.141592653589793
+
+numbers and math
+
+covers
+floating points
+special numbers (NaN, Infinity, -0)
+Math functions
+
+questions
+
+1. why 0.1 + 0.2 !== 0.3
+2. what is NaN and how to check it
+3. difference between parseInt and Number
+
+problems
+
+1. round to 2 decimal places
+2. generate random number in range
+3. check if number is integer
+4. implement custom toFixed
+
+The above is the 15th topic, analyze the html and js files and notes.txt and do the same thing as you did for previous folders. 
+Also as you can see we used HTML file so you can do changes in HTML also, if required and Help me in creating html, js and README files 
+with required information and codes with nice examples for better understanding.
 
 The above is 14th topic, I haven't created any html or js files because I am not getting any idea for this.
 Help me in creating html, js and README files with required information and codes with nice examples for better understanding.
 
 The above is the 11th topic, analyze the html and js files and do the same thing as you did for previous folders. 
 Also as you can see I didn't use the HTML file very much so suggest few changes we can do for HTML.
-
-The above is the 10th topic, analyze the html and js files and do the same thing as you did for previous folders. 
-Also as you can see we used HTML file so you can do changes in HTML also, if required.
 
 The above is the 7th topic, I have not written any notes for this topic, so generate a new README file, analyze the html and js files and do the same thing as you did for previous folders. 
 Also as you can see we used HTML file so you can do changes in HTML also, if required.
