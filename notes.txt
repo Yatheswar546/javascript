@@ -64,9 +64,9 @@ Storage
 
 =================================================================================================
 
-Good gp, now 16th Folder
+Good gp, now 17th Folder
 
-16th Folder : Scope, Hoisting and Closures
+17th Folder : Anonymous-Arrow-Functions
 
 index.html
 <!DOCTYPE html>
@@ -74,157 +74,181 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scope, Hoisting and Closures</title>
+    <title>Anonymous & Arrow Functions</title>
 </head>
 <body>
+    
+    <h1>Anonymous & Arrow Functions</h1>
+    <h4>Check the script.js & notes.txt file for details</h4>
 
-    <h1>Scope, Hoisting and Closures</h1>
-    <h4>Check the notes.txt file for details</h4>
+    <script src="./script.js"></script> 
 
 </body>
 </html>
 
+script.js
+// Normal Functions to Arrow Functions
+
+////////////// Example-1 (Function with no parameters) //////////////
+
+// function greet(){
+//     console.log("Hello World");
+// }
+// greet();
+
+// let greet = () => {
+//     console.log("Hello World");
+// }
+// greet();
+ 
+let greet = () => console.log("Hello World");
+greet();
+
+////////////// Example-2 (Function with 1 parameter) //////////////
+
+// function square(num){
+//     console.log(num * num);
+// }
+// square(5);
+
+// let square = (num) => {
+//     console.log(num * num);
+// }
+// square(52);
+
+let square = num => num * num;
+let n = 23
+console.log(`Square of ${n} is ${square(n)}`);
+
+////////////// Example-3 (Function with multiple parameters) //////////////
+
+// function add(a,b){
+//     console.log(`${a} + ${b} is ${a+b}`);
+// }
+// add(2,3);
+
+let add = (a,b) => a + b;
+console.log(add(5,8));
+
+////////////// Example-4 (Function with multiple lines) //////////////
+
+// function checkEven(num){
+//     if(num%2 === 0){
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
+// }
+
+// console.log(checkEven(10));
+
+// const checkEven = (num) => {
+//     if(num%2 === 0){
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
+// }
+// console.log(checkEven(3));
+
+// const checkEven = (num) => { return (num%2 === 0) ? true : false };
+// console.log(checkEven(13));
+
+const checkEven = num => num%2 === 0;
+console.log(checkEven(234));
+
+////////////// Example-5 (Function returning an object) //////////////
+
+// function createUser(name, age){
+//     return {name: name, age: age};
+// }
+// console.log(createUser("Yatheswar", 25));
+
+let createUser = (name, age) => ( {name: name, age: age} );
+console.log(createUser("Yatheswar", 25));
+
+// NOTE: Arrow function must wrap object in parentheses. If not Js thinks it's a function body.
+
+
 notes.txt 
-Scope of a Variable:
+Functions:
+=> Block of reusable code that performs a specific task.
 
-        Types 
-    ______|______
-    |           |
-  Global       Local 
-                |-> Function (var)
-                |-> Block (let, const)
+Uses:
+1) Code Resuability
+2) Organisation
+3) Encapsulation
+4) Abstraction
+5) Seperation of Concerns 
 
-Function Scope: 
-=> variables can't be accessed outside the function using "var/let/const".
-=> Used especially in "functions".
+3 Ways of declaring functions:
 
-Eg: function func(){
-        var b = "Hello";
-        console.log(b);  // Hello
-    }
-    func();
-    console.log(b)  // error
-
-Block Scope:
-=> Only "let/const" variables are accessed within the Block.
-=> "var" can accessed outside the Block also.
-=> Used especially in block "{}".
-
-Example-1:
-
-var a = 5;
-if(a === 5){
-    let b = 15;
-    console.log(b);  // 15;
-}
-console.log(b);   // error 
-
-Example-2:
-
-var a = 5;
-if(a === 5){
-    var b = 150;
-    console.log(b);  // 150
-}
-console.log(b);  // 150
-
-Lexical Scope:
-
-=> Ability for an inner scope to access the variable from outer scope 
-    i.e. inner scope is lexically bound to the outer scope.
-=> Lexical scope means a function can access variables from its outer scope 
-    based on where the function is defined in the code, not where it is executed.
-
-NOTE: 
-JavaScript looks for variables in this order:
-a) Current scope
-b) Outer scope
-c) Global scope
-
-Eg: let message = "Hello";
+1) Function Declaration
     
-    function outer(){
-        let name = "Yatheswar";
-
-        function inner(){
-            console.log(message);
-            console.log(name);
-        }
-
-        inner();
+    function add(a,b){
+        return a + b;
     }
 
-    outer;
-
-=====================================================================================================
-
-Hoisting:
-
-=> It is a JavaScript mechanism where "variables" and "function declarations" are moved to 
-    top of their scope before code execution.
-=> variables declared using "var" only supports hoisting.
-
-Example-1: 
-
-a = 10;
-console.log(a);   // 10
-var a;            // error
-
-Example-2:
-
-func();
-function func(){
-    console.log("Hello");
-}
-
-Example-3:
-
-console.log(a);   // undefined 
-var a = 10;
-
-Example-4:
-
-console.log(a);
-a = 10;           // error 
+    add(5,4);
 
 
-=====================================================================================================
+2) Function Expression
 
-Closures:   (Function + Lexical Environment)
-
-=> If a function is created inside another function, it retains access to scope of that outer function 
-   even after that outer function returns, because the outer function is in the lexical scope of the
-   function.
-
-=> If in a inner function if the "child function is returned" then it is a CLOSURE.
-
-Example:
-
-function parentFunction(){
-
-    // Lexical Scope START
-
-    const message = "Hi!, I am parent";
-
-    function childFunction(){
-        console.log(message);
+    let sum = function (a,b){
+        return a + b;
     }
 
-    return childFunction;
+    sum(2,3);
 
-    // Lexical Scope END
-}
 
-const ans = parentFunction();
-console.log(ans);
+3) ES-6 Arrow Functions 
+
+    let add = (a,b) => {
+        return a + b;
+    }
+
+    => In Arrow function you can skip "{}" and "return" for single line of code.
+
+    let add = (a,b) => a + b;
+
+    => In case of only 1 argument and no arguments.
+
+    let x1 = () => console.log("Hello World!");
+
+    let x2 = a => console.log(a);
+
+===========================================================================
+
+Anonymous Function:
+=> Functions with no names. We create them using "Arrow" functions.
+
+
+anonymous and arrow functions
+
+questions
+
+1. arrow vs normal function
+2. lexical this
+3. when not to use arrow
+
+problems
+
+1. convert normal to arrow
+2. write concise arrow utilities
+3. fix this binding bug
+
+The above is the 17th topic, analyze the html, js files and notes.txt and do the same thing as you did for previous folders. 
+Also as you can see we used HTML file so you can do changes in HTML also, if required and help me in creating html, js and README files 
+with required information and codes with nice examples for better understanding. And try to maintain the points I have written in my notes.txt
+including extra points for better understanding. You can any additional data that is helpful for this but the data mentioned in my notes.txt
+should also be mentioned in new README.md file
+
 
 The above is 16th topic, I haven't created any js file because I am not getting any idea for this. 
 Also as you can see I didn't use the HTML file very much so suggest few changes we can do for HTML.
 Help me in creating html, js and README files with required information and codes with nice examples for better understanding.
-
-The above is the 15th topic, analyze the html and js files and notes.txt and do the same thing as you did for previous folders. 
-Also as you can see we used HTML file so you can do changes in HTML also, if required and Help me in creating html, js and README files 
-with required information and codes with nice examples for better understanding.
 
 The above is 14th topic, I haven't created any html or js files because I am not getting any idea for this.
 Help me in creating html, js and README files with required information and codes with nice examples for better understanding.

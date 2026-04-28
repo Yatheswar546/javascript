@@ -1,81 +1,127 @@
-// Normal Functions to Arrow Functions
+// ================= BASIC ARROW =================
+let greet = () => "Hello World";
 
-////////////// Example-1 (Function with no parameters) //////////////
+// ================= PARAMETERS =================
+let square = num => num * num;
 
-// function greet(){
-//     console.log("Hello World");
-// }
-// greet();
+let add = (a,b) => a + b;
 
-// let greet = () => {
-//     console.log("Hello World");
-// }
-// greet();
+// ================= MULTI LINE =================
+const checkEven = num => {
+    return num % 2 === 0;
+}
 
+// ================= RETURN OBJECT =================
+let createUser = (name, age) => ({ name, age });
+
+// ================= DOM DEMO =================
+function runArrow() {  
+    let result = `
+        greet: ${greet()}
+        square(5): ${square(5)}
+        add(2,3): ${add(2,3)}
+        even(10): ${checkEven(10)}
+    `;
+
+    document.getElementById("arrowResult").innerText = result;
+}
+
+// ================= THIS BEHAVIOR =================
+const obj = {
+    name: "Yathe",
+
+    normalFunc: function () {
+        console.log("Normal:", this.name);
+    },
+
+    arrowFunc: () => {
+        console.log("Arrow:", this.name);
+    }
+};
+
+function thisDemo() {
+    obj.normalFunc();  // Yathe
+    obj.arrowFunc();   // undefined (important)
+}
+
+// ================= Normal Functions to Arrow Functions =================
+
+// ================= Example-1 (Function with no parameters) =================
+
+function greet(){
+    console.log("Hello World");
+}
+greet();
+
+let greet = () => {
+    console.log("Hello World");
+}
+greet();
+ 
 let greet = () => console.log("Hello World");
 greet();
 
-////////////// Example-2 (Function with 1 parameter) //////////////
+// ================= Example-2 (Function with 1 parameter) =================
 
-// function square(num){
-//     console.log(num * num);
-// }
-// square(5);
+function square(num){
+    console.log(num * num);
+}
+square(5);
 
-// let square = (num) => {
-//     console.log(num * num);
-// }
-// square(52);
+let square = (num) => {
+    console.log(num * num);
+}
+square(52);
 
 let square = num => num * num;
 let n = 23
 console.log(`Square of ${n} is ${square(n)}`);
 
-////////////// Example-3 (Function with multiple parameters) //////////////
+// ================= Example-3 (Function with multiple parameters) =================
 
-// function add(a,b){
-//     console.log(`${a} + ${b} is ${a+b}`);
-// }
-// add(2,3);
+function add(a,b){
+    console.log(`${a} + ${b} is ${a+b}`);
+}
+add(2,3);
 
 let add = (a,b) => a + b;
 console.log(add(5,8));
 
-////////////// Example-4 (Function with multiple lines) //////////////
+// ================= Example-4 (Function with multiple lines) =================
 
-// function checkEven(num){
-//     if(num%2 === 0){
-//         return true;
-//     }
-//     else{
-//         return false;
-//     }
-// }
+function checkEven(num){
+    if(num%2 === 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
-// console.log(checkEven(10));
+console.log(checkEven(10));
 
-// const checkEven = (num) => {
-//     if(num%2 === 0){
-//         return true;
-//     }
-//     else{
-//         return false;
-//     }
-// }
-// console.log(checkEven(3));
+const checkEven = (num) => {
+    if(num%2 === 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+console.log(checkEven(3));
 
-// const checkEven = (num) => { return (num%2 === 0) ? true : false };
-// console.log(checkEven(13));
+const checkEven = (num) => { return (num%2 === 0) ? true : false };
+console.log(checkEven(13));
 
 const checkEven = num => num%2 === 0;
 console.log(checkEven(234));
 
-////////////// Example-5 (Function returning an object) //////////////
+// ================= Example-5 (Function returning an object) =================
 
-// function createUser(name, age){
-//     return {name: name, age: age};
-// }
-// console.log(createUser("Yatheswar", 25));
+function createUser(name, age){
+    return {name: name, age: age};
+}
+console.log(createUser("Yatheswar", 25));
 
 let createUser = (name, age) => ( {name: name, age: age} );
 console.log(createUser("Yatheswar", 25));
