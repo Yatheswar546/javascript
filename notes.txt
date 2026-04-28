@@ -64,85 +64,35 @@ Storage
 
 =================================================================================================
 
-Good gp, now 21st Folder
+Good gp, now 22nd Folder
 
-21st Folder : Counter-DOM Example
+22nd Folder : BOM (Browser Object Model)
 
-index.html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Js Counter</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    <header>
-        <div>
-            <img id="bg-image" src="./images/bg2.jpg" alt="">
-            <h1 id="countdown">10</h1>
-        </div>
-    </header> 
-    <script src="./js/script.js"></script>
-</body>
-</html>
+notex.txt
+Browser Object Model (BOM):
 
-style.css
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+=> It represents the current browser window. The main purpose of BOM is to manipulate 
+    the properties and methods which are associated with the browser window.
 
-img{
-    width: 100%;
-    height: 100%;
-}
+                                window
+        ___________________________|___________________________
+        |            |             |             |             |
+     document     history       location       screen       navigator
 
-h1{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 100px;
-}
+=> document object  : Represents html structure and content in tree format.
 
-script.js
-var countdownelement = document.getElementById('countdown');
-var bgimgelement = document.getElementById('bg-image');
+=> history object   : data of URLs.
 
-// console.log(bgimgelement.src);
+=> location object  : info. about current URL.
 
-var initialcountdown = countdownelement.innerHTML;
+=> screen object    : info. about browser screen like width/height.
 
-var interval = setInterval(function() {
-    initialcountdown = initialcountdown > 0 ? initialcountdown -= 1 : 0;
+=> navigator object : info. about user's browser & OS.
 
-    countdownelement.innerHTML = initialcountdown;
-
-    // countdownelement.style.fontSize = initialcountdown * 100 + "px";
-
-    // bgimgelement.style.width = initialcountdown * 10 + "%";
-
-    var backimgpath = initialcountdown % 2 === 0 ? './images/bg1.jpg' : './images/bg2.jpg';
-
-    bgimgelement.src = backimgpath;
-
-    // console.log('Interval is Runinng');
-
-    // bgimgelement.className = 'BackImage';
-    // console.log(bgimgelement);
-
-    if(initialcountdown <= 0){
-        clearInterval(interval);
-    }
-
-}, 1000);
-
-The above is the 21st topic which is DOM-Example (Counter). In this the counter runs from 10 to 0. Background image changes for all even numbers and for all odd numbers.
-Analyze the HTML, CSS, Js files and prepare a README.md file for this counter example.
+The above is notes for 22nd topic, I created only notes.txt for this. Because I am not getting any idea 
+on what to write in HTML and Js files for this. Also I am not sure whether it is a very important topic
+for interviews or not. So, help me in this topic. Generate required files for this with better examples 
+so everyone can understand easily and also for interview ready.
 
 (1)
 The above is the 20th topic, analyze the html, js files and notes.txt. For this folder just do changes in HTML if you feel required. 
@@ -169,3 +119,9 @@ Help me in creating html, js and README files with required information and code
 (5)
 The above is the 7th topic, I have not written any notes for this topic, so generate a new README file, analyze the html and js files and do the same thing as you did for previous folders. 
 Also as you can see we used HTML file so you can do changes in HTML also, if required.
+
+(6)
+The above is notes for 22nd topic, I created only notes.txt for this. Because I am not getting any idea 
+on what to write in HTML and Js files for this. Also I am not sure whether it is a very important topic
+for interviews or not. So, help me in this topic. Generate required files for this with better examples 
+so everyone can understand easily and also for interview ready.
