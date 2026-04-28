@@ -64,99 +64,28 @@ Storage
 
 =================================================================================================
 
-Good gp, now 30th Folder
+Very good gp, now 31st Folder
 
-30th Folder : HTTP
+31st Folder : Web APIs
 
 notes.txt
-HTTP (HyperText Transfer Protocol):
+Web APIs:
 
-                         request
-            FRONTEND   ----------->  BACKEND
-            (CLIENT)   <-----------  (SERVER)
-                         response 
+=> Browser gives Js some additional superpowers in form of Web APIs (functions)
+    that helps to overcome challenges of being synchronous.
 
-============================================================================
-
-HTTP Methods:
-GET    - fetching the data
-POST   - creating the data
-PUT    - editing the data 
-DELETE - deleting the data 
-
-============================================================================
-
-GET Request:
-
-URL - https://jsonplaceholder.typicode.com/todos
-              |----- backend server -----| |-endpoint-|
-
-============================================================================
-
-Handling HTTP Repsonse:
-
-"readyState" property: It is a XMLHttpRequest Object that holds the status.
-
-    0  -  UNSENT
-    1  -  OPENED
-    2  -  HEADERS RECEIVED
-    3  -  LOADING
-    4  -  DONE
-
-"onreadystatechange" : defines a function to be executed when the readyState changes.
-
-============================================================================
-
-HTTP Status Codes:
-
-100 - 199 [ Information ]
-
-100 - Continue 
-101 - Switching Protocols
-102 - Processing
-103 - Early Hints 
+=> Some of most used ones are
+    |--> DOM APIs 
+    |--> console.log()
+    |--> setTimeout(), fetch(), localStorgae() etc....
 
 
-200 - 299 [ Success ]
-
-200 - OK
-201 - CREATED 
-202 - ACCEPTED
-204 - No content 
-206 - Partial Content 
-
-300 - 399 [ Redirect ]
-
-300 - Multiple choices 
-301 - Moved Permanently 
-304 - Not Modified
-307 - Temporary Redirect 
-308 - Permanent Redirect
-
-400 - 499 [ Client Error ]
-
-400 - Bad Request 
-401 - Unauthorized
-403 - Forbidden
-404 - Not Found 
-409 - Conflict
-
-500 - 599 [ Server Error ]
-
-500 - Internal Server Error
-501 - Not implemented
-502 - Bad Gateway
-503 - Service Unavailable
-504 - Gateway Timeout
-
-
-The above is 30th topic about HTTP. Now we have moved into Networking part. I created only notes.txt for this. Because I am not getting any idea 
-on what to write in HTML and Js files for this.
-Help me in creating this HTTP topic in a very clear and beginner friendly way so even a beginner can also understand.
+The above is 31st topic about Web APIs. The 2nd part of Networking. I created only notes.txt for this. Because I am not getting any idea 
+on what to write in HTML and Js files for this same as HTTP.
+Help me in creating this Web APIs topic in a very clear as we did for HTTP one and beginner friendly way so even a beginner can also understand.
 This knowledge should be helpful for backend also for future reference.
-After this the next folder is on Web APIs. These two folders are on networking in our present JavaScript Repo.
 
-So make this folder with better examples and add additional information on this for easier understanding for everyone. 
+Make this folder with better examples and add additional information on this for easier understanding for everyone. 
 Make sure you make it for Interview Ready like the previous topics and also you can add diagrams or graphs(like we did earlier).
 But make sure it is understand for everyone and you can cover each and every topic including structure of URLs also right from scratch.
 

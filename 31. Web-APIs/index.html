@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web APIs</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Web APIs Demo</h1>
+
+    <h2>1. setTimeout API</h2>
+    <button onclick="runTimeout()">Run setTimeout</button>
+    <pre id="timeoutResult"></pre>
+
+    <h2>2. Fetch API</h2>
+    <button onclick="fetchData()">Fetch Data</button>
+    <pre id="fetchResult"></pre>
+
+    <h3>3. LocalStorage API</h3>
+    <button onclick="saveData()">Save Data</button>
+    <button onclick="getData()">Get Data</button>
+    <p id="storageResult"></p>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
