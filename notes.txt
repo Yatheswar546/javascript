@@ -64,39 +64,167 @@ Storage
 
 =================================================================================================
 
-Good gp, now 28th Folder
+Good gp, now 29th Folder
 
-28th Folder : errorHandling
+29th Folder : JSON
+
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js - JSON</title>
+</head>
+<body>
+
+    <h1>Javascript - JSON</h1>
+
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
+
+script.js
+var obj = {
+    "name" : 'Yathe',
+    "age" : 28,
+    "married" : false,
+    "score" : [22,45,67,13],
+    "grade" : null,
+    "marks": {
+        "ml" : 65,
+        "python" : 76,
+        "javascript" : 87,
+    },
+    "lastName" : undefined,
+    "getName" : function(){
+        return this.name
+    }
+}
+
+console.log(obj)
+
+obj = JSON.stringify(obj)
+console.log(obj)
+console.log(JSON.stringify(obj))
+
+obj = JSON.parse(obj)
+console.log(obj)
+
+obj = JSON.stringify(obj)
+console.log(obj)
+
+var arr = [
+    {
+        "name" : 'Yathe',
+        "age" : 22
+    },
+    {
+        "name" : 'Swarup',
+        "age" : 21
+    },
+    {
+        "name" : 'Suhaas',
+        "age" : 20
+    },
+]
+
+console.log(arr[1].age)
 
 notes.txt
-Error Handling:
+XML (eXtensible MarkUp Language):
 
-    try/ catch/ throw 
+=> It is a markup language that is desgined to store and transport data in a structured format.
+    It is used before JSON, but the data transfer is difficult because it is in HTML format.
 
-=> When an error occurs, Js will normaly stop, and generate an error message. 
+=====================================================================================
 
-=> The try/ catch/ finally statements handles some or all errors due to wrong input, and other unforseen things.
+JSON (JavaScript Object Notation):
 
-error handling and defensive programming
+=> It is a lightweight format for storing and transporting data from a server to webpage.
+    It is "self-describing" and easy to understand.
 
-questions
+=> Whenever we want to get data from server it will be difficult to fetch data in a
+    plain text format (or) XML format because data would be bulky and cause too much
+    overhead for web services.
 
-1. try catch limitations
-2. throw custom error
-3. finally usage
-4. safe optional chaining purpose
+=> We use JSON in which, data is passed in an array of objects.
 
-problems
+Synatx:  
+{
+    "name"  : "value",
+    "array" :  [ ]
+}
 
-1. safe JSON parse utility
-2. fetch wrapper with error handling
-3. retry with exponential backoff
-4. null-safe object reader
-5. global error handler
+Uses: 
+1) Less Verbose
+2) Faster
+3) Readable 
+4) Objects align in a code
+5) Structure matches the code
 
-The above is 28th topic about Error Handling. I written only notes.txt. Because I am not getting any idea on what to write in HTML and Js files for this.
-Create a neat HTML, Js files and README.md file explaining in a neat manner about Error Handling and with better examples and add additional information 
-on this for easier understanding for everyone.
+=====================================================================================
+
+Difference between JSON and Js Object:
+
+            JSON               |          Js Object
+                               |
+1.  key/value pairs in " "     |    key/value pairs without " "
+                               |
+2.  no functions               |    can contain functions
+                               |
+3.  supported by any language  |    only JavaScript supports
+
+=====================================================================================
+
+=> JSON can't hold "undefined" variables and "functions" and "data".
+
+=> It can hold strings, arrays, numbers, booleans, null and object.
+
+=====================================================================================
+
+Similarities b/w JSON & XML:
+
+=> Both are "self-describing" and "human-readable"
+
+=> Hierarchical (values within values)
+
+=> Can be parsed and used by programming languages
+
+=> Can be fetched with and "XMLHttpRequest"
+
+=====================================================================================
+
+JSON.parse() & JSON.stringify():
+
+JSON.parse()     : The data received from server will be in string format, 
+                   so we need to parse to get object.
+
+JSON.stringify() :  The data should be send in string format to server. 
+
+                        JSON.parser()
+            Web   <--------------------------  SERVER
+            Page  -------------------------->
+                        JSON.stringify()
+
+=====================================================================================
+
+Why JSON is better ?
+
+=> It doesn't use end tag 
+=> It is shorter 
+=> Quicker to read and write 
+=> Can use arrays 
+=> XML has to be parsed with an XML parser 
+    JSON can be parsed by JSON.parse()
+=> For AJAX applications, JSON is faster and easier.
+
+The above is 29th topic about JSON. Analyze the html, js files and notes.txt and create a README.md file explaining in a neat manner 
+about JSON from beginning of why we need to use it and how to use with better examples and add additional information 
+on this for easier understanding for everyone. Also add suggestions in html and js files if you want. 
+Make sure you make it for Interview Ready like the previous topics.
 
 (1)
 The above is the 20th topic, analyze the html, js files and notes.txt. For this folder just do changes in HTML if you feel required. 

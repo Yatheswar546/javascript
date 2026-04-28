@@ -3,12 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Js - JSON</title>
+    <title>JSON Demo</title>
 </head>
 <body>
 
     <h1>Javascript - JSON</h1>
 
+    <!-- JSON Parse -->
+    <h2>1. JSON Parse</h2>
+    <textarea id="jsonInput" rows="4" placeholder="Enter JSON e.g. {'name': 'yathe'}"></textarea>
+    <button onclick="parseJSON()">Parse JSON</button>
+    <pre id="parseResult"></pre>
+
+    <!-- JSON Stringify -->
+    <h2>2. JSON Stringify</h2>
+    <button onclick="stringifyJSON()">Convert Object to JSON</button>
+    <pre id="stringifyResult"></pre>
+
+    <!-- Fetch API -->
+    <h2>3. Fetch API (Real JSON)</h2>
+    <button onclick="fetchUsers()">Fetch Users</button>
+    <pre id="apiResult"></pre>
 
     <script src="./script.js"></script>
 
