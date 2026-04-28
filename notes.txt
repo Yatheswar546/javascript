@@ -64,9 +64,9 @@ Storage
 
 =================================================================================================
 
-Good gp, now 24th Folder
+Good gp, now 25th Folder
 
-24th Folder : formEvents
+25th Folder : keyBoardEvents
 
 index.html
 <!DOCTYPE html>
@@ -80,28 +80,8 @@ index.html
 </head>
 <body>
 
-    <!------------- Form Events ---------->
-    
-    <form action="" id="form">
-        <div>
-            <h1>Forms</h1>
-        </div>
-        <div>
-            <label>Enter Your Name</label>
-            <input type="text" name="" id="name">
-        </div>
-        <div>
-            <label>Enter Your Email</label>
-            <input type="email" name="" id="email">
-        </div>
-        <div>
-            <label>Enter Your Phone Number</label>
-            <input type="text" name="" id="phone">
-        </div>
-        <div>
-            <input type="submit" value="Submit" id="submit">
-        </div>
-    </form>
+    <!------------- Keyboard Events ---------->
+    <h1>Keyboard Events</h1> 
 
     <script src="./script.js"></script>
 </body> 
@@ -114,74 +94,66 @@ style.css
     box-sizing: border-box;
 }
 
-form{
+h1{
+    font-size: 50px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    display: flex;
-    flex-direction: column;
-
-    border: 1px solid black;
-}
-
-form div{
-    padding: 10px;
-    margin: 10px;    
-}
-
-form input{
-    border: 1px solid black;
-    padding: 8px;
 }
 
 script.js
-var username = document.getElementById('name');
+// Keydown event
 
-// change event
-// we can use input/change both are same
-username.addEventListener('change', function(event) {
-    // console.log(event.target.value);  
-    var currentValue = event.target.value;
-    currentValue = currentValue.toUpperCase();
-    console.log(currentValue);  
-    username.value = currentValue;
+document.body.addEventListener('keydown', function(e) {
+    var keycode = e.keyCode;
+
+    // 13 is keycode for enter
+    if(keycode === 13){
+        console.log(keycode + 'KeyDown - A key is clicked !!!')
+    }
+    // console.log(keycode + 'KeyDown - A key is clicked !!!')
 });
 
-// focus event
-username.addEventListener('focus', function() {
-    console.log('Focused');
-})
+// Keyup event
 
-// blur event
-username.addEventListener('blur', function() {
-    console.log('ELement lost Focus');
-})
+document.body.addEventListener('keyup', function(e) {
+    var keycode = e.keyCode;
 
-//Submit event 
-var form = document.getElementById('form');
-
-form.addEventListener('submit', function (e) {
-    // console.log('Submitted');
-    alert('Submitted');
-    e.preventDefault();
+    // 13 is keycode for enter
+    
+    if(keycode === 13){
+        console.log(keycode + 'Keyup - A key is clicked !!!')
+    }
+    // console.log(keycode + 'Keyup -  is clicked !!!')
 });
+
+// Keypress event
+
+document.body.addEventListener('keypress', function(e) {
+    var keycode = e.keyCode;
+
+    // 13 is keycode for enter
+    if(keycode === 13){
+        console.log(keycode + 'Keypress - A key is clicked !!!')
+    }
+    // console.log(keycode + 'Keypress -  is clicked !!!')
+});
+
+
 
 notex.txt
-Js - Form Events:
+Js - KeyBoard Events:
 
-1) change - It is triggered when the content of an input field is changed (or)
-            when user selects a value from dropdown etc....
+Events triggered when user clicks a key.
 
-2) focus  - It is triggered when input is focused by user.
+3 types:
 
-3) blur   - When input field loses focus.
+1) keydown   : key is pressed.
 
-4) submit - When submit button is clicked.
+2) keyup     : key is released after it's keydown event.
 
-
-=> e.preventDefault() : used to prevent the default behavior of an event (refresh a form etc...)
+3) keypress  : when any key is in pressed position (except SHIFT, FN, CAPS LOCK).
 
 questions
 
@@ -198,7 +170,7 @@ problems
 4. keyboard event listener
 5. detect outside click
 
-The above is 24th topic about Form-Events. Analyze the html, css , js and notes files. Create a neat README.md file explaining in a neat manner about Form-Events
+The above is 25th topic about KeyBoard-Events. Analyze the html, css , js and notes files. Create a neat README.md file explaining in a neat manner about KeyBoard-Events
 and add additional information if you want on this with better examples for easier understanding for everyone. Also suggest any changes if you can in the present html,css and js files.
 Also regarding the questions and problems add the information that are suitable for the present topic.
 
