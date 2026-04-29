@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Programming</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Asynchronous Programming</h1>
+    
+    <h2>1. Synchronous Example</h2>
+    <button onclick="runSync()">Run Sync</button>
+    <pre id="syncOutput"></pre>
+
+    <h2>2. Asynchronous (setTimeout)</h2>
+    <button onclick="runAsync()">Run Async</button>
+    <pre id="asyncOutput"></pre>
+
+    <h2>3. setInterval Example</h2>
+    <button onclick="startInterval()">Start Interval</button>
+    <button onclick="stopInterval()">Stop Interval</button>
+    <p id="intervalOutput"></p>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

@@ -34,13 +34,14 @@ Callbacks and Array Iteration
 
 DOM and Broswer 
 20. DOM and CRUD operations in DOM 
-21. BOM (Browser Object Model)
+21. Counter (DOM Example)
+22. BOM (Browser Object Model)
 
 Events
-22. Events and Event Handling 
-23. Form Events
-24. keyBoard Events
-25. Mouse Events 
+23. Events and Event Handling 
+24. Form Events
+25. keyBoard Events
+26. Mouse Events 
 27. Event Bubbling
 
 Error and Data Handling
@@ -64,30 +65,73 @@ Storage
 
 =================================================================================================
 
-Very good gp, now 31st Folder
+Very good gp, now 32nd Folder
 
-31st Folder : Web APIs
+32nd Folder : Asynchronous Programming
 
 notes.txt
-Web APIs:
+Asynchronous:  
 
-=> Browser gives Js some additional superpowers in form of Web APIs (functions)
-    that helps to overcome challenges of being synchronous.
+        " I will finish it later ! "
 
-=> Some of most used ones are
-    |--> DOM APIs 
-    |--> console.log()
-    |--> setTimeout(), fetch(), localStorgae() etc....
+=> Writing code where tasks run in background without blocking the main program flow,
+    allowing other work to continue while waiting for results.
 
+=> Simply we can refer as functions "running in parallel" with other functions.
 
-The above is 31st topic about Web APIs. The 2nd part of Networking. I created only notes.txt for this. Because I am not getting any idea 
-on what to write in HTML and Js files for this same as HTTP.
-Help me in creating this Web APIs topic in a very clear as we did for HTTP one and beginner friendly way so even a beginner can also understand.
+=> We can use "setTimeout()" and "setInterval()".
+
+Syntax: setTimeout( function() { },  1000 );
+
+Explanation: 
+    => setTimeout  :  Js function to "wait"
+    => function()  :  callback function to perform
+    => 1000        :  time in ms (milliseconds)
+
+==============================================================================
+
+=> In JS, code is executed "line-by-line" in sequence.
+    So, we can achieve asynchronous programming in the following ways:
+
+    1) Callbacks  :   asynchronous function is executed when a function is completed.
+
+                    setTimeout( () => {
+                        ..........
+                        ..........
+                    }, 2000);
+
+    2) Promises 
+
+    3) Async / Await 
+
+    4) Timers     :  setTimeout(), setInterval()
+
+    5) Event Listeners
+
+==============================================================================
+
+NOTE: JavaScript Engine is single threaded synchronous
+      
+      ==> can only execute one line of code at a time.
+
+      ==> Only after the current line of code runs to completion can another line of code start executing.
+
+The above is 32nd topic about Asynchronous Programming. Now we are moving into Asynchronous Programming.
+I divided this part in the following ways.
+(i) Asynchronous Programming
+(ii) Promises
+(iii) fetch API
+(iv) async-await
+Let's create one-by-one. 
+
+At present let's concentrate on Asynchronous Programming. I created only notes.txt for this. Because I am not getting any idea 
+on what to write in HTML and Js files for this same as previous topics.
+Help me in creating this topic in a very clear as we did for previous few topics and make it into a beginner friendly way 
+so even a beginner can also understand.
 This knowledge should be helpful for backend also for future reference.
 
 Make this folder with better examples and add additional information on this for easier understanding for everyone. 
-Make sure you make it for Interview Ready like the previous topics and also you can add diagrams or graphs(like we did earlier).
-But make sure it is understand for everyone and you can cover each and every topic including structure of URLs also right from scratch.
+Make sure you make it for Interview Ready like the previous topics. But make sure it is understand for everyone.
 
 You can generate html, js etc... any kind of files for this including README.md file for better understanding.
 
