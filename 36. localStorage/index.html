@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage Demo</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>localStorage Demo</h1>
+
+    <h2>1. Save Username</h2>
+    <input type="text" id="username" placeholder="Enter Name">
+    <button onclick="saveName()">Save</button>
+    <button onclick="getName()">Get</button>
+    <button onclick="removeName()">Remove</button>
+    <p id="userOutput"></p>
+
+    <h2>2. Persistent Todo List</h2>
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
