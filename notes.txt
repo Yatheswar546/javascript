@@ -65,114 +65,52 @@ Storage
 
 =================================================================================================
 
-good gp, now 33rd Folder
+good gp, now 34th Folder
 
-33rd Folder : Promises
+34th Folder : fetch API
 
 notes.txt
-Promises: 
+Fetch API:
 
-        " I Promise a Result !!! "
+=> It is a Promise which helps to capture data from external server.
 
-=> In JavaScript, a Promise represents a value (output of a request) 
-    which is unknown for now, but will become known in future. 
+    FETCH ------> Create Promise + Process Promise
 
-=> Promises are values which acts as placeholders for future values.
-    Unlike Arrays, Strings, Maps and Sets in JavaScript, 
-    Promises have a deterministic value from the very start.
+=> It is one of Web APIs.
 
-=> There are primarily two scenarios where we can use a Promise:
-    1) When you use a promise to create a placeholder for a future value.
-    2) When you consume the value which is assigned to the placeholder.
+=> It returns a Promise i.e. you can store the returned value from a HTTP response to a variable 
+    and also consume the value like any Promise object.
 
-=> Promise is used to handle the asynchronous result of an operation.
-    Eg: making an API Call, Reading from Disk etc....
 
-=> It defers the execution of code block until an asynchronous request is completed.
+Example: 
 
-=============================================================================================
+    // PROMISE DECLARATION
+    const postApiPromise = fetch('https://..........');
 
-Producing Code: codes takes some time (running).
+    // HANDLING PROMISE 
+    postApiPromise.then( function(rawData) {
+        // rawData.json() --> Promise
 
-Consuming Code: code must wait sometime (waiting).
-
-=> When the producing code obtains result, it should call one of the two callbacks.
-    
-    Success ---> myResolve ( result value )
-
-    Reject  ---> myReject  ( error object )
-
-Syntax:
-    const myPromise = new Promise( (resolve, reject) => {
-        // Promise body 
-        // call resolve() when it is success 
-        // call reject()  when it fails 
+        rawData.json.then( function(formattedData) {
+            console.log(formattedData);
+        })
     });
 
-=> Promise constructor is having only 1 parameter, which is callback.
+====================================================================================
 
-=> Callback is having 2 parameters
-    |
-    |--> resolve() : when promise is in success 
-    |
-    |--> reject()  : when promise is in fail.
+POST request using fetch() :
 
-=============================================================================================
+fetch( url, {
+    method : "POST",
+    body   : JSON.stringify( {name: "Crio.do"} ),
+    headers: {
+        "Content-type" : "application/json, charset=UTF-8"
+    }
+}).then( (response) => response.json())
+  .then( (json) => console.log(json));
 
-States of a Promise:
 
-1) Start 
-2) Pending    :  A pending promise hasn't begin operation yet. (undefined)
-3) Fulfilled  :  A promise resolves after operation finishes.  (result) 
-4) Rejected   :  A promise fails to complete successfully.     (error)
-5) Result 
-
-=============================================================================================
-
-Handling Promises:
-
-    RESOLVE ------> then()
-    REJECT  ------> catch()
-
-then()   :  It is called when resolve() is executed. 
-            It receives data passed in resolve() as argument.
-
-catch()  :  It is called when reject() is executed.
-            It receives data passed in reject() as argument.
-
-            Eg: waiting for a timeout 
-                waiting for a file.
-
-Eg: 
-
-    const isCashAvailable = true;
-
-    //PROMISE DECLARATION 
-    const atmPromise = new Promise( function (resolve, reject) => {
-        {
-            if(isCashAvailable){
-                const response = {
-                    message: "Cash is Available to withdraw";
-                }
-                resolve(response);
-            }
-            else {
-                const response = {
-                    message: "Cash is Not Available";
-                }
-                reject(response);
-            }
-        }
-    });
-
-    //HANDLING PROMISE 
-    atmPromise.then( function(successData) {
-        console.log(successData);
-    }).catch( function(failData) {
-        console.error(failData);
-    });
-
-The above is 33rd topic about Promises. Continuation of Asynchronous Programming.
+The above is 34th topic about fetch API. Continuation of Asynchronous Programming.
 
 As you can see I created only notes.txt for this. Because I am not getting any idea 
 on what to write in HTML and Js files for this, same as previous topics.

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        input {
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Fetch API Demo</h1>
+
+    <h2>1. GET Request</h2>
+    <button onclick="getPosts()">Get Posts</button>
+    <pre id="getOutput"></pre>
+
+    <h2>2. POST Request</h2>
+    <button onclick="createPost()">Create Post</button>
+    <pre id="postOutput"></pre>
+
+    <h2>3. GitHub User Search</h2>
+    <input type="text" id="username" placeholder="Enter GitHub username">
+    <button onclick="searchUser()">Search</button>
+    <pre id="userOutput"></pre>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
