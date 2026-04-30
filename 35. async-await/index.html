@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        input {
+            padding: 8px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Async / Await Demo</h1>
+
+    <h2>1. Basic Example</h2>
+    <button onclick="basicExample()">Run Basic</button>
+    <pre id="basicOutput"></pre>
+
+    <h2>2. API Call using async/await</h2>
+    <button onclick="getPosts()">Get Posts</button>
+    <pre id="apiOutput"></pre>
+
+    <h2>3. Error Handling</h2>
+    <button onclick="getError()">Trigger Error</button>
+    <pre id="errorOutput"></pre>
+
+    <h2>4. Parallel vs Sequential</h2>
+    <button onclick="runSequential()">Sequential</button>
+    <button onclick="runParallel()">Parallel</button>
+    <pre id="output"></pre>
+
+    <h2>5. Input Check Example</h2>
+    <input type="text" id="num" placeholder="Enter number">
+    <button onclick="runCheck()">Check</button>
+    <pre id="checkOutput"></pre>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>

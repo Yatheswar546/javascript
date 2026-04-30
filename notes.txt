@@ -65,52 +65,119 @@ Storage
 
 =================================================================================================
 
-good gp, now 34th Folder
+good gp, now 35th Folder
 
-34th Folder : fetch API
+35th Folder : async-await
 
 notes.txt
-Fetch API:
+Async - Await:
 
-=> It is a Promise which helps to capture data from external server.
+=> "Makes promises easy to write" instead of .then() and .catch()
 
-    FETCH ------> Create Promise + Process Promise
+=> "async, await" would allow any function to implicitly return a promise.
 
-=> It is one of Web APIs.
+    async  :  makes a function as asynchronous. It returns a promise.
 
-=> It returns a Promise i.e. you can store the returned value from a HTTP response to a variable 
-    and also consume the value like any Promise object.
+    await  :  pauses the function until Promise resolves. Makes a func. wait for a promise.
 
 
-Example: 
-
-    // PROMISE DECLARATION
-    const postApiPromise = fetch('https://..........');
-
-    // HANDLING PROMISE 
-    postApiPromise.then( function(rawData) {
-        // rawData.json() --> Promise
-
-        rawData.json.then( function(formattedData) {
-            console.log(formattedData);
-        })
-    });
-
-====================================================================================
-
-POST request using fetch() :
-
-fetch( url, {
-    method : "POST",
-    body   : JSON.stringify( {name: "Crio.do"} ),
-    headers: {
-        "Content-type" : "application/json, charset=UTF-8"
+Async Syntax:   
+    
+    async function func_name () {
+        ...................
+        ...................
     }
-}).then( (response) => response.json())
-  .then( (json) => console.log(json));
+
+Await Syntax: 
+
+    let variable_name = await myPromise;
 
 
-The above is 34th topic about fetch API. Continuation of Asynchronous Programming.
+Example:  
+
+    async function getData(){
+        const res = await fetch('https://........');
+        const data = await res.json();
+        console.log(data);
+    }
+    getData();
+
+
+Rules: 
+    1) aysnc always returns a Promise.
+    2) await works only inside a async function.
+
+===========================================================================
+
+How to CONVERT any Function to ASYNC:
+
+Step 1  :  Add "async" keyword 
+
+Step 2  :  If it is resolve function then returns the data.
+
+Step 3  :  If it is a reject function then just throw data as error.
+
+Example:
+
+    function checkNumber (num) {
+        return new Promise( (resolve, reject) => {
+            setTimeout( () => {
+                if(num > 0){
+                    resolve("Success");
+                } 
+                else{
+                    resolve("Failure");
+                }
+            }, 1000);
+        });
+    }
+
+    async function runCheck(num) {
+        try{
+            const result = await checkNumber(num);
+            console.log(result);
+        }
+        catch(error){
+            console.log(error);
+        }
+    }
+
+    runCheck(5);
+
+    runCheck(-2);
+
+===========================================================================
+
+NOTE: async function suspends execution when it encounters an await keyword inside.
+===========================================================================
+
+=> With async-await syntax we don't need the then and catch construct 
+    we can use the normal try-catch error handling.
+
+asynchronous programming, promises, async/await
+
+questions
+
+1. event loop explanation (must prepare well)
+2. promise states
+3. async await under the hood
+4. promise vs async await
+5. microtask vs macrotask (bonus)
+
+problems
+
+1. create your own promise
+2. promisify setTimeout
+3. run promises in parallel
+4. retry failed api call
+5. timeout wrapper for fetch
+6. sequential vs parallel api calls
+7. convert callback function to promise
+8. convert function to async
+
+––––––––––––––––––––
+
+The above is 35th topic about async-await. Continuation of Asynchronous Programming.
 
 As you can see I created only notes.txt for this. Because I am not getting any idea 
 on what to write in HTML and Js files for this, same as previous topics.
@@ -121,7 +188,11 @@ This knowledge should be helpful for backend also for future reference.
 Make this folder with better examples and add additional information on this for easier understanding for everyone. 
 Make sure you make it for Interview Ready like the previous topics. But make sure it is understand for everyone.
 
+Regarding the questions and problems part. Answer the questions that have not answered in our previous topics. 
+Also mention the steps on "How to CONVERT any function to ASYNC" in a clear way as I did above.
+
 You can generate html, js etc... any kind of files for this including README.md file for better understanding.
+
 
 (1)
 The above is the 20th topic, analyze the html, js files and notes.txt. For this folder just do changes in HTML if you feel required. 
