@@ -4,6 +4,8 @@
 
 Fetch API:
 
+`fetch returns a Promise that resolves even for HTTP errors, so we must manually check response.ok`
+
 👉 Used to make HTTP requests (GET, POST, etc.)
 👉 It is a Web API
 👉 It returns a Promise
