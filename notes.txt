@@ -65,66 +65,6 @@ Storage
 
 =================================================================================================
 
-good gp, now 36th Folder
-
-36th Folder : localStorage
-
-localStorage (Browser Storage Mechanism):
-
-localStorage is a browser storage mechanism that lets you store data in user's browser permanently (until manually cleared).
-
-=> Data stays even after refresh / browser start
-=> Stores data as key-value pairs 
-=> Part of the "WebStorage API" 
-=> Stores strings only
-
-Save data: localStorage.setItem("username", "yathe");
-
-Get data : localStorage.getItem("username");
-
-Remove : localStorage.removeItem("username");
-
-Clear : localStorage.clear();
-
-NOTE: The keys, values both are stored as "Strings"
-
-1. setting to localStorage --> convert to string (JSON.stringify())
-
-2. Read from localStorage --> convert back to array/object (JSON.parse())
-
-local storage
-
-questions
-
-1. storage limits
-2. localStorage vs sessionStorage
-3. why stringify needed
-4. security concerns
-
-problems
-
-1. persistent todo app
-2. theme switcher save preference
-3. cart persistence
-4. auto-save form draft
-5. storage wrapper utility
-
-––––––––––––––––––––
-
-The above is 36th topic about localStorage. 
-
-As you can see I created only notes.txt for this. Because I am not getting any idea 
-on what to write in HTML and Js files for this, same as previous topics.
-Help me in creating this topic in a very clear as we did for previous few topics and make it into a beginner friendly way 
-so even a beginner can also understand.
-This knowledge should be helpful for backend also for future reference.
-
-Make this folder with better examples and add additional information on this for easier understanding for everyone. 
-Make sure you make it for Interview Ready like the previous topics. But make sure it is understand for everyone.
-
-You can generate html, js etc... any kind of files for this including README.md file for better understanding.
-
-
 (1)
 The above is the 20th topic, analyze the html, js files and notes.txt. For this folder just do changes in HTML if you feel required. 
 But generate a good README file with the information provided in notes.txt and additional information which you feel would be better 
@@ -156,3 +96,17 @@ The above is notes for 22nd topic, I created only notes.txt for this. Because I 
 on what to write in HTML and Js files for this. Also I am not sure whether it is a very important topic
 for interviews or not. So, help me in this topic. Generate required files for this with better examples 
 so everyone can understand easily and also for interview ready.
+
+(7)
+The above is 36th topic about localStorage. 
+
+As you can see I created only notes.txt for this. Because I am not getting any idea 
+on what to write in HTML and Js files for this, same as previous topics.
+Help me in creating this topic in a very clear as we did for previous few topics and make it into a beginner friendly way 
+so even a beginner can also understand.
+This knowledge should be helpful for backend also for future reference.
+
+Make this folder with better examples and add additional information on this for easier understanding for everyone. 
+Make sure you make it for Interview Ready like the previous topics. But make sure it is understand for everyone.
+
+You can generate html, js etc... any kind of files for this including README.md file for better understanding.
