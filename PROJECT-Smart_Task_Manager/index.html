@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Task Manager</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Header section -->
+    <header>
+        <h1>Task Manager</h1>
+        <p id="quote"></p>
+    </header>
+
+    <!-- Main section -->
+    <main>
+        <form id="taskForm">
+            <input type="text" id="taskInput" placeholder="Enter a task" required />
+            <button>Add</button>
+        </form>
+
+        <div class="filters">
+            <button data-filter="all">All</button>
+            <button data-filter="pending">Pending</button>
+            <button data-filter="completed">Completed</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </main>
+
+
+    <!-- Custom Js -->
+    <script src="./script.js"></script>
+
+</body>
+</html>
