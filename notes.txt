@@ -65,67 +65,117 @@ Storage
 
 =================================================================================================
 
-Very good gp, now 32nd Folder
+good gp, now 33rd Folder
 
-32nd Folder : Asynchronous Programming
+33rd Folder : Promises
 
 notes.txt
-Asynchronous:  
+Promises: 
 
-        " I will finish it later ! "
+        " I Promise a Result !!! "
 
-=> Writing code where tasks run in background without blocking the main program flow,
-    allowing other work to continue while waiting for results.
+=> In JavaScript, a Promise represents a value (output of a request) 
+    which is unknown for now, but will become known in future. 
 
-=> Simply we can refer as functions "running in parallel" with other functions.
+=> Promises are values which acts as placeholders for future values.
+    Unlike Arrays, Strings, Maps and Sets in JavaScript, 
+    Promises have a deterministic value from the very start.
 
-=> We can use "setTimeout()" and "setInterval()".
+=> There are primarily two scenarios where we can use a Promise:
+    1) When you use a promise to create a placeholder for a future value.
+    2) When you consume the value which is assigned to the placeholder.
 
-Syntax: setTimeout( function() { },  1000 );
+=> Promise is used to handle the asynchronous result of an operation.
+    Eg: making an API Call, Reading from Disk etc....
 
-Explanation: 
-    => setTimeout  :  Js function to "wait"
-    => function()  :  callback function to perform
-    => 1000        :  time in ms (milliseconds)
+=> It defers the execution of code block until an asynchronous request is completed.
 
-==============================================================================
+=============================================================================================
 
-=> In JS, code is executed "line-by-line" in sequence.
-    So, we can achieve asynchronous programming in the following ways:
+Producing Code: codes takes some time (running).
 
-    1) Callbacks  :   asynchronous function is executed when a function is completed.
+Consuming Code: code must wait sometime (waiting).
 
-                    setTimeout( () => {
-                        ..........
-                        ..........
-                    }, 2000);
+=> When the producing code obtains result, it should call one of the two callbacks.
+    
+    Success ---> myResolve ( result value )
 
-    2) Promises 
+    Reject  ---> myReject  ( error object )
 
-    3) Async / Await 
+Syntax:
+    const myPromise = new Promise( (resolve, reject) => {
+        // Promise body 
+        // call resolve() when it is success 
+        // call reject()  when it fails 
+    });
 
-    4) Timers     :  setTimeout(), setInterval()
+=> Promise constructor is having only 1 parameter, which is callback.
 
-    5) Event Listeners
+=> Callback is having 2 parameters
+    |
+    |--> resolve() : when promise is in success 
+    |
+    |--> reject()  : when promise is in fail.
 
-==============================================================================
+=============================================================================================
 
-NOTE: JavaScript Engine is single threaded synchronous
-      
-      ==> can only execute one line of code at a time.
+States of a Promise:
 
-      ==> Only after the current line of code runs to completion can another line of code start executing.
+1) Start 
+2) Pending    :  A pending promise hasn't begin operation yet. (undefined)
+3) Fulfilled  :  A promise resolves after operation finishes.  (result) 
+4) Rejected   :  A promise fails to complete successfully.     (error)
+5) Result 
 
-The above is 32nd topic about Asynchronous Programming. Now we are moving into Asynchronous Programming.
-I divided this part in the following ways.
-(i) Asynchronous Programming
-(ii) Promises
-(iii) fetch API
-(iv) async-await
-Let's create one-by-one. 
+=============================================================================================
 
-At present let's concentrate on Asynchronous Programming. I created only notes.txt for this. Because I am not getting any idea 
-on what to write in HTML and Js files for this same as previous topics.
+Handling Promises:
+
+    RESOLVE ------> then()
+    REJECT  ------> catch()
+
+then()   :  It is called when resolve() is executed. 
+            It receives data passed in resolve() as argument.
+
+catch()  :  It is called when reject() is executed.
+            It receives data passed in reject() as argument.
+
+            Eg: waiting for a timeout 
+                waiting for a file.
+
+Eg: 
+
+    const isCashAvailable = true;
+
+    //PROMISE DECLARATION 
+    const atmPromise = new Promise( function (resolve, reject) => {
+        {
+            if(isCashAvailable){
+                const response = {
+                    message: "Cash is Available to withdraw";
+                }
+                resolve(response);
+            }
+            else {
+                const response = {
+                    message: "Cash is Not Available";
+                }
+                reject(response);
+            }
+        }
+    });
+
+    //HANDLING PROMISE 
+    atmPromise.then( function(successData) {
+        console.log(successData);
+    }).catch( function(failData) {
+        console.error(failData);
+    });
+
+The above is 33rd topic about Promises. Continuation of Asynchronous Programming.
+
+As you can see I created only notes.txt for this. Because I am not getting any idea 
+on what to write in HTML and Js files for this, same as previous topics.
 Help me in creating this topic in a very clear as we did for previous few topics and make it into a beginner friendly way 
 so even a beginner can also understand.
 This knowledge should be helpful for backend also for future reference.

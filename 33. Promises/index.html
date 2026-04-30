@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        pre {
+            background: #f4f4f4;
+            margin: 10px 0;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <h1>JavaScript Promises</h1>
+
+    <h2>1. Basic Promise (Resolve)</h2>
+    <button onclick="runSuccess()">Run Success</button>
+    <pre id="successOutput"></pre>
+
+    <h2>2. Basic Promise (Reject)</h2>
+    <button onclick="runFailure()">Run Failure</button>
+    <pre id="failOutput"></pre>
+
+    <h3>3. Promise Chaining</h3>
+    <button onclick="runChaining()">Run Chain</button>
+    <pre id="chainOutput"></pre>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
